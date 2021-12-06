@@ -7,7 +7,7 @@ import Business.Express.DeliveryManDir;
 import Business.Employee.Employee;
 import Business.Seller.Seller;
 import Business.Seller.SellerDirectory;
-import Business.Role.AdminRole;
+import Business.Role.SellerRole;
 import Business.Role.CustomerRole;
 import Business.Role.DeliverManRole;
 import Business.Role.SystemAdminRole;
@@ -37,11 +37,11 @@ public class ConfigureASystem {
         system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
         system.getUserAccountDirectory().createUserAccount("1", "1", e1, new CustomerRole());
         system.getUserAccountDirectory().createUserAccount("2","2", e2, new DeliverManRole());
-        system.getUserAccountDirectory().createUserAccount("3","3", e3, new AdminRole());
+        system.getUserAccountDirectory().createUserAccount("3","3", e3, new SellerRole());
 //        
 //        Customer c1 = system.getCustomerDirectory().createCustomer(1, "Name", "username", "password");
-        DeliveryMan m1 = system.getDeliveryManDirectory().createDeliveryMan(2, "Name", "username", "password");
-        system.getSellerDirectory().createRestaurant(3, "1", "2", "3");
+//        DeliveryMan m1 = system.getDeliveryManDirectory().createDeliveryMan(2, "Name", "username", "password");
+//        system.getSellerDirectory().createRestaurant(3, "1", "2", "3");
 //      Restaurant r1 = system.getRestaurantDirectory().createRestaurant(3, "Name", "username", "password");
         
         return system;

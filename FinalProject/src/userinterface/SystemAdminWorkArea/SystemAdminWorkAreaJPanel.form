@@ -40,7 +40,7 @@
                           <Component id="btnManageAdmin" max="32767" attributes="0"/>
                           <Component id="btnResAdmin" alignment="0" pref="278" max="32767" attributes="0"/>
                           <Component id="btnCustomer" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnResAdmin1" alignment="0" pref="278" max="32767" attributes="0"/>
+                          <Component id="btnSeller" alignment="0" pref="278" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -62,18 +62,18 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="btnManageAdmin" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="btnResAdmin" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnResAdmin1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnSeller" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="btnCustomer" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="199" max="-2" attributes="0"/>
                   </Group>
@@ -115,7 +115,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnManageAdmin">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Edit Express"/>
+        <Property name="text" type="java.lang.String" value="Manage Express Manager"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnManageAdminActionPerformed"/>
@@ -169,12 +169,12 @@
         <Property name="text" type="java.lang.String" value="Create New Network HERE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnResAdmin1">
+    <Component class="javax.swing.JButton" name="btnSeller">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage E-Pay Manager"/>
+        <Property name="text" type="java.lang.String" value="Manage Seller"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResAdmin1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSellerActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

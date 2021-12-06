@@ -3,7 +3,9 @@
 package userinterface.RestaurantAdminRole;
 
 
+import Business.EcoSystem;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -12,17 +14,21 @@ import javax.swing.JPanel;
  *
  * @author  raunak
  */
-public class AdminWorkAreaJPanel extends javax.swing.JPanel {
+public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     WorkQueue wq;
     Network net;
+    UserAccount useraccount;
+    EcoSystem system;
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminWorkAreaJPanel(JPanel userProcessContainer,WorkQueue wq,Network net) {
+    public SellerWorkAreaJPanel(JPanel userProcessContainer,UserAccount useraccount,EcoSystem system,WorkQueue wq,Network net) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.wq= wq;
         this.net= net;
+        this.useraccount=useraccount;
+        this.system=system;
         //valueLabel.setText();
     }
     

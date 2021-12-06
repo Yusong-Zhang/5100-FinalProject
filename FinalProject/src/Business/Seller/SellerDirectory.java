@@ -5,6 +5,7 @@
  */
 package Business.Seller;
 
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -12,10 +13,10 @@ import java.util.ArrayList;
  * @author harold
  */
 public class SellerDirectory {
-    private ArrayList<Seller> restaurantList;
+    private ArrayList<Seller> sellerList;
     private ArrayList<Menu> ml;
     public SellerDirectory(){
-        restaurantList = new ArrayList();
+        sellerList = new ArrayList();
         ml = new ArrayList();
     }
     
@@ -37,28 +38,28 @@ public class SellerDirectory {
     public void deleteMenu(Menu m){
         ml.remove(m);
     }
-    public ArrayList<Seller> getRestaurantList(){
-        return restaurantList;
+    public ArrayList<Seller> getSellerList(){
+        return sellerList;
     }
     
     public Seller authenticateUser(String username, String password){
-        for(Seller r : restaurantList)
-            if(r.getUsername().equals(username) && r.getPassword().equals(password)){
+        for(Seller r : sellerList)
+            if(r.getUserAccount().getUsername().equals(username) && r.getUserAccount().getPassword().equals(password)){
                 return r;
             }
         return null;
     }
     
-    public Seller createRestaurant(int ID, String Name, String username, String password){
-        Seller r = new Seller(ID, Name, username, password);
+    public Seller createSeller(String Name,UserAccount useraccount,String type,String address,String phone){
+        Seller r = new Seller( Name,useraccount,type,address,phone);
         
-        restaurantList.add(r);
+        sellerList.add(r);
         return r;
     }
     
     public boolean checkIfUsernameIsUnique(String username){
-        for(Seller r : restaurantList){
-            if(r.getUsername().equals(username))
+        for(Seller r : sellerList){
+            if(r.getUserAccount().getUsername().equals(username))
                 return false;
         }
     return true;

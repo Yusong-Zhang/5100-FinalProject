@@ -7,6 +7,7 @@ package Business.Seller;
 
 import Business.Employee.Employee;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 
 /**
@@ -15,21 +16,63 @@ import Business.WorkQueue.WorkQueue;
  */
 public class Seller {
     private int ID;
+    private static int count=100;
     private String Name;
-    private String username;
-    private String password;
+    private String type;
+     private String address;
+    private String phone;
+    private UserAccount userAccount;
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
     
-    public Seller(int ID, String Name, String username, String password){
-        workQueue = new WorkQueue();
-        this.ID = ID;
-        this.Name = Name;
-        this.username = username;
-        this.password = password;
+    
+    public String getType() {
+        return type;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+   
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
+    
+    
+    public Seller( String Name,UserAccount useraccount,String type,String address,String phone){
+        workQueue = new WorkQueue();
+        ID=count++;
+        this.Name = Name;
+        this.userAccount=useraccount;
+        this.type=type;
+        this.address=address;
+        this.phone=phone;
+    }
+    public Seller(){
+    
+    }
     public int getID() {
         return ID;
     }
@@ -44,22 +87,6 @@ public class Seller {
 
     public void setName(String Name) {
         this.Name = Name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public Employee getEmployee() {
@@ -88,6 +115,6 @@ public class Seller {
     
     @Override
     public String toString() {
-        return username;
+        return userAccount.getUsername();
     }
 }

@@ -76,7 +76,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnCustomer1 = new javax.swing.JButton();
         txtNetwork = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        btnResAdmin1 = new javax.swing.JButton();
+        btnSeller = new javax.swing.JButton();
 
         jLabel1.setText("Welcome!");
 
@@ -94,7 +94,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnManageAdmin.setText("Edit Express");
+        btnManageAdmin.setText("Manage Express Manager");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageAdminActionPerformed(evt);
@@ -137,10 +137,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Create New Network HERE");
 
-        btnResAdmin1.setText("Manage E-Pay Manager");
-        btnResAdmin1.addActionListener(new java.awt.event.ActionListener() {
+        btnSeller.setText("Manage Seller");
+        btnSeller.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResAdmin1ActionPerformed(evt);
+                btnSellerActionPerformed(evt);
             }
         });
 
@@ -170,7 +170,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnManageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnResAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
                             .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnResAdmin1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))))
+                            .addComponent(btnSeller, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -184,15 +184,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(15, 15, 15)
                         .addComponent(btnManageAdmin)
-                        .addGap(18, 18, 18)
+                        .addGap(27, 27, 27)
                         .addComponent(btnResAdmin)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnResAdmin1)
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSeller)
+                        .addGap(29, 29, 29)
                         .addComponent(btnCustomer))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(5, 5, 5)
@@ -207,19 +207,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        ManageDeliveryManJPanel md = new ManageDeliveryManJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("ManageDeliveryManJPanel", md);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+      
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
     private void btnResAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdminActionPerformed
-        ManageRestaurantsManagerJPanel mr = new ManageRestaurantsManagerJPanel(userProcessContainer, ecosystem,wq);
-        userProcessContainer.add("ManageRestaurantsManagerJPanel", mr);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+       
     }//GEN-LAST:event_btnResAdminActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
@@ -250,9 +242,19 @@ int selectedRow = tblNetwork.getSelectedRow();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNetworkActionPerformed
 
-    private void btnResAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdmin1ActionPerformed
+    private void btnSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnResAdmin1ActionPerformed
+         int selectedRow = tblNetwork.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+               userProcessContainer.add(new ManageSellerJPanel(userProcessContainer,ecosystem,wq,network));
+                layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSellerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -260,7 +262,7 @@ int selectedRow = tblNetwork.getSelectedRow();
     private javax.swing.JButton btnCustomer1;
     private javax.swing.JButton btnManageAdmin;
     private javax.swing.JButton btnResAdmin;
-    private javax.swing.JButton btnResAdmin1;
+    private javax.swing.JButton btnSeller;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
