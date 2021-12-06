@@ -66,9 +66,7 @@ public class Network {
         return sellerDirectory;
     }
 
-    public CustomerDirectory getBuyerDirectory() {
-        return customerDirectory;
-    }
+    
 
     public ExpressManagerDir getExpressCompanyDir() {
         return expressCompanyDir;

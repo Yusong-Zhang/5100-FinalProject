@@ -7,6 +7,7 @@ package Business.Customer;
 
 import Business.Employee.Employee;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 
 /**
@@ -14,28 +15,65 @@ import Business.WorkQueue.WorkQueue;
  * @author harold
  */
 public class Customer {
+    private static int count=0;
     private int ID;
-    private String Name;
+    private String name;
     private String username;
     private String password;
-    private Employee employee;
+    private String address;
+    private String phone;
+    private UserAccount userAccount;
     private Role role;
-    private WorkQueue workQueue;
-
-    public Customer(int ID,String Name,String username,String password) {
+    private WorkQueue workQueue;  
+    
+    public Customer(String Name,String username,String password,String address,String phone,UserAccount useraccount) {
         workQueue = new WorkQueue();
-        this.ID = ID;
-        this.Name = Name;
+        ID = ++count;
+        this.name = Name;
         this.username = username;
         this.password = password;
+        this.address = address;
+        this.phone=phone;
+        this.userAccount=useraccount;
+    }
+    public Customer(){
     }
 
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    private Employee employee;
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
+   
+  
+   
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public int getID() {
@@ -88,8 +126,9 @@ public class Customer {
 
 
 
-    @Override
+  @Override
     public String toString() {
-        return username;
+        return userAccount.getUsername();
     }
+    
 }

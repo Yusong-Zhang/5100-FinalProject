@@ -13,7 +13,9 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -37,9 +39,23 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.ecosystem=ecosystem;
         this.wq = wq;
         this.net=net;
-       System.out.println(ecosystem.getUserAccountDirectory().getUserAccountList());
+       populateTable();
     }
-    
+     public void populateTable(){
+        int rowCount = tblNetwork.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)tblNetwork.getModel();
+        for(int i=rowCount-1;i>=0;i--) {
+            model.removeRow(i);
+        }
+        for(Network network:ecosystem.getNetworkList()){
+            
+                Object row[] = new Object[1];
+                row[0] = network;
+                
+                
+                model.addRow(row);
+                }
+            }
   
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,29 +66,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblAdminName = new javax.swing.JLabel();
         btnCustomer = new javax.swing.JButton();
         btnResAdmin = new javax.swing.JButton();
         btnManageAdmin = new javax.swing.JButton();
-
-        setLayout(new java.awt.BorderLayout());
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-        );
-
-        jSplitPane.setLeftComponent(jPanel1);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblNetwork = new javax.swing.JTable();
+        btnCustomer1 = new javax.swing.JButton();
+        txtNetwork = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        btnResAdmin1 = new javax.swing.JButton();
 
         jLabel1.setText("Welcome!");
 
@@ -83,76 +87,124 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnResAdmin.setText("Manage Restaurants Manager");
+        btnResAdmin.setText("Manage E-Pay Manager");
         btnResAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResAdminActionPerformed(evt);
             }
         });
 
-        btnManageAdmin.setText("Manage Deliveryman");
+        btnManageAdmin.setText("Edit Express");
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageAdminActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
+        tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Network"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblNetwork);
+
+        btnCustomer1.setText("----^");
+        btnCustomer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomer1ActionPerformed(evt);
+            }
+        });
+
+        txtNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNetworkActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Create New Network HERE");
+
+        btnResAdmin1.setText("Manage E-Pay Manager");
+        btnResAdmin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResAdmin1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(lblAdminName))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnManageAdmin)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnResAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(298, Short.MAX_VALUE))
+                        .addComponent(lblAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnManageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnResAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                            .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnResAdmin1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblAdminName))
-                .addGap(54, 54, 54)
-                .addComponent(btnCustomer)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(btnManageAdmin)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnResAdmin)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnResAdmin1)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnCustomer))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(btnResAdmin)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageAdmin)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCustomer1)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
-
-        jSplitPane.setRightComponent(jPanel2);
-
-        add(jSplitPane, java.awt.BorderLayout.LINE_START);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
-        ManageCustomerJPanel mc = new ManageCustomerJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("ManageUserAccountJPanel", mc);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnCustomerActionPerformed
-
-    private void btnResAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdminActionPerformed
-        ManageRestaurantsManagerJPanel mr = new ManageRestaurantsManagerJPanel(userProcessContainer, ecosystem,wq);
-        userProcessContainer.add("ManageRestaurantsManagerJPanel", mr);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnResAdminActionPerformed
 
     private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
         ManageDeliveryManJPanel md = new ManageDeliveryManJPanel(userProcessContainer, ecosystem);
@@ -162,15 +214,58 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageAdminActionPerformed
 
+    private void btnResAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdminActionPerformed
+        ManageRestaurantsManagerJPanel mr = new ManageRestaurantsManagerJPanel(userProcessContainer, ecosystem,wq);
+        userProcessContainer.add("ManageRestaurantsManagerJPanel", mr);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnResAdminActionPerformed
+
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+//        ManageCustomerJPanel mc = new ManageCustomerJPanel(userProcessContainer, ecosystem);
+//        userProcessContainer.add("ManageUserAccountJPanel", mc);
+//
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
+int selectedRow = tblNetwork.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+               userProcessContainer.add(new ManageCustomerJPanel(userProcessContainer,ecosystem,network));
+                layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnCustomerActionPerformed
+
+    private void btnCustomer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomer1ActionPerformed
+        // TODO add your handling code here:
+        ecosystem.createAndAddNetwork(txtNetwork.getText());
+         populateTable();
+    }//GEN-LAST:event_btnCustomer1ActionPerformed
+
+    private void txtNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNetworkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNetworkActionPerformed
+
+    private void btnResAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdmin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnResAdmin1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomer;
+    private javax.swing.JButton btnCustomer1;
     private javax.swing.JButton btnManageAdmin;
     private javax.swing.JButton btnResAdmin;
+    private javax.swing.JButton btnResAdmin1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSplitPane jSplitPane;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAdminName;
+    private javax.swing.JTable tblNetwork;
+    private javax.swing.JTextField txtNetwork;
     // End of variables declaration//GEN-END:variables
 }

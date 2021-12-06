@@ -39,7 +39,7 @@ public class ConfigureASystem {
         system.getUserAccountDirectory().createUserAccount("2","2", e2, new DeliverManRole());
         system.getUserAccountDirectory().createUserAccount("3","3", e3, new AdminRole());
 //        
-        Customer c1 = system.getCustomerDirectory().createCustomer(1, "Name", "username", "password");
+//        Customer c1 = system.getCustomerDirectory().createCustomer(1, "Name", "username", "password");
         DeliveryMan m1 = system.getDeliveryManDirectory().createDeliveryMan(2, "Name", "username", "password");
         system.getSellerDirectory().createRestaurant(3, "1", "2", "3");
 //      Restaurant r1 = system.getRestaurantDirectory().createRestaurant(3, "Name", "username", "password");

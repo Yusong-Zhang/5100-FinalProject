@@ -34,8 +34,8 @@ public class CustomerDirectory {
         return null;
     }
     
-    public Customer createCustomer(int ID, String Name, String username, String password){
-        Customer c = new Customer(ID,Name,username,password);
+    public Customer createCustomer( String Name, String username, String password,String address,String phone,UserAccount useraccount){
+        Customer c = new Customer(Name,username,password,address,phone,useraccount);
 
         customerList.add(c);
         return c;
