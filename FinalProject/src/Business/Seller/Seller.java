@@ -62,7 +62,7 @@ public class Seller {
     
     
     public Seller( String Name,UserAccount useraccount,String type,String address,String phone){
-        workQueue = new WorkQueue();
+       
         ID=count++;
         this.Name = Name;
         this.userAccount=useraccount;

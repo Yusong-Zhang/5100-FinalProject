@@ -18,8 +18,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.CustomerRole.CustomerAreaJPanel;
-import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
-import userinterface.RestaurantAdminRole.SellerWorkAreaJPanel;
+import userinterface.ExpressRole.ExpressManagerWorkAreaJPanel;
+import userinterface.SellerRole.SellerWorkAreaJPanel;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 /**
  *
@@ -135,6 +135,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
+        container.setAlignmentY(0.0F);
+        container.setDoubleBuffered(false);
+        container.setMaximumSize(new java.awt.Dimension(666, 250));
+        container.setMinimumSize(new java.awt.Dimension(666, 250));
         container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);
 
@@ -152,7 +156,7 @@ public class MainJFrame extends javax.swing.JFrame {
         String password = String.valueOf(passwordCharArray);
         boolean flag = false;
         
-        UserAccount userAccount = null;
+       
         for (UserAccount u  : system.getUserAccountDirectory().getUserAccountList()){
             
             u = system.getUserAccountDirectory().authenticateUser(userName, password);
@@ -166,7 +170,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
             if (u != null){
                 CardLayout layout = (CardLayout) container.getLayout();
-                container.add("workArea", u.getRole().createWorkArea(container, u, system,WQ,network));
+                container.add("workArea", u.getRole().createWorkArea(container, system, network));
                 layout.next(container);
                 flag = true;
             }

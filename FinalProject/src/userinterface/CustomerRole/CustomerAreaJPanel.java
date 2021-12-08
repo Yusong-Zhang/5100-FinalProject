@@ -32,18 +32,16 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account,EcoSystem system,WorkQueue wq,Network net) {
+    public CustomerAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net) {
         initComponents();
-        
+//        
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.u = account;
-        this.wq = wq;
         this.net= net;
-        lblCustomerName.setText(((u.getEmployee() != null) ? u.getEmployee().getName() : u.getUsername()) + "!");
-        //valueLabel.setText(enterprise.getName());
-        wq.getRequestList();
-       populateRequestTable();
+//        lblCustomerName.setText(((u.getEmployee() != null) ? u.getEmployee().getName() : u.getUsername()) + "!");
+//        //valueLabel.setText(enterprise.getName());
+//        wq.getRequestList();
+//       populateRequestTable();
     }
     
     public void populateRequestTable(){
@@ -78,6 +76,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel = new javax.swing.JLabel();
         lblCustomerName = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        btnRequest1 = new javax.swing.JButton();
+        btnHistoryOrder = new javax.swing.JButton();
 
         tblWorkQ.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,6 +131,20 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnRequest1.setText("Comment");
+        btnRequest1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequest1ActionPerformed(evt);
+            }
+        });
+
+        btnHistoryOrder.setText("View Order History");
+        btnHistoryOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoryOrderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,6 +168,12 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 507, Short.MAX_VALUE)
                                 .addComponent(btnRequest)))))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnHistoryOrder)
+                .addGap(44, 44, 44)
+                .addComponent(btnRequest1)
+                .addGap(149, 149, 149))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +190,11 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRequest)
                     .addComponent(jButton1))
-                .addContainerGap(371, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnHistoryOrder)
+                    .addComponent(btnRequest1))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -199,15 +223,28 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest a = wq.getRequestList().get(row);
-        Commit c = new Commit(userProcessContainer, system,u,a);
+        CommentJPanel c = new CommentJPanel(userProcessContainer, system,u,a);
         userProcessContainer.add("RequestJPanel", c);
 
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnRequest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequest1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRequest1ActionPerformed
+
+    private void btnHistoryOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryOrderActionPerformed
+        HistoryOrderJPanel ho = new HistoryOrderJPanel(userProcessContainer, net, system);
+        userProcessContainer.add("HistoryOrder",ho);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);     
+    }//GEN-LAST:event_btnHistoryOrderActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHistoryOrder;
     private javax.swing.JButton btnRequest;
+    private javax.swing.JButton btnRequest1;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;

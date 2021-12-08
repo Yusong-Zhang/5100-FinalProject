@@ -20,9 +20,11 @@ import javax.swing.JPanel;
 public class CustomerRole extends Role{
 
     
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business,WorkQueue wq,Network net) {
-        return new CustomerAreaJPanel(userProcessContainer, account,business,wq,net);
+    public JPanel createWorkArea(JPanel userProcessContainer,EcoSystem business,Network net) {
+        return new CustomerAreaJPanel(userProcessContainer, business,net);
     }
+
+   
     
     
 }

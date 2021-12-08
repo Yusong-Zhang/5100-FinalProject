@@ -19,10 +19,13 @@ import javax.swing.JPanel;
 public abstract class Role {
     
     public enum RoleType{
-        RestaurantAdmin("RestaurantAdmin"),
+        Seller("Seller"),
         Customer("Customer"),
         DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
+        SysAdmin("Sysadmin"),
+        ProductManager("ProductManager"),
+        PriceManager("PriceManager"),
+        Feedback("Feedback");
         
         private String value;
         private RoleType(String value){
@@ -41,10 +44,8 @@ public abstract class Role {
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
-            UserAccount account,  
-            EcoSystem business,
-            WorkQueue wq,Network net);
+    public abstract JPanel createWorkArea(JPanel userProcessContainer,  
+            EcoSystem business, Network net);
 
     @Override
     public String toString() {

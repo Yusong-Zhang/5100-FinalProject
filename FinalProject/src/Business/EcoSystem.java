@@ -7,8 +7,11 @@ package Business;
 
 
 import Business.Customer.CustomerDirectory;
+import Business.Epay.EpayerDir;
 import Business.Express.DeliveryManDir;
+import Business.Feedback.FeedbackDir;
 import Business.Network.Network;
+import Business.ProductManager.ProductManagerDir;
 import Business.Seller.SellerDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -27,6 +30,10 @@ public class EcoSystem extends Organization{
     private SellerDirectory sellerDirectory;
     private CustomerDirectory customerDirectory;
     private DeliveryManDir deliveryManDirectory;
+    private EpayerDir epayerDirectory;
+    private ProductManagerDir productmanagerDirectory;
+    private FeedbackDir feedbackDirectory;
+    
     private WorkQueue wq;
 
      public Network createAndAddNetwork(String name){
@@ -55,8 +62,27 @@ public class EcoSystem extends Organization{
     sellerDirectory= new SellerDirectory();
     customerDirectory= new CustomerDirectory();
     deliveryManDirectory = new DeliveryManDir();
+    epayerDirectory = new EpayerDir();
+    productmanagerDirectory = new ProductManagerDir();
+    feedbackDirectory = new FeedbackDir();
     networkList=new ArrayList<Network>();
     wq = new WorkQueue();
+    }
+
+    public ProductManagerDir getProductmanagerDirectory() {
+        return productmanagerDirectory;
+    }
+
+    public void setProductmanagerDirectory(ProductManagerDir productmanagerDirectory) {
+        this.productmanagerDirectory = productmanagerDirectory;
+    }
+
+    public FeedbackDir getFeedbackDirectory() {
+        return feedbackDirectory;
+    }
+
+    public void setFeedbackDirectory(FeedbackDir feedbackDirectory) {
+        this.feedbackDirectory = feedbackDirectory;
     }
     public ArrayList<Network> getNetworkList() {
         return networkList;
@@ -110,5 +136,12 @@ public class EcoSystem extends Organization{
     public boolean checkIfUserIsUnique(String userName){
        //
        return false;
+    }
+    public EpayerDir getEpayerDirectory() {
+        return epayerDirectory;
+    }
+
+    public void setEpayerDirectory(EpayerDir epayerDirectory) {
+        this.epayerDirectory = epayerDirectory;
     }
 }

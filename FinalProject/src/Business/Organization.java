@@ -5,6 +5,7 @@
 package Business;
 
 import Business.Employee.EmployeeDirectory;
+import Business.Epay.Epayer;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
@@ -27,7 +28,14 @@ public abstract class Organization {
         RestaurantAdmin("RestaurantAdmin"),
         Customer("Customer"),
         DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
+        SysAdmin("Sysadmin"),
+
+        /**
+         *
+         */
+        Epayer("Epayer");
+        
+        
         
         private String value;
         private Type(String value) {

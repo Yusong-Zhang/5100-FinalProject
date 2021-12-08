@@ -32,9 +32,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     EcoSystem ecosystem;
     WorkQueue wq;
     Network net;
-    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,UserAccount ua,EcoSystem ecosystem,WorkQueue wq,Network net) {
+    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem,Network net) {
         initComponents();
-         lblAdminName.setText(((ua.getEmployee() != null) ? ua.getEmployee().getName() : ua.getUsername()) + "!");
+//         lblAdminName.setText(((ua.getEmployee() != null) ? ua.getEmployee().getName() : ua.getUsername()) + "!");
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
         this.wq = wq;
@@ -69,14 +69,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         lblAdminName = new javax.swing.JLabel();
         btnCustomer = new javax.swing.JButton();
-        btnResAdmin = new javax.swing.JButton();
-        btnManageAdmin = new javax.swing.JButton();
+        btnEpayManager = new javax.swing.JButton();
+        btnExpressManager = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNetwork = new javax.swing.JTable();
         btnCustomer1 = new javax.swing.JButton();
         txtNetwork = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnSeller = new javax.swing.JButton();
+        btnFeedbacker = new javax.swing.JButton();
 
         jLabel1.setText("Welcome!");
 
@@ -87,17 +88,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnResAdmin.setText("Manage E-Pay Manager");
-        btnResAdmin.addActionListener(new java.awt.event.ActionListener() {
+        btnEpayManager.setText("Manage E-Pay Manager");
+        btnEpayManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResAdminActionPerformed(evt);
+                btnEpayManagerActionPerformed(evt);
             }
         });
 
-        btnManageAdmin.setText("Manage Express Manager");
-        btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
+        btnExpressManager.setText("Manage Express Manager");
+        btnExpressManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageAdminActionPerformed(evt);
+                btnExpressManagerActionPerformed(evt);
             }
         });
 
@@ -144,6 +145,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnFeedbacker.setText("Manage Feedbacker");
+        btnFeedbacker.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFeedbackerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,26 +159,33 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(lblAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnManageAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnResAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                            .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSeller, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnExpressManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnEpayManager, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                    .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSeller, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnFeedbacker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -184,35 +199,52 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(btnManageAdmin)
+                        .addComponent(btnExpressManager)
                         .addGap(27, 27, 27)
-                        .addComponent(btnResAdmin)
+                        .addComponent(btnEpayManager)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSeller)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnCustomer))
+                        .addGap(27, 27, 27)
+                        .addComponent(btnCustomer)
+                        .addGap(9, 9, 9))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCustomer1)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCustomer1)
+                        .addComponent(jLabel2)
+                        .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnFeedbacker)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-      
-    }//GEN-LAST:event_btnManageAdminActionPerformed
+    private void btnExpressManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpressManagerActionPerformed
+        int selectedRow = tblNetwork.getSelectedRow();
 
-    private void btnResAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResAdminActionPerformed
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+               userProcessContainer.add(new ManageExpressJPanel(userProcessContainer,ecosystem,network));
+                layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnExpressManagerActionPerformed
+
+    private void btnEpayManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEpayManagerActionPerformed
        
-    }//GEN-LAST:event_btnResAdminActionPerformed
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+               userProcessContainer.add(new ManageEpayJPanel(userProcessContainer,ecosystem));
+                layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnEpayManagerActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
 //        ManageCustomerJPanel mc = new ManageCustomerJPanel(userProcessContainer, ecosystem);
@@ -220,7 +252,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 //
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        layout.next(userProcessContainer);
-int selectedRow = tblNetwork.getSelectedRow();
+        int selectedRow = tblNetwork.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
@@ -244,7 +276,7 @@ int selectedRow = tblNetwork.getSelectedRow();
 
     private void btnSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellerActionPerformed
         // TODO add your handling code here:
-         int selectedRow = tblNetwork.getSelectedRow();
+        int selectedRow = tblNetwork.getSelectedRow();
 
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
@@ -256,12 +288,27 @@ int selectedRow = tblNetwork.getSelectedRow();
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnSellerActionPerformed
 
+    private void btnFeedbackerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFeedbackerActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblNetwork.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+               userProcessContainer.add(new ManageFeedbackJPanel(userProcessContainer,ecosystem,network));
+                layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnFeedbackerActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnCustomer1;
-    private javax.swing.JButton btnManageAdmin;
-    private javax.swing.JButton btnResAdmin;
+    private javax.swing.JButton btnEpayManager;
+    private javax.swing.JButton btnExpressManager;
+    private javax.swing.JButton btnFeedbacker;
     private javax.swing.JButton btnSeller;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

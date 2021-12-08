@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * @author jiaohongmei
  */
 public class ExpressManagerDir {
-    private ArrayList<ExpressManager>ExpressCompanyList;
+    private ArrayList<ExpressManager>ExpressManagerList;
 
     public  ExpressManagerDir() {
-        ExpressCompanyList = new ArrayList();
+        ExpressManagerList = new ArrayList();
     }
 
-    public ArrayList<ExpressManager> getExpressCompanyList() {
-        return ExpressCompanyList;
+    public ArrayList<ExpressManager> getExpressManagerList() {
+        return ExpressManagerList;
     }
 }

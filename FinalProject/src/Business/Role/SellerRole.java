@@ -10,7 +10,7 @@ import Business.Network.Network;
 import Business.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
-import userinterface.RestaurantAdminRole.SellerWorkAreaJPanel;
+import userinterface.SellerRole.SellerWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -20,8 +20,8 @@ import javax.swing.JPanel;
 public class SellerRole extends Role{
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business,WorkQueue wq,Network net) {
-        return new SellerWorkAreaJPanel(userProcessContainer,account,business,wq,net);
+    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net) {
+        return new SellerWorkAreaJPanel(userProcessContainer,business,net);
     }
 
     

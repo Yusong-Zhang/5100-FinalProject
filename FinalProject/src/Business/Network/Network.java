@@ -6,8 +6,10 @@
 package Business.Network;
 
 import Business.Customer.CustomerDirectory;
+import Business.Epay.EpayerDir;
 
 import Business.Express.ExpressManagerDir;
+import Business.Item.Items;
 import Business.Seller.SellerDirectory;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
@@ -20,9 +22,38 @@ public class Network {
     private String name;
     private SellerDirectory sellerDirectory;
     private CustomerDirectory customerDirectory;
-    private ExpressManagerDir expressCompanyDir;
+    private ExpressManagerDir expressManagerDir;
+    private Items items;
+    private EpayerDir epayerdir;
     private UserAccountDirectory userAccountDirectory;
     private WorkQueue workQueue;
+    public Items getItems() {
+        return items;
+    }
+
+    public void setItems(Items items) {
+        this.items = items;
+    }
+    public EpayerDir getEpayerdir() {
+        return epayerdir;
+    }
+
+    public void setEpayerdir(EpayerDir epayerdir) {
+        this.epayerdir = epayerdir;
+    }
+
+    public void setSellerDirectory(SellerDirectory sellerDirectory) {
+        this.sellerDirectory = sellerDirectory;
+    }
+
+    public void setExpressManagerDir(ExpressManagerDir expressManagerDir) {
+        this.expressManagerDir = expressManagerDir;
+    }
+
+    public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
+        this.userAccountDirectory = userAccountDirectory;
+    }
+   
 
     public CustomerDirectory getCustomerDirectory() {
         return customerDirectory;
@@ -48,8 +79,9 @@ public class Network {
         userAccountDirectory=new UserAccountDirectory();
         sellerDirectory=new SellerDirectory();
         customerDirectory =new CustomerDirectory();
-        expressCompanyDir=new ExpressManagerDir();
-        workQueue= new WorkQueue(); 
+        expressManagerDir=new ExpressManagerDir();
+        workQueue= new WorkQueue();
+        items= new Items();
         
     }
 
@@ -68,8 +100,8 @@ public class Network {
 
     
 
-    public ExpressManagerDir getExpressCompanyDir() {
-        return expressCompanyDir;
+    public ExpressManagerDir getExpressManagerDir() {
+        return expressManagerDir;
     }
 
     public UserAccountDirectory getUserAccountDirectory() {
