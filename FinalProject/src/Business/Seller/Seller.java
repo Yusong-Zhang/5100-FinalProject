@@ -6,7 +6,11 @@
 package Business.Seller;
 
 import Business.Employee.Employee;
+import Business.Item.Items;
+import Business.PriceManager.PriceManagerDir;
+import Business.ProductManager.ProductManagerDir;
 import Business.Role.Role;
+import Business.SellerOrder.SellOrder;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 
@@ -25,7 +29,42 @@ public class Seller {
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
-    
+    private Items items;
+    private PriceManagerDir priceManageDir;
+    private ProductManagerDir productManagerDir;
+
+    public Items getItems() {
+        return items;
+    }
+
+    public void setItems(Items items) {
+        this.items = items;
+    }
+
+    public PriceManagerDir getPriceManageDir() {
+        return priceManageDir;
+    }
+
+    public void setPriceManageDir(PriceManagerDir priceManageDir) {
+        this.priceManageDir = priceManageDir;
+    }
+
+    public ProductManagerDir getProductManagerDir() {
+        return productManagerDir;
+    }
+
+    public void setProductManagerDir(ProductManagerDir productManagerDir) {
+        this.productManagerDir = productManagerDir;
+    }
+
+    public SellOrder getSellOrder() {
+        return sellOrder;
+    }
+
+    public void setSellOrder(SellOrder sellOrder) {
+        this.sellOrder = sellOrder;
+    }
+    private SellOrder sellOrder;
     
     public String getType() {
         return type;
@@ -115,6 +154,6 @@ public class Seller {
     
     @Override
     public String toString() {
-        return userAccount.getUsername();
+        return Name;
     }
 }

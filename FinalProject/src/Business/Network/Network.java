@@ -6,6 +6,7 @@
 package Business.Network;
 
 import Business.Customer.CustomerDirectory;
+import Business.CustomerOrder.BuyOrderItem;
 import Business.Epay.EpayerDir;
 
 import Business.Express.ExpressManagerDir;
@@ -23,17 +24,17 @@ public class Network {
     private SellerDirectory sellerDirectory;
     private CustomerDirectory customerDirectory;
     private ExpressManagerDir expressManagerDir;
-    private Items items;
     private EpayerDir epayerdir;
     private UserAccountDirectory userAccountDirectory;
-    private WorkQueue workQueue;
-    public Items getItems() {
-        return items;
-    }
 
-    public void setItems(Items items) {
-        this.items = items;
-    }
+
+    
+    
+    
+    
+   
+ 
+    
     public EpayerDir getEpayerdir() {
         return epayerdir;
     }
@@ -63,13 +64,7 @@ public class Network {
         this.customerDirectory = customerDirectory;
     }
 
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
 
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
-    }
     
     
     
@@ -80,8 +75,7 @@ public class Network {
         sellerDirectory=new SellerDirectory();
         customerDirectory =new CustomerDirectory();
         expressManagerDir=new ExpressManagerDir();
-        workQueue= new WorkQueue();
-        items= new Items();
+       
         
     }
 

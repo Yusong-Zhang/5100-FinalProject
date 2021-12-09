@@ -8,8 +8,10 @@ package userinterface.SystemAdminWorkArea;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Employee.Employee;
+import Business.Express.ExpressManager;
 import Business.Network.Network;
 import Business.Role.CustomerRole;
+import Business.Role.ExpressManagerRole;
 import Business.Seller.Seller;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -288,6 +290,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
 
     private void btnCreateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCustomerActionPerformed
         // TODO add your handling code here:
+        
            if(txtCustomerName.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Invalid Name!");
         }else if(txtUserName.getText().isEmpty()){
@@ -301,11 +304,18 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         String address=txtAddress.getText();
         String phone=txtPhone.getText();
         
+        Customer ct = new Customer();
         UserAccount useraccount=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(customerName);
         useraccount=system.getUserAccountDirectory().createUserAccount(userName, password, e1, new CustomerRole());
-        network.getCustomerDirectory().createCustomer(customerName,userName,password,address,phone,useraccount);
+        ct.setName(customerName);
+        ct.setPhone(phone);
+        ct.setAddress(address);
+        ct.setUserAccount(useraccount);
+        ct.setPassword(password);
         
+        network.getCustomerDirectory().getCustomersList().add(ct);
+        network.getUserAccountDirectory().getUserAccountList().add(useraccount);
         
         JOptionPane.showMessageDialog(null, "User Account created successfully.");
        

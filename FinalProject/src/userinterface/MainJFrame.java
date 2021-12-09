@@ -156,11 +156,14 @@ public class MainJFrame extends javax.swing.JFrame {
         String password = String.valueOf(passwordCharArray);
         boolean flag = false;
         
-       
-        for (UserAccount u  : system.getUserAccountDirectory().getUserAccountList()){
-            
-            u = system.getUserAccountDirectory().authenticateUser(userName, password);
-            Network network=new Network();
+        UserAccount u=null;
+        u = system.getUserAccountDirectory().authenticateUser(userName, password);
+        
+        if(u==null){
+            JOptionPane.showMessageDialog(null, "Wrong username or password!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network=new Network();
         for(Network ne:system.getNetworkList()){
             for(UserAccount ua: ne.getUserAccountDirectory().getUserAccountList()){
                 if(ua.getUsername().equals(userName)){
@@ -168,12 +171,12 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         }
-            if (u != null){
-                CardLayout layout = (CardLayout) container.getLayout();
-                container.add("workArea", u.getRole().createWorkArea(container, system, network));
-                layout.next(container);
-                flag = true;
-            }
+            
+        CardLayout layout = (CardLayout) container.getLayout();
+        container.add("workArea", u.getRole().createWorkArea(container, system, network));
+        layout.next(container);
+        flag = true;
+            
             logoutJButton.setEnabled(true);
             txtUserName.setEnabled(false);
             pwdField.setEnabled(false);
@@ -184,7 +187,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
 
             dB4OUtil.storeSystem(system);
-        }
+        
  
         if (flag == false) {
             JOptionPane.showMessageDialog(null, "Invalid User Name/ Password.");

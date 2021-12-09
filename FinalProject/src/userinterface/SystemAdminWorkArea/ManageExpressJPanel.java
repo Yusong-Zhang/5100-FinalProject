@@ -321,7 +321,7 @@ public class ManageExpressJPanel extends javax.swing.JPanel {
         em.setUseraccount(useraccount);
         em.setCompany(company);
         network.getExpressManagerDir().getExpressManagerList().add(em);
-        
+         network.getUserAccountDirectory().getUserAccountList().add(useraccount);
       
        JOptionPane.showMessageDialog(null, "User Account added successfully.");
         txtUserName.setText("");

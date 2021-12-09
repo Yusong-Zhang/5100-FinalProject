@@ -1,93 +1,77 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.Express;
 
-import Business.Employee.Employee;
-import Business.Role.Role;
-import Business.WorkQueue.WorkQueue;
+import Business.CustomerOrder.BuyOrder;
+import Business.UserAccount.UserAccount;
 
 /**
  *
- * @author harold
+ * @author 86133
  */
 public class DeliveryMan {
-    private int ID;
-    private String Name;
-    private String username;
-    private String password;
-    private Employee employee;
-    private Role role;
-    private WorkQueue workQueue;
-
-    public DeliveryMan(int ID, String Name, String username, String password) {
-        workQueue = new WorkQueue();
-        this.ID = ID;
-        this.Name = Name;
-        this.username = username;
-        this.password = password;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
+    private String telephone;
+    private String position;
+    private String status;
+    public UserAccount userAccount;
+    private BuyOrder buyOrder;
+    private String name;
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public WorkQueue getWorkQueue() {
-        return workQueue;
-    }
-
-    public void setWorkQueue(WorkQueue workQueue) {
-        this.workQueue = workQueue;
+    public void setName(String name) {
+        this.name = name;
     }
     
+
+    public BuyOrder getBuyOrder() {
+        if(buyOrder == null){
+            buyOrder = new BuyOrder();
+        }
+        return buyOrder;
+    }
+
+    public void setBuyOrder(BuyOrder buyOrder) {
+        this.buyOrder = buyOrder;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
     @Override
     public String toString() {
-        return username;
+        return position;
     }
 }

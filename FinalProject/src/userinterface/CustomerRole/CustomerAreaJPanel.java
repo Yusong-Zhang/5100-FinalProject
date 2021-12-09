@@ -5,7 +5,10 @@
 package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
+import Business.CustomerOrder.BuyOrderItem;
 import Business.EcoSystem;
+import Business.Express.ExpressManager;
+import Business.Item.Item;
 import Business.Network.Network;
 
 import Business.UserAccount.UserAccount;
@@ -41,23 +44,30 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 //        lblCustomerName.setText(((u.getEmployee() != null) ? u.getEmployee().getName() : u.getUsername()) + "!");
 //        //valueLabel.setText(enterprise.getName());
 //        wq.getRequestList();
-//       populateRequestTable();
+        
+           populateTable();
     }
     
-    public void populateRequestTable(){
-        DefaultTableModel model = (DefaultTableModel) tblWorkQ.getModel();
-        model.setRowCount(0);
-
-        for(WorkRequest co: wq.getRequestList()){
-            Object row[] = new Object[4];
-            row[0] = co.getCustomerName();
-            row[1] = co.getOrder();
-            row[2] = co.getStatus();
-            row[3] = co.getCommit();
-
-            model.addRow(row);
+    public void populateTable(){
+//          int rowCount = tblItem.getRowCount();
+//        DefaultTableModel model = (DefaultTableModel)tblItem.getModel();
+//        for(int i=rowCount-1;i>=0;i--) {
+//            model.removeRow(i);
+//        }
+//      
+//       for(Item item:net.getItems().getItemCatalog()){
+//          
+//           Object row[] = new Object[5];
+//           row[0] = item;
+//           row[1] = item.getPrice();
+//           row[2] = item.getDiscribe();
+//           row[3] = item.getQuantity();
+//           row[4] = item.getSeller();
+//           
+//            model.addRow(row);
+//       }
     }
-    }
+    
 
     
     /**
@@ -70,7 +80,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblWorkQ = new javax.swing.JTable();
+        tblItem = new javax.swing.JTable();
         btnRequest = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
@@ -78,23 +88,27 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         btnRequest1 = new javax.swing.JButton();
         btnHistoryOrder = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblWorkQ1 = new javax.swing.JTable();
+        txtQuantity = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
-        tblWorkQ.setModel(new javax.swing.table.DefaultTableModel(
+        tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "CustomerName", "OrderName", "Status", "Commit"
+                "ItemName", "Price", "Discribe", "quantity", "Seller"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.Object.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -105,9 +119,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblWorkQ);
+        jScrollPane1.setViewportView(tblItem);
 
-        btnRequest.setText("Request Order");
+        btnRequest.setText("Add Cart");
         btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestActionPerformed(evt);
@@ -145,6 +159,42 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        tblWorkQ1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ItemName", "Quantity", "Discribe", "Totalprice", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblWorkQ1);
+
+        txtQuantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQuantityActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("quantity:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,23 +207,29 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 507, Short.MAX_VALUE)
-                                .addComponent(btnRequest)))))
+                                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnRequest)
+                                .addGap(30, 30, 30))
+                            .addComponent(jScrollPane2))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnHistoryOrder)
-                .addGap(44, 44, 44)
+                .addGap(96, 96, 96)
                 .addComponent(btnRequest1)
-                .addGap(149, 149, 149))
+                .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,35 +245,49 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRequest)
-                    .addComponent(jButton1))
-                .addGap(57, 57, 57)
+                    .addComponent(jButton1)
+                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(80, 80, 80)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHistoryOrder)
                     .addComponent(btnRequest1))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
+         int selectedRow = tblItem.getSelectedRow();
         
-        RequestLabTestJPanel r = new RequestLabTestJPanel(userProcessContainer, system,u,wq);
-        userProcessContainer.add("RequestJPanel", r);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+      Item it = ( Item)tblItem.getValueAt(selectedRow, 0);
+      it.setQuantity(it.getQuantity()-Integer.parseInt(txtQuantity.getText()));
+      
+      
+     
+//        RequestLabTestJPanel r = new RequestLabTestJPanel(userProcessContainer, system,u,wq);
+//        userProcessContainer.add("RequestJPanel", r);
+//
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnRequestActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
         
-        populateRequestTable();
+        populateTable();
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-          int row = tblWorkQ.getSelectedRow();
+          int row = tblItem.getSelectedRow();
          if(row < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -241,15 +311,23 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);     
     }//GEN-LAST:event_btnHistoryOrderActionPerformed
 
+    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantityActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHistoryOrder;
     private javax.swing.JButton btnRequest;
     private javax.swing.JButton btnRequest1;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCustomerName;
     private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JTable tblWorkQ;
+    private javax.swing.JTable tblItem;
+    private javax.swing.JTable tblWorkQ1;
+    private javax.swing.JTextField txtQuantity;
     // End of variables declaration//GEN-END:variables
 }

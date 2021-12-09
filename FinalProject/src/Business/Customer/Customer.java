@@ -5,6 +5,7 @@
  */
 package Business.Customer;
 
+import Business.CustomerOrder.BuyOrder;
 import Business.Employee.Employee;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
@@ -25,6 +26,8 @@ public class Customer {
     private UserAccount userAccount;
     private Role role;
     private WorkQueue workQueue;  
+    private BuyOrder buyOrder;
+
     
     public Customer(String Name,String username,String password,String address,String phone,UserAccount useraccount) {
         workQueue = new WorkQueue();
@@ -124,7 +127,12 @@ public class Customer {
         this.workQueue = workQueue;
     }
 
-
+ public BuyOrder getBuyOrder() {
+        if(buyOrder==null){
+            buyOrder = new BuyOrder();
+        }
+        return buyOrder;
+    }
 
   @Override
     public String toString() {

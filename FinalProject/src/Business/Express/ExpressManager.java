@@ -4,6 +4,7 @@
  */
 package Business.Express;
 
+import Business.CustomerOrder.BuyOrder;
 import Business.Employee.Employee;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
@@ -15,7 +16,11 @@ import Business.UserAccount.UserAccount;
 public class ExpressManager {
     private int ID;
     private static int count=200;
+    private BuyOrder buyOrder;
+    private TransportDir transportDir;
+    private DeliveryManDir deliverymanDir;
 
+    
    
     private String name;
     private String address;
@@ -94,4 +99,27 @@ public class ExpressManager {
     public String toString() {
         return useraccount.getUsername();
     }  
+    public BuyOrder getBuyOrder() {
+        return buyOrder;
+    }
+
+    public void setBuyOrder(BuyOrder buyOrder) {
+        this.buyOrder = buyOrder;
+    }
+
+    public TransportDir getTransportDir() {
+        return transportDir;
+    }
+
+    public void setTransportDir(TransportDir transportDir) {
+        this.transportDir = transportDir;
+    }
+
+    public DeliveryManDir getDeliverymanDir() {
+        return deliverymanDir;
+    }
+
+    public void setDeliverymanDir(DeliveryManDir deliverymanDir) {
+        this.deliverymanDir = deliverymanDir;
+    }
 }

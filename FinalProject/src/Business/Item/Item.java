@@ -38,11 +38,11 @@ public class Item {
  
  
     }
-    public String getProdName() {
+    public String getItemName() {
         return itemName;
     }
 
-    public void setProdName(String prodName) {
+    public void setItemName(String prodName) {
         this.itemName = prodName;
     }
 

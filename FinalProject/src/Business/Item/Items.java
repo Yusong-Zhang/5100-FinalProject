@@ -19,9 +19,9 @@ public class Items {
     }
     
     public ArrayList<Item> getItemCatalog(){
-        if(itemCatalog ==null){
-            itemCatalog = new ArrayList<Item>();
-        }
+//        if(itemCatalog ==null){
+//            itemCatalog = new ArrayList<Item>();
+//        }
         return itemCatalog;
     }
     
@@ -34,10 +34,11 @@ public class Items {
     public Item addItem(String itemName,int price, String discribe,int quantity,Seller seller){
         Item i = new Item(itemName,price,discribe,quantity,seller);
         itemCatalog.add(i);
+        System.out.println(i);
         return i;
     }
-    public void removeItem(Item g){
-        itemCatalog.remove(g);
+    public void removeItem(Item i){
+        itemCatalog.remove(i);
     }
     
     public Item searchItem(int id){

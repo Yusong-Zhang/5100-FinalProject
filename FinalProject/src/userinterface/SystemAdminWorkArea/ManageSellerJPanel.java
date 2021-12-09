@@ -326,7 +326,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
         seller.setUserAccount(useraccount);
         seller.setType(type);
         network.getSellerDirectory().getSellerList().add(seller);
-        
+         network.getUserAccountDirectory().getUserAccountList().add(useraccount);
         
         JOptionPane.showMessageDialog(null, "User Account created successfully.");
        
@@ -467,7 +467,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
        for(Seller s: network.getSellerDirectory().getSellerList()){
             Object row[] = new Object[5];
            row[0] = s;
-           row[1] = s.getName();
+           row[1] = s.getUserAccount().getUsername();
            row[2] = s.getAddress();
            row[3] = s.getPhone();
            row[4] = s.getType();

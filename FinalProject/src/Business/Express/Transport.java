@@ -4,8 +4,10 @@
  */
 package Business.Express;
 
+import Business.CustomerOrder.BuyOrder;
 import Business.Employee.Employee;
 import Business.Role.Role;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 
 /**
@@ -13,11 +15,65 @@ import Business.WorkQueue.WorkQueue;
  * @author 13522
  */
 public class Transport {
-    private int ID;
-    private String Name;
-    private String username;
-    private String password;
-    private Employee employee;
-    private Role role;
-    private WorkQueue workQueue;
+     private String telephone;
+    private String position;
+    private String status;
+    public UserAccount userAccount;
+    private BuyOrder buyOrder;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public BuyOrder getBuyOrder() {
+        if(buyOrder == null){
+            buyOrder = new BuyOrder();
+        }
+        return buyOrder;
+    }
+
+    public void setBuyOrder(BuyOrder buyOrder) {
+        this.buyOrder = buyOrder;
+    }
+    
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
+    }
+    @Override
+    public String toString() {
+        return position;
+    }
 }

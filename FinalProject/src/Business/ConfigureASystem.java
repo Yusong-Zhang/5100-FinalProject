@@ -60,14 +60,7 @@ public class ConfigureASystem {
         system.getUserAccountDirectory().createUserAccount("8","8", e8, new TransportRole());
         system.getUserAccountDirectory().createUserAccount("9","9", e9, new FeedbackRole());
         
-        seller.setName("CM");
-        seller.setPhone("test");
-        seller.setAddress("test");
-        seller.setUserAccount(useraccount);
-        seller.setType("test");
-        net.getSellerDirectory().getSellerList().add(seller);
         
-        net.getItems().addItem("socks",10,"cotton socks",10,seller);
        
 //        Customer c1 = system.getCustomerDirectory().createCustomer(1, "Name", "username", "password");
 //        DeliveryMan m1 = system.getDeliveryManDirectory().createDeliveryMan(2, "Name", "username", "password");
