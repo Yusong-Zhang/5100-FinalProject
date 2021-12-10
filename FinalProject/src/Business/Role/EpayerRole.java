@@ -17,8 +17,8 @@ import userinterface.EpayerRole.EpayerAreaJPanel;
  * @author 13522
  */
 public class EpayerRole extends Role{
-    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business,Network net) {
-        return new EpayerAreaJPanel(userProcessContainer,business,net);
+    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business,Network net, UserAccount account) {
+        return new EpayerAreaJPanel(userProcessContainer,business,net, account);
     }
     
     

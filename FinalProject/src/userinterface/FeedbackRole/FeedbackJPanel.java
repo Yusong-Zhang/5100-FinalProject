@@ -18,14 +18,16 @@ public class FeedbackJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     EcoSystem system;
     Network net;
+    UserAccount useraccount;
     /**
      * Creates new form Feekback
      */
-    public FeedbackJPanel(JPanel userProcessContainer, EcoSystem system, Network net) {
+    public FeedbackJPanel(JPanel userProcessContainer, EcoSystem system, Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
         this.net = net;
+        this.useraccount = useraccount;
     }
 
     /**

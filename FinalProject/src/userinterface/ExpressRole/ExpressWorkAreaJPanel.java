@@ -23,7 +23,7 @@ public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
     UserAccount useraccount;
     EcoSystem system;
     /** Creates new form AdminWorkAreaJPanel */
-    public ExpressWorkAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net) {
+    public ExpressWorkAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.wq= wq;
@@ -88,20 +88,20 @@ public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
          CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ExpressInfo(userProcessContainer,net,system));
+        userProcessContainer.add(new ExpressInfo(userProcessContainer,net,system, useraccount));
         layout.next(userProcessContainer);        // TODO add your handling code here:
         
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
          CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageTransportJPanel(userProcessContainer,net,system));
+        userProcessContainer.add(new ManageTransportJPanel(userProcessContainer,net,system,useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 
     private void manageEmployeeJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButton1ActionPerformed
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageDeliveryManJPanel(userProcessContainer,net,system));
+        userProcessContainer.add(new ManageDeliveryManJPanel(userProcessContainer,net,system, useraccount));
         layout.next(userProcessContainer);        // TODO add your handling code here:
     }//GEN-LAST:event_manageEmployeeJButton1ActionPerformed
     

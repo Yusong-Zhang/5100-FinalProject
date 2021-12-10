@@ -5,11 +5,18 @@
 package userinterface.SellerRole;
 
 import Business.EcoSystem;
+import Business.Employee.Employee;
 import Business.Network.Network;
+import Business.ProductManager.ProductManager;
+import Business.Role.ProductManagerRole;
+import Business.Role.SellerRole;
+import Business.Seller.Seller;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,17 +26,28 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     
-    Network net;
+    Network network;
+    Seller seller;
     
     EcoSystem system;
+    UserAccount useraccount;
     /**
      * Creates new form ManageProductJPanel
      */
-    public ManageProductManagerJPanel(JPanel userProcessContainer, Network net, EcoSystem system) {
+    public ManageProductManagerJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.net = net;
+        this.network = net;
         this.system = system;
+        this.useraccount = useraccount;
+        
+        for(Seller s: network.getSellerDirectory().getSellerList()){
+            if(s.getUserAccount().getUsername().equals(useraccount.getUsername())){
+                seller = s;
+            }
+        }
+        
+        refreshTable();
     }
 
     /**
@@ -48,11 +66,15 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         txtAddress = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtCustomerName = new javax.swing.JTextField();
+        txtProductManagerName = new javax.swing.JTextField();
         txtPhone = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         lblManageProductManager = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProductManager = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        btnCreateRestaurantsManager = new javax.swing.JButton();
 
         jLabel6.setText("Password");
 
@@ -62,9 +84,9 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Product Manager Name");
 
-        txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
+        txtProductManagerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCustomerNameActionPerformed(evt);
+                txtProductManagerNameActionPerformed(evt);
             }
         });
 
@@ -86,23 +108,67 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
             }
         });
 
+        tblProductManager.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "UserName", "Password", "Phone", "Address"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblProductManager);
+        if (tblProductManager.getColumnModel().getColumnCount() > 0) {
+            tblProductManager.getColumnModel().getColumn(0).setResizable(false);
+            tblProductManager.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jButton1.setText("Delete");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnCreateRestaurantsManager.setText("Create");
+        btnCreateRestaurantsManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateRestaurantsManagerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblManageProductManager)
+                        .addGap(244, 244, 244))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtProductManagerName, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
@@ -110,56 +176,64 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addComponent(lblManageProductManager)))
-                .addGap(147, 147, 147))
+                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCreateRestaurantsManager)
+                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(45, 45, 45))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btnBack)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBack)
+                    .addComponent(lblManageProductManager))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(lblManageProductManager))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btnBack)))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtProductManagerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(115, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(btnCreateRestaurantsManager))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerNameActionPerformed
+    private void txtProductManagerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductManagerNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCustomerNameActionPerformed
+    }//GEN-LAST:event_txtProductManagerNameActionPerformed
 
     private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
         // TODO add your handling code here:
@@ -172,19 +246,96 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnCreateRestaurantsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateRestaurantsManagerActionPerformed
+        String name = txtProductManagerName.getText();
+        String username= txtUserName.getText();
+        String password=txtPassword.getText();
+        String address = txtAddress.getText();
+        String telePhone= txtPhone.getText();
+        //check If Username Is Unique
+        if(system.getUserAccountDirectory().checkIfUsernameIsUnique(username)){}
+        else{
+            JOptionPane.showMessageDialog(null, "This username has existed!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        //check format of username and password
+        if(txtUserName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Invalid UserName!");
+        }else if(txtPassword.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Invalid Password!");
+        }else{
+        
+
+        ProductManager pm = new ProductManager();
+        UserAccount useraccount1=new UserAccount();
+        Employee e1 = system.getEmployeeDirectory().createEmployee(name);
+        useraccount1=system.getUserAccountDirectory().createUserAccount(name, password, e1, new ProductManagerRole());
+        
+        pm.setName(name);
+        pm.setTelephone(telePhone);
+        pm.setUserAccount(useraccount1);
+        seller.getProductManagerDir().getProductManagerList().add(pm);
+        network.getUserAccountDirectory().getUserAccountList().add(useraccount1);
+         
+
+        txtUserName.setText("");
+        txtPassword.setText("");
+        txtPhone.setText("");
+        txtProductManagerName.setText("");
+         txtAddress.setText("");
+        refreshTable();
+       
+       
+
+        JOptionPane.showMessageDialog(null, "Create new price manager successfully!");        // TODO add your handling code here:
+     }  
+    }//GEN-LAST:event_btnCreateRestaurantsManagerActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCreateRestaurantsManager;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblManageProductManager;
+    private javax.swing.JTable tblProductManager;
     private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCustomerName;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtProductManagerName;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    private void refreshTable() {
+          DefaultTableModel model = (DefaultTableModel) tblProductManager.getModel();
+        model.setRowCount(0);
+        
+        
+         for(ProductManager pm: seller.getProductManagerDir().getProductManagerList()){
+            
+                Object row[] = new Object[5];
+                row[0] = pm.getName();
+                row[1] =pm.getUserAccount().getUsername();
+                row[2] =pm.getUserAccount().getPassword();
+                row[3] =pm.getTelephone();
+                row[4] = pm.getAddress();
+                
+                model.addRow(row);
+        }
+        
+     
+       
+    }
+    
 }

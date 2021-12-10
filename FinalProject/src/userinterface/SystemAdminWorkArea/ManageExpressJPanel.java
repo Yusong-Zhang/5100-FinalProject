@@ -32,11 +32,13 @@ public class ManageExpressJPanel extends javax.swing.JPanel {
     private JPanel container;
     private EcoSystem system;
     private Network network;
-    public ManageExpressJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network) {
+    private UserAccount useraccount;
+    public ManageExpressJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network, UserAccount useraccount) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
         this.network=network;
+        this.useraccount = useraccount;
         
         refreshTable();
     }

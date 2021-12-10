@@ -6,6 +6,7 @@ package userinterface.SellerRole;
 
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -17,15 +18,17 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
     
     /**
      * Creates new form ManageSellerInfoJPanel
      */
-    public ManageSellerInfoJPanel(JPanel userProcessContainer, Network net, EcoSystem system) {
+    public ManageSellerInfoJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.net = net;
         this.system = system;
+        this.useraccount = useraccount;
     }
 
     /**

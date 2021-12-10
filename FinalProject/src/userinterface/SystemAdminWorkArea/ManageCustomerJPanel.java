@@ -32,12 +32,14 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
     private JPanel container;
     private EcoSystem system;
     private Network network;
+    private UserAccount useraccount;
    
-    public ManageCustomerJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network) {
+    public ManageCustomerJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network, UserAccount u) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
         this.network = network;
+        this.useraccount = u;
         refreshTable();
     }
 

@@ -20,8 +20,8 @@ import javax.swing.JPanel;
 public class SellerRole extends Role{
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net) {
-        return new SellerWorkAreaJPanel(userProcessContainer,business,net);
+    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net, UserAccount account) {
+        return new SellerWorkAreaJPanel(userProcessContainer,business,net, account);
     }
 
     

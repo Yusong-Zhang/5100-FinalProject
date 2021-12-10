@@ -17,17 +17,18 @@ public class TransportJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
     /**
      * Creates new form TransportJPanel
      */
   
 
-    public TransportJPanel(JPanel userProcessContainer, EcoSystem business, Network net) {
+    public TransportJPanel(JPanel userProcessContainer, EcoSystem business, Network net, UserAccount useraccount) {
          initComponents();
         this.userProcessContainer = userProcessContainer;
      
         this.system = system;
-    
+        this.useraccount = useraccount;
         this.net = net;
          //To change body of generated methods, choose Tools | Templates.
     }

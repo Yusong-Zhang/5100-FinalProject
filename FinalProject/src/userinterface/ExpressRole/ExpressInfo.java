@@ -18,15 +18,16 @@ public class ExpressInfo extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
     /**
      * Creates new form ExpressInfo
      */
 
 
-    ExpressInfo(JPanel userProcessContainer, Network net, EcoSystem system) {
+    ExpressInfo(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
           initComponents();
         this.userProcessContainer = userProcessContainer;
-     
+        this.useraccount = useraccount;
         this.system = system;
     
         this.net = net;//To change body of generated methods, choose Tools | Templates.

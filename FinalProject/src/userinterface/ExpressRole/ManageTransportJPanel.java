@@ -19,14 +19,15 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
     /**
      * Creates new form ManagePriceJPanel
      */
   
-    ManageTransportJPanel(JPanel userProcessContainer, Network net, EcoSystem system) {
+    ManageTransportJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-     
+        this.useraccount = useraccount;
         this.system = system;
     
         this.net = net; //T

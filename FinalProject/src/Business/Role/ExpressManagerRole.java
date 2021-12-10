@@ -20,8 +20,8 @@ import userinterface.ExpressRole.ExpressWorkAreaJPanel;
 public class ExpressManagerRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net) {
-        return new ExpressWorkAreaJPanel(userProcessContainer,business,net);//To change body of generated methods, choose Tools | Templates.
+    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net, UserAccount account) {
+        return new ExpressWorkAreaJPanel(userProcessContainer,business,net, account);//To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -17,6 +17,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         JPanel userProcessContainer;
         Network net;
         EcoSystem system;
+        UserAccount useraccount;
     
 
     /**
@@ -24,10 +25,10 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
      */
   
 
-    public DeliveryManJPanel(JPanel userProcessContainer, EcoSystem business, Network net) {
+    public DeliveryManJPanel(JPanel userProcessContainer, EcoSystem business, Network net, UserAccount useraccount) {
          initComponents();
         this.userProcessContainer = userProcessContainer;
-     
+        this.useraccount = useraccount;
         this.system = system;
     
         this.net = net;

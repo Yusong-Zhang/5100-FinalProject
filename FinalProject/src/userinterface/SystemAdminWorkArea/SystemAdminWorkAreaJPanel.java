@@ -30,13 +30,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     EcoSystem ecosystem;
+    UserAccount useraccount;
     WorkQueue wq;
     Network net;
-    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem,Network net) {
+    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem,Network net, UserAccount useraccount) {
         initComponents();
 //         lblAdminName.setText(((ua.getEmployee() != null) ? ua.getEmployee().getName() : ua.getUsername()) + "!");
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
+        this.useraccount = useraccount;
         this.wq = wq;
         this.net=net;
        populateTable();
@@ -235,14 +237,14 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
         Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageExpressJPanel(userProcessContainer,ecosystem,network));
+               userProcessContainer.add(new ManageExpressJPanel(userProcessContainer,ecosystem,network, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnExpressManagerActionPerformed
 
     private void btnEpayManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEpayManagerActionPerformed
        
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageEpayJPanel(userProcessContainer,ecosystem));
+               userProcessContainer.add(new ManageEpayJPanel(userProcessContainer,ecosystem, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnEpayManagerActionPerformed
 
@@ -260,7 +262,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
         Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageCustomerJPanel(userProcessContainer,ecosystem,network));
+               userProcessContainer.add(new ManageCustomerJPanel(userProcessContainer,ecosystem,network, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCustomerActionPerformed
 
@@ -284,7 +286,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
         Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageSellerJPanel(userProcessContainer,ecosystem,wq,network));
+               userProcessContainer.add(new ManageSellerJPanel(userProcessContainer,ecosystem,wq,network, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnSellerActionPerformed
 
@@ -298,7 +300,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
         Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageFeedbackJPanel(userProcessContainer,ecosystem,network));
+               userProcessContainer.add(new ManageFeedbackJPanel(userProcessContainer,ecosystem,network, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnFeedbackerActionPerformed
 

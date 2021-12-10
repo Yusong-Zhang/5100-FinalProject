@@ -21,8 +21,8 @@ import userinterface.SellerRole.PriceManagerJPanel;
 public class PriceManagerRole extends Role{
 
     
-    public JPanel createWorkArea(JPanel userProcessContainer,  EcoSystem business,Network net) {
-        return new PriceManagerJPanel(userProcessContainer,business,net);
+    public JPanel createWorkArea(JPanel userProcessContainer,  EcoSystem business,Network net, UserAccount account) {
+        return new PriceManagerJPanel(userProcessContainer,business,net, account);
     }
     
     

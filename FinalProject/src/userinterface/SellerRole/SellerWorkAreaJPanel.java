@@ -5,6 +5,7 @@ package userinterface.SellerRole;
 
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.Seller.Seller;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
@@ -22,12 +23,18 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     Network net;
     
     EcoSystem system;
+    UserAccount useraccount;
+   
     /** Creates new form AdminWorkAreaJPanel */
-    public SellerWorkAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net) {
+    public SellerWorkAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.net= net;
         this.system=system;
+        this.useraccount = useraccount;
+        
+        
+         
         //valueLabel.setText();
     }
     
@@ -87,20 +94,20 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     private void btnManageSellerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageSellerInfoActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageSellerInfoJPanel(userProcessContainer,net,system));
+        userProcessContainer.add(new ManageSellerInfoJPanel(userProcessContainer,net,system, useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageSellerInfoActionPerformed
 
     private void btnManageProductManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProductManagerActionPerformed
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageProductManagerJPanel(userProcessContainer,net,system));
+        userProcessContainer.add(new ManageProductManagerJPanel(userProcessContainer,net,system,useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageProductManagerActionPerformed
 
     private void btnManagePriceManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePriceManagerActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManagerPriceManagerJPanel(userProcessContainer,net,system));
+        userProcessContainer.add(new ManagerPriceManagerJPanel(userProcessContainer,net,system,useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManagePriceManagerActionPerformed
     

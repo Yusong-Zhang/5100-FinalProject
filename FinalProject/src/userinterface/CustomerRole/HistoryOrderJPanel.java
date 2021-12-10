@@ -6,6 +6,7 @@ package userinterface.CustomerRole;
 
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 
 /**
@@ -16,18 +17,20 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     EcoSystem system;
     Network net;
+    UserAccount useraccount;
     /**
      * Creates new form HistoryOrder
      */
    
 
-    public HistoryOrderJPanel(JPanel userProcessContainer, Network net, EcoSystem system) {
+    public HistoryOrderJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
          initComponents();
         this.userProcessContainer = userProcessContainer;
      
         this.system = system;
      
         this.net = net;
+        this.useraccount = useraccount;
     }
 
     /**

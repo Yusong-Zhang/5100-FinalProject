@@ -27,11 +27,13 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
     private JPanel container;
     private EcoSystem system;
     private Network network;
-    public ManageFeedbackJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network) {
+    private UserAccount useraccount;
+    public ManageFeedbackJPanel(JPanel userProcessContainer, EcoSystem ecosystem,Network network, UserAccount useraccount ) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
         this.network=network;
+        this.useraccount = useraccount;
         refreshTable();
     }
 

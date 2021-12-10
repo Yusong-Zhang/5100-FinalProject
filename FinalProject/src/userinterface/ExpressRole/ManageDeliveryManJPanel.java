@@ -6,6 +6,7 @@ package userinterface.ExpressRole;
 
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import userinterface.SellerRole.*;
@@ -18,15 +19,16 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
     /**
      * Creates new form ManageProductJPanel
      */
    
 
-    ManageDeliveryManJPanel(JPanel userProcessContainer, Network net, EcoSystem system) {
+    ManageDeliveryManJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
           initComponents();
         this.userProcessContainer = userProcessContainer;
-     
+        this.useraccount = useraccount;
         this.system = system;
     
         this.net = net;

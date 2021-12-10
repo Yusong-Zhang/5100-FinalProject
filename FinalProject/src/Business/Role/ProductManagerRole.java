@@ -21,8 +21,8 @@ import userinterface.SellerRole.ProductManagerJPanel;
 public class ProductManagerRole extends Role{
 
     
-    public JPanel createWorkArea(JPanel userProcessContainer,  EcoSystem business, Network net) {
-        return new ProductManagerJPanel(userProcessContainer, business, net);
+    public JPanel createWorkArea(JPanel userProcessContainer,  EcoSystem business, Network net, UserAccount account) {
+        return new ProductManagerJPanel(userProcessContainer, business, net, account);
     }
     
     

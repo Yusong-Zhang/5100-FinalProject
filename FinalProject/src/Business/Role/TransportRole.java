@@ -6,6 +6,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.ExpressRole.TransportJPanel;
 
@@ -16,8 +17,8 @@ import userinterface.ExpressRole.TransportJPanel;
 public class TransportRole extends Role{
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net) {
-        return new TransportJPanel(userProcessContainer, business, net); //To change body of generated methods, choose Tools | Templates.
+    public JPanel createWorkArea(JPanel userProcessContainer, EcoSystem business, Network net, UserAccount account) {
+        return new TransportJPanel(userProcessContainer, business, net, account); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

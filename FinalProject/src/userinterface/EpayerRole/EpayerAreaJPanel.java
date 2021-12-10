@@ -34,12 +34,12 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public EpayerAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net) {
+    public EpayerAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net, UserAccount useraccount) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-        
+        this.u = useraccount;
         this.wq = wq;
         this.net= net;
         

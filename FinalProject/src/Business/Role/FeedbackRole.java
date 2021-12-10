@@ -21,8 +21,8 @@ import userinterface.FeedbackRole.FeedbackJPanel;
 public class FeedbackRole extends Role{
 
     
-    public JPanel createWorkArea(JPanel userProcessContainer,EcoSystem business,Network net) {
-        return new FeedbackJPanel(userProcessContainer, business,net);
+    public JPanel createWorkArea(JPanel userProcessContainer,EcoSystem business,Network net, UserAccount account) {
+        return new FeedbackJPanel(userProcessContainer, business,net, account);
     }
     
     

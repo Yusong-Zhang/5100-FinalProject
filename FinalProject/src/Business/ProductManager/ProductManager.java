@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Business.ProductManager;
 
 import Business.UserAccount.UserAccount;
@@ -11,26 +8,25 @@ import Business.UserAccount.UserAccount;
  * @author 86133
  */
 public class ProductManager {
-    public static int count=300;
-
-  
-    private int ID;
+    private UserAccount userAccount;
     private String name;
-    private String phone;
-    private UserAccount useraccount;
+    private String telephone;
+    private String address;
 
-    public ProductManager( String name, String phone, UserAccount account) {
-        this.ID = count;
-        this.name = name;
-        this.phone = phone;
-        this.useraccount = account;
-    }
-      public int getID() {
-        return ID;
+    public String getAddress() {
+        return address;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 
     public String getName() {
@@ -41,20 +37,18 @@ public class ProductManager {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
-
-    public UserAccount getUseraccount() {
-        return useraccount;
-    }
-
-    public void setUseraccount(UserAccount useraccount) {
-        this.useraccount = useraccount;
+    @Override
+    public String toString() {
+        return name;
     }
     
 }
+    
+

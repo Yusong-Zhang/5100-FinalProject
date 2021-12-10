@@ -21,16 +21,18 @@ public class PriceManagerJPanel extends javax.swing.JPanel {
     EcoSystem system;
 
     Network net;
+    UserAccount useraccount;
     /**
      * Creates new form ManageOrder
      */
-    public PriceManagerJPanel(JPanel userProcessContainer, EcoSystem system, Network net) {
+    public PriceManagerJPanel(JPanel userProcessContainer, EcoSystem system, Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
      
         this.system = system;
      
         this.net = net;
+        this.useraccount = useraccount;
     }
 
     /**

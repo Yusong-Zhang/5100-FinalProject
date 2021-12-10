@@ -23,6 +23,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
     JPanel userProcessContainer;
     Network net;
     EcoSystem system;
+    UserAccount useraccount;
      
     public ProcessWorkRequestJPanel(JPanel userProcessContainer) {
        initComponents();

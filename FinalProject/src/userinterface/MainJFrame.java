@@ -173,7 +173,7 @@ public class MainJFrame extends javax.swing.JFrame {
         }
             
         CardLayout layout = (CardLayout) container.getLayout();
-        container.add("workArea", u.getRole().createWorkArea(container, system, network));
+        container.add("workArea", u.getRole().createWorkArea(container, system, network, u));
         layout.next(container);
         flag = true;
             

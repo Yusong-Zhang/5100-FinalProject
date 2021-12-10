@@ -21,16 +21,18 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
     EcoSystem system;
     WorkQueue wq;
     Network net;
+    
     /**
      * Creates new form ManageMenu
      */
-    public ProductManagerJPanel(JPanel userProcessContainer, EcoSystem system, Network net) {
+    public ProductManagerJPanel(JPanel userProcessContainer, EcoSystem system, Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
      
         this.system = system;
     
         this.net = net;
+        this.ua = useraccount;
     }
 
     /**

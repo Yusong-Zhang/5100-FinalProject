@@ -35,12 +35,14 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
     private EcoSystem system;
     private WorkQueue wq;
     private Network network;
-    public ManageSellerJPanel(JPanel userProcessContainer, EcoSystem ecosystem,WorkQueue wq,Network network) {
+    private UserAccount useraccount;
+    public ManageSellerJPanel(JPanel userProcessContainer, EcoSystem ecosystem,WorkQueue wq,Network network, UserAccount useraccount) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
         this.wq = wq;
         this.network=network;
+        this.useraccount = useraccount;
         refreshTable();
     }
 
@@ -148,6 +150,12 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
         jLabel7.setText("Location");
 
         jLabel8.setText("Address");
+
+        txtAddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAddressActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Phone");
 
@@ -321,7 +329,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
         Employee e1 = system.getEmployeeDirectory().createEmployee(sellerName);
         useraccount=system.getUserAccountDirectory().createUserAccount(userName, password, e1, new SellerRole());
         seller.setName(sellerName);
-        seller.setPhone(phone);
+        seller.setTelephone(phone);
         seller.setAddress(address);
         seller.setUserAccount(useraccount);
         seller.setType(type);
@@ -379,7 +387,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
       txtSellerName.setText(seller.getName());
       txtUserName.setText(seller.getUserAccount().getUsername());
       txtPassword.setText(seller.getUserAccount().getPassword());
-      txtPhone.setText(seller.getPhone());
+      txtPhone.setText(seller.getTelephone());
       txtAddress.setText(seller.getAddress());
       txtType.setText(seller.getType());
       
@@ -412,7 +420,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
         
       
       seller.setName( txtSellerName.getText());
-      seller.setPhone(txtPhone.getText());
+      seller.setTelephone(txtPhone.getText());
       seller.getUserAccount().setPassword(txtPassword.getText());
       seller.getUserAccount().setUsername(txtUserName.getText());
       seller.setType(txtType.getText());
@@ -431,6 +439,10 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
         
         refreshTable();
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAddressActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -469,7 +481,7 @@ public class ManageSellerJPanel extends javax.swing.JPanel {
            row[0] = s;
            row[1] = s.getUserAccount().getUsername();
            row[2] = s.getAddress();
-           row[3] = s.getPhone();
+           row[3] = s.getTelephone();
            row[4] = s.getType();
            
             model.addRow(row);       

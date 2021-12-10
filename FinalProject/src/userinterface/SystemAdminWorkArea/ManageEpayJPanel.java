@@ -33,11 +33,13 @@ public class ManageEpayJPanel extends javax.swing.JPanel {
     private JPanel container;
     private EcoSystem system;
     private Network network;
+    private UserAccount useraccount;
    
-    public ManageEpayJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
+    public ManageEpayJPanel(JPanel userProcessContainer, EcoSystem ecosystem, UserAccount useraccoun) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
+        this.useraccount = useraccount;
         refreshTable();
     }
 
