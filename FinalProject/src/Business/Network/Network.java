@@ -75,8 +75,7 @@ public class Network {
         sellerDirectory=new SellerDirectory();
         customerDirectory =new CustomerDirectory();
         expressManagerDir=new ExpressManagerDir();
-       
-        
+        epayerdir=new EpayerDir();
     }
 
 

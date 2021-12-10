@@ -31,7 +31,7 @@ public class EpayerDir {
         return null;
     }
     
-    public Epayer createEpayer(String Name, String phone, UserAccount useraccount){
+    public Epayer createEpayer(String Name, String phone,UserAccount useraccount){
         Epayer ep = new Epayer( Name,phone,useraccount);
         epayerList.add(ep);
         return ep;

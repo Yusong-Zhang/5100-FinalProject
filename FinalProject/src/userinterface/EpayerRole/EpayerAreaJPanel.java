@@ -13,6 +13,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.CustomerRole.EpaymentJPanel;
 
 import userinterface.CustomerRole.RequestLabTestJPanel;
 
@@ -28,7 +29,7 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
  
   private JPanel userProcessContainer;
     private EcoSystem system;
-    private UserAccount u;
+    private UserAccount useraccount;
     private WorkQueue wq;
     private Network net;
     /**
@@ -39,7 +40,7 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
         
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-        this.u = useraccount;
+        this.useraccount = useraccount;
         this.wq = wq;
         this.net= net;
         
@@ -59,29 +60,93 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnSeller = new javax.swing.JButton();
+        btnCustomer = new javax.swing.JButton();
+        btnOrder = new javax.swing.JButton();
 
         jLabel1.setText("Epayer workarea");
+
+        btnSeller.setText("Manage Seller E-payment");
+        btnSeller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSellerActionPerformed(evt);
+            }
+        });
+
+        btnCustomer.setText("Manage Customer E-payment");
+        btnCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomerActionPerformed(evt);
+            }
+        });
+
+        btnOrder.setText("Manage Order Process");
+        btnOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(211, 211, 211)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSeller)
+                            .addComponent(btnCustomer))))
+                .addContainerGap(205, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnOrder)
+                .addGap(236, 236, 236))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(btnSeller)
+                .addGap(36, 36, 36)
+                .addComponent(btnCustomer)
+                .addGap(18, 18, 18)
+                .addComponent(btnOrder)
+                .addContainerGap(126, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellerActionPerformed
+        // TODO add your handling code here:
+     CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new SellerEJPanel(userProcessContainer,system,net,useraccount));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnSellerActionPerformed
+
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+        // TODO add your handling code here:
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new CustomerEJPanel(userProcessContainer,system,net,useraccount));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnCustomerActionPerformed
+
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+//        // TODO add your handling code here:
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new OrderEJPanel(userProcessContainer,system,net,useraccount));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnOrderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCustomer;
+    private javax.swing.JButton btnOrder;
+    private javax.swing.JButton btnSeller;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

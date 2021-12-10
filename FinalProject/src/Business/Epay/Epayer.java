@@ -50,7 +50,7 @@ public class Epayer {
     }
     @Override
     public String toString() {
-        return useraccount.getUsername();
+        return name;
     }
     
 }

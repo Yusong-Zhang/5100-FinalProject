@@ -136,7 +136,7 @@ public class Customer {
 
   @Override
     public String toString() {
-        return userAccount.getUsername();
+        return name;
     }
     
 }

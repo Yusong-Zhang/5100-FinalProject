@@ -3,18 +3,53 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/ExpressManagerRole.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/RequestLabTestJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/FeedbackRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/ManageExpressJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/CustomerOrder/BuyOrderItem.java</file>
             <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/WriteCommentJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/EpayManageJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/CustomerMainJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/ManageCustomerInformationJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/CustomerAreaJPanel.java</file>
-            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/EpaymentJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/EpayerRole/CustomerEJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/DeliveryManJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/ManageDeliveryManJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Express/ExpressManagerDir.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/EpayerRole/EpayerAreaJPanel.java</file>
             <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/CustomerRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Epay/Epayer.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Customer/Customer.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/ManageCustomerJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/EpayerRole/OrderEJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Seller/Seller.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Customer/CustomerDirectory.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Express/DeliveryManDir.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Epayment/EpaymentAccount.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/CustomerOrder/BuyOrder.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/CustomerMainJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/CustomerAreaJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Epay/FinancialManager.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/ExpressManagerWorkAreaJPanel.java</file>
             <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/DetailsJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/ManageFeedbackJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Epay/EpayerDir.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/TransportJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Express/ExpressManager.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/ManageSellerJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/UserAccount/UserAccount.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/DeliveryManRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Network/Network.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/ExpressManagerRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/EpayerRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/ExpressInfo.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/RequestLabTestJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/ProcessWorkRequestJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Role/FeedbackRole.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/SystemAdminWorkArea/ManageEpayJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/Item/Item.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/EpayManageJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/Business/UserAccount/UserAccountDirectory.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/ManageCustomerInformationJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/EpaymentJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/ExpressRole/ManageTransportJPanel.java</file>
             <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/CustomerRole/HistoryOrderJPanel.java</file>
+            <file>file:/D:/Netbeans%20Project/FinalProject/src/userinterface/EpayerRole/SellerEJPanel.java</file>
         </group>
     </open-files>
 </project-private>

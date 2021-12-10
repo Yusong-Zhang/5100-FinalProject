@@ -51,7 +51,7 @@ public class BuyOrderItem {
         return customer;
     }
 
-    public void setCustomer(Customer cutomer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
    

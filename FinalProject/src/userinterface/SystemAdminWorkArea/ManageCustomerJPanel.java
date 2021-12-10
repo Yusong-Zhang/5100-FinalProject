@@ -87,7 +87,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "AccountName", "CustomerName","Password", "Address", "Phone"
+                "CustomerName","AccountName","Password", "Address", "Phone"
             }
         ){
             Class[] types = new Class [] {
@@ -451,8 +451,8 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         for(Customer c: network.getCustomerDirectory().getCustomersList()){
             Object row[] = new Object[5];
             row[0] = c;
-            row[1] = c.getName();
-            row[2]=c.getPassword();
+            row[1] = c.getUserAccount().getUsername();
+            row[2]=c.getUserAccount().getPassword();
             row[3] = c.getAddress();
             row[4] = c.getPhone();
           

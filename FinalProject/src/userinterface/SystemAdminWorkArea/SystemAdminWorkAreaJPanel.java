@@ -242,9 +242,15 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnExpressManagerActionPerformed
 
     private void btnEpayManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEpayManagerActionPerformed
-       
+      int selectedRow = tblNetwork.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Network network = (Network)tblNetwork.getValueAt(selectedRow, 0);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ManageEpayJPanel(userProcessContainer,ecosystem, useraccount));
+               userProcessContainer.add(new ManageEpayJPanel(userProcessContainer,ecosystem,network, useraccount));
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnEpayManagerActionPerformed
 

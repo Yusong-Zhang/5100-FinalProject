@@ -35,11 +35,12 @@ public class ManageEpayJPanel extends javax.swing.JPanel {
     private Network network;
     private UserAccount useraccount;
    
-    public ManageEpayJPanel(JPanel userProcessContainer, EcoSystem ecosystem, UserAccount useraccoun) {
+    public ManageEpayJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Network network,UserAccount useraccoun) {
         initComponents();
         this.container = userProcessContainer;
         this.system = ecosystem;
         this.useraccount = useraccount;
+        this.network=network;
         refreshTable();
     }
 
@@ -300,7 +301,11 @@ public class ManageEpayJPanel extends javax.swing.JPanel {
         UserAccount useraccount=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(EpayerName);
         useraccount=system.getUserAccountDirectory().createUserAccount(userName, password, e1, new EpayerRole());
-        network.getEpayerdir().createEpayer(EpayerName,phone,useraccount);
+        Epayer ep= new Epayer(EpayerName,phone,useraccount);
+        
+        
+        network.getEpayerdir().getEpayerList().add(ep);
+        network.getUserAccountDirectory().getUserAccountList().add(useraccount);
         
         
         JOptionPane.showMessageDialog(null, "User Account created successfully.");
@@ -423,10 +428,10 @@ public class ManageEpayJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblCustomers.getModel();
         model.setRowCount(0);
 
-        for(Epayer ep: system.getEpayerDirectory().getEpayerList()){
+        for(Epayer ep: network.getEpayerdir().getEpayerList()){
             Object row[] = new Object[4];
             row[0] = ep;
-            row[1] = ep.getName();
+            row[1] = ep.getUserAccount().getUsername();
             row[2]=ep.getUserAccount().getPassword();
             row[3] = ep.getPhone();
             
