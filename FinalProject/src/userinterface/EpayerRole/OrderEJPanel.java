@@ -134,11 +134,15 @@ public class OrderEJPanel extends javax.swing.JPanel {
             return;
         }
       BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
-      
+      if(buyitem.getStatus()=="Canceled"){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getCustomer().getUserAccount().getEpaccount().getMoney();
       buyitem.getCustomer().getUserAccount().getEpaccount().setMoney(moneyLeft+(buyitem.getQuantity()*buyitem.getItem().getPrice()));
-    populateTable();
+      }else{
+      JOptionPane.showMessageDialog(null, "Customer did not want to refund the item yet!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+      }
+      populateTable();
     }//GEN-LAST:event_bRefundActionPerformed
 
     private void bApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bApproveActionPerformed
@@ -158,6 +162,7 @@ public class OrderEJPanel extends javax.swing.JPanel {
       JOptionPane.showMessageDialog(null, "Customer has not recieved the item yet!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
       }
+      populateTable();
     }//GEN-LAST:event_bApproveActionPerformed
 
 

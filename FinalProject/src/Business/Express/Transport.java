@@ -15,8 +15,8 @@ import Business.WorkQueue.WorkQueue;
  * @author 13522
  */
 public class Transport {
-     private String telephone;
-    private String position;
+    private String telephone;
+    private String address;
     private String status;
     public UserAccount userAccount;
     private BuyOrder buyOrder;
@@ -49,12 +49,12 @@ public class Transport {
         this.telephone = telephone;
     }
 
-    public String getPosition() {
-        return position;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getStatus() {
@@ -74,6 +74,6 @@ public class Transport {
     }
     @Override
     public String toString() {
-        return position;
+        return address;
     }
 }

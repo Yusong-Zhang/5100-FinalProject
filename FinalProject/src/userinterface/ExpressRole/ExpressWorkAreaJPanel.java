@@ -5,6 +5,7 @@ package userinterface.ExpressRole;
 
 import userinterface.SellerRole.*;
 import Business.EcoSystem;
+import Business.Express.ExpressManager;
 import Business.Network.Network;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
@@ -18,19 +19,26 @@ import javax.swing.JPanel;
 public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    WorkQueue wq;
+    
     Network net;
     UserAccount useraccount;
     EcoSystem system;
+    ExpressManager expressmanager;
     /** Creates new form AdminWorkAreaJPanel */
     public ExpressWorkAreaJPanel(JPanel userProcessContainer,EcoSystem system,Network net, UserAccount useraccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.wq= wq;
+        
         this.net= net;
         this.useraccount=useraccount;
         this.system=system;
+        this.expressmanager = expressmanager;
+        for(ExpressManager em: net.getExpressManagerDir().getExpressManagerList()){
+            if(em.getUseraccount().equals(useraccount)){
+                expressmanager = em;
+            }
         //valueLabel.setText();
+    }
     }
     
     /** This method is called from within the constructor to
@@ -60,7 +68,7 @@ public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 170, -1));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 170, -1));
 
         manageOrganizationJButton.setText("Manage Transport");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,25 +91,25 @@ public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButton1ActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
+        add(manageEmployeeJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
          CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ExpressInfo(userProcessContainer,net,system, useraccount));
+        userProcessContainer.add(new ManageExpressInfoJPanel(userProcessContainer,net,system, useraccount,expressmanager));
         layout.next(userProcessContainer);        // TODO add your handling code here:
         
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
          CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageTransportJPanel(userProcessContainer,net,system,useraccount));
+        userProcessContainer.add(new ManageTransportJPanel(userProcessContainer,net,system,useraccount,expressmanager));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 
     private void manageEmployeeJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButton1ActionPerformed
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageDeliveryManJPanel(userProcessContainer,net,system, useraccount));
+        userProcessContainer.add(new ManageDeliveryManJPanel(userProcessContainer,net,system, useraccount,expressmanager));
         layout.next(userProcessContainer);        // TODO add your handling code here:
     }//GEN-LAST:event_manageEmployeeJButton1ActionPerformed
     

@@ -13,7 +13,7 @@ import Business.UserAccount.UserAccount;
  */
 public class DeliveryMan {
     private String telephone;
-    private String position;
+    private String address;
     private String status;
     public UserAccount userAccount;
     private BuyOrder buyOrder;
@@ -47,12 +47,12 @@ public class DeliveryMan {
         this.telephone = telephone;
     }
 
-    public String getPosition() {
-        return position;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getStatus() {
@@ -72,6 +72,6 @@ public class DeliveryMan {
     }
     @Override
     public String toString() {
-        return position;
+        return address;
     }
 }

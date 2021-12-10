@@ -19,9 +19,6 @@ public class ExpressManager {
     private BuyOrder buyOrder;
     private TransportDir transportDir;
     private DeliveryManDir deliverymanDir;
-
-    
-   
     private String name;
     private String address;
     private String phone;
@@ -100,6 +97,9 @@ public class ExpressManager {
         return useraccount.getUsername();
     }  
     public BuyOrder getBuyOrder() {
+        if(buyOrder == null){
+            buyOrder = new BuyOrder();
+        }
         return buyOrder;
     }
 
@@ -108,6 +108,9 @@ public class ExpressManager {
     }
 
     public TransportDir getTransportDir() {
+        if(transportDir == null){
+            transportDir = new TransportDir();
+        }
         return transportDir;
     }
 
@@ -116,6 +119,9 @@ public class ExpressManager {
     }
 
     public DeliveryManDir getDeliverymanDir() {
+        if(deliverymanDir == null){
+            deliverymanDir = new DeliveryManDir();
+        }
         return deliverymanDir;
     }
 
