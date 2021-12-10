@@ -12,6 +12,8 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import userinterface.CustomerRole.CustomerAreaJPanel;
 import javax.swing.JPanel;
+import userinterface.CustomerRole.CustomerMainJPanel;
+import userinterface.CustomerRole.EpaymentJPanel;
 
 /**
  *
@@ -21,7 +23,7 @@ public class CustomerRole extends Role{
 
     
     public JPanel createWorkArea(JPanel userProcessContainer,EcoSystem business,Network net, UserAccount account) {
-        return new CustomerAreaJPanel(userProcessContainer, business,net, account);
+        return new CustomerMainJPanel(userProcessContainer,net, business, account);
     }
 
     

@@ -19,6 +19,7 @@ import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -62,14 +63,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 //            model.removeRow(i);
 //        }
 //      
-//       for(Item item:net.getItems().getItemCatalog()){
+//       for(Item buyitem:net.getItems().getItemCatalog()){
 //          
 //           Object row[] = new Object[5];
-//           row[0] = item;
-//           row[1] = item.getPrice();
-//           row[2] = item.getDiscribe();
-//           row[3] = item.getQuantity();
-//           row[4] = item.getSeller();
+//           row[0] = buyitem;
+//           row[1] = buyitem.getPrice();
+//           row[2] = buyitem.getDiscribe();
+//           row[3] = buyitem.getQuantity();
+//           row[4] = buyitem.getSeller();
 //           
 //            model.addRow(row);
 //       }
@@ -173,6 +174,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         btnDelete = new javax.swing.JButton();
         btnChangeQuantity = new javax.swing.JButton();
         jSpinner2 = new javax.swing.JSpinner();
+        btnBack = new javax.swing.JButton();
+        btnDetails = new javax.swing.JButton();
 
         tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,7 +229,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnRequest1.setText("PlaceOrder");
+        btnRequest1.setText("Place Order");
         btnRequest1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequest1ActionPerformed(evt);
@@ -272,6 +275,12 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Item:");
 
+        txtType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTypeActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Seller:");
 
         jLabel4.setText("Address:");
@@ -302,6 +311,20 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        btnDetails.setText("More details");
+        btnDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDetailsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -309,7 +332,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(btnBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshTestJButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -339,12 +364,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jSearch)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addGroup(layout.createSequentialGroup()
+                                                        .addGap(15, 15, 15)
+                                                        .addComponent(jSearch))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                         .addComponent(txtPriceLow, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jLabel7)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txtPriceHigh, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -356,25 +382,28 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, Short.MAX_VALUE)))
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnRequest)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnRequest))
+                                    .addComponent(btnDetails))
                                 .addGap(30, 30, 30)))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnHistoryOrder)
-                .addGap(477, 477, 477))
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnChangeQuantity)
-                .addGap(18, 18, 18)
                 .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
+                .addComponent(btnChangeQuantity)
+                .addGap(117, 117, 117)
                 .addComponent(btnRequest1)
                 .addGap(72, 72, 72))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(188, 188, 188)
+                .addComponent(btnHistoryOrder)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,53 +412,56 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCustomerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(refreshTestJButton)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(refreshTestJButton))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnRequest)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtItem, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(txtSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPriceLow, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPriceHigh, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jSearch)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBack)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRequest)
+                            .addComponent(jLabel1)
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnChangeQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRequest1))
-                        .addGap(68, 153, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnHistoryOrder)
-                        .addGap(60, 60, 60))))
+                            .addComponent(jLabel2)
+                            .addComponent(txtItem, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPriceLow, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPriceHigh, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSearch)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChangeQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRequest1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(btnHistoryOrder)
+                .addGap(45, 45, 45))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -514,19 +546,19 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         ArrayList<Item> itemList2 = new ArrayList<Item>();
         if(priceLow!=0&&priceHigh==0){
             for(Item p: itemList1){
-                if(p.getPrice()>(priceLow)){
+                if(p.getPrice()>priceLow){
                     itemList2.add(p);
                 }
             }
         }else if(priceLow==0&&priceHigh!=0){
             for(Item p: itemList1){
-                if(p.getPrice()<(priceHigh)){
+                if(p.getPrice()<priceHigh){
                     itemList2.add(p);
                 }
             }
         }else if(priceLow!=0&&priceHigh!=0){
              for(Item p: itemList1){
-                if((priceLow)<p.getPrice()&&p.getPrice()<(priceHigh)){
+                if(priceLow<p.getPrice()&&p.getPrice()<priceHigh){
                     itemList2.add(p);
                 }
             }
@@ -574,13 +606,44 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
     private void btnRequest1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequest1ActionPerformed
         // TODO add your handling code here:
+          Date date = new Date();
+          int totalprice =0;
+         
+        for(Customer customer: net.getCustomerDirectory().getCustomersList()){
+            if(customer.getUserAccount().equals(u)){
+                for(BuyOrderItem buyitem: cart){
+                    totalprice+= (buyitem.getItem().getPrice()*buyitem.getItem().getQuantity());
+                }
+            }
+        }
+        if(u.getEpaccount().getMoney()<totalprice){
+          JOptionPane.showMessageDialog(null, "You are out of money!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }else{
+        for(Customer customer: net.getCustomerDirectory().getCustomersList()){
+            if(customer.getUserAccount().equals(u)){
+                for(BuyOrderItem buyitem: cart){
+                    buyitem.setCreateTime(date);
+                    buyitem.setStatus("Customer submitted the order");
+                    buyitem.setCustomer(customer);
+                    customer.getBuyOrder().getOrderItemList().add(buyitem);
+                    int newInventory = buyitem.getItem().getQuantity() - buyitem.getQuantity();
+                    buyitem.getItem().setQuantity(newInventory);
+                 
+                }
+            }
+        }
+        u.getEpaccount().setMoney(u.getEpaccount().getMoney()-totalprice);
+        }
+        cart.clear();
+        cartTable(cart);
+        
     }//GEN-LAST:event_btnRequest1ActionPerformed
 
     private void btnHistoryOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryOrderActionPerformed
-        HistoryOrderJPanel ho = new HistoryOrderJPanel(userProcessContainer, net, system, u);
-        userProcessContainer.add("HistoryOrder",ho);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);     
+       CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new HistoryOrderJPanel(userProcessContainer,system,u,net));
+        layout.next(userProcessContainer);   
     }//GEN-LAST:event_btnHistoryOrderActionPerformed
 
     private void txtPriceLowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceLowActionPerformed
@@ -614,16 +677,42 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             return;
         }
         if(quantity > buyitem.getItem().getQuantity()){
-            JOptionPane.showMessageDialog(null, "Quantity cannot be more than Inventory!");
+            JOptionPane.showMessageDialog(null, "Quantity cannot be more than Storage!");
             return;
         }
         buyitem.setQuantity(quantity);
         cartTable(cart);
     }//GEN-LAST:event_btnChangeQuantityActionPerformed
 
+    private void txtTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTypeActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        userProcessContainer.remove(this);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailsActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblItem.getSelectedRow();
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Item item = (Item)tblItem.getValueAt(selectedRow, 0);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new DetailsJPanel(userProcessContainer,item));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnDetailsActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChangeQuantity;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDetails;
     private javax.swing.JButton btnHistoryOrder;
     private javax.swing.JButton btnRequest;
     private javax.swing.JButton btnRequest1;

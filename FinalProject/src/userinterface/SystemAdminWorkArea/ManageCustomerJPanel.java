@@ -320,7 +320,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         network.getUserAccountDirectory().getUserAccountList().add(useraccount);
         
         JOptionPane.showMessageDialog(null, "User Account created successfully.");
-       
+        System.out.println(useraccount.getEpaccount().getUsername());
         
         txtCustomerName.setText("");
         txtUserName.setText("");

@@ -1,38 +1,98 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package userinterface.CustomerRole;
 
+
+import Business.Customer.Customer;
+import Business.CustomerOrder.BuyOrderItem;
 import Business.EcoSystem;
 import Business.Network.Network;
+import Business.Seller.Seller;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 13522
+ * @author TT1
  */
 public class HistoryOrderJPanel extends javax.swing.JPanel {
-    JPanel userProcessContainer;
-    EcoSystem system;
-    Network net;
-    UserAccount useraccount;
-    /**
-     * Creates new form HistoryOrder
-     */
-   
 
-    public HistoryOrderJPanel(JPanel userProcessContainer, Network net, EcoSystem system, UserAccount useraccount) {
-         initComponents();
-        this.userProcessContainer = userProcessContainer;
-     
-        this.system = system;
-     
-        this.net = net;
-        this.useraccount = useraccount;
+    /**
+     * Creates new form BuyerHistoryOrderJPanel
+     */
+    JPanel userProcessContainer; 
+    UserAccount account;
+    Network network;
+    Customer c;
+    EcoSystem system;
+    
+    public HistoryOrderJPanel(JPanel userProcessContainer,EcoSystem system, UserAccount account, Network network) {
+        initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.account=account;
+        this.network=network;
+        this.system= system;
+        populateOrderListTable();
     }
 
+    public void populateOrderListTable(){
+        int rowCount = orderListTable.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)orderListTable.getModel();
+        for(int i=rowCount-1;i>=0;i--) {
+            model.removeRow(i);
+        }
+        //find buyer who possess this account
+        for(Customer customer: network.getCustomerDirectory().getCustomersList()){
+            if(customer.getUserAccount().getUsername().equals(account.getUsername())){
+               c=customer;
+            }
+        }
+        
+        for(BuyOrderItem item: c.getBuyOrder().getOrderItemList()){
+            Object row[] = new Object[7];
+            row[0] = item;
+            row[1] = item.getItem().getPrice();
+            row[2] = item.getItem().getSeller();
+            row[3] = item.getQuantity();
+            row[4] = item.getEvaluate().getWord();
+            row[5] = item.getCreateTime();
+            row[6] = item.getStatus();
+
+            model.addRow(row);
+        }   
+    }
+    
+    private void searchOrderItemTable(ArrayList<BuyOrderItem> orderItemList) {
+        int rowCount = orderListTable.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)orderListTable.getModel();
+        for(int i=rowCount-1;i>=0;i--) {
+            model.removeRow(i);
+        }
+        
+        for(BuyOrderItem item: orderItemList){
+            Object row[] = new Object[7];
+            row[0] = item;
+            row[1] = item.getItem().getPrice();
+            row[2] = item.getItem().getSeller();
+            row[3] = item.getQuantity();
+            row[4] = item.getEvaluate().getWord();
+            row[5] = item.getCreateTime();
+            row[6] = item.getStatus();
+
+            model.addRow(row);
+        }     
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,30 +102,335 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtTime = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        btnWriteComment = new javax.swing.JButton();
+        txtSeller = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        orderListTable = new javax.swing.JTable();
+        btnFreshTable = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtGood = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnConnect = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
-        jLabel1.setText("HistoryOrder");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 125, -1));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 125, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
+        jLabel7.setText("Time:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+
+        jLabel5.setText("Price:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        btnWriteComment.setText("Write Comment");
+        btnWriteComment.setPreferredSize(new java.awt.Dimension(150, 30));
+        btnWriteComment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWriteCommentActionPerformed(evt);
+            }
+        });
+        add(btnWriteComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 140, -1));
+        add(txtSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 125, -1));
+
+        jLabel6.setText("Seller:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+
+        orderListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Item", "Price", "Seller", "Quantity", "Comment", "Time", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(orderListTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 119, 808, 147));
+
+        btnFreshTable.setText("REFRESH");
+        btnFreshTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFreshTableActionPerformed(evt);
+            }
+        });
+        add(btnFreshTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 86, 110, -1));
+
+        btnSearch.setText("Search");
+        btnSearch.setPreferredSize(new java.awt.Dimension(150, 30));
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 100, 29));
+
+        jLabel2.setText("Order list:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, -1, -1));
+        add(txtGood, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 289, 125, -1));
+
+        jLabel4.setText("Item:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 292, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setText("History Order");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 39, 542, -1));
+
+        btnBack.setText(" back");
+        btnBack.setPreferredSize(new java.awt.Dimension(150, 30));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, -1));
+
+        btnCancel.setText("Cancel order ");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 130, 30));
+
+        btnConnect.setText("Connect Service");
+        btnConnect.setPreferredSize(new java.awt.Dimension(150, 30));
+        btnConnect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConnectActionPerformed(evt);
+            }
+        });
+        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 520, 170, -1));
+
+        jButton1.setText("Confirm Order");
+        jButton1.setPreferredSize(new java.awt.Dimension(150, 30));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 120, 29));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 10, 120, 100));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 383, 569, 302));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = orderListTable.getSelectedRow();
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+        
+            buyitem.setStatus("Canceled");
+            int oldquantity = buyitem.getItem().getQuantity();
+            buyitem.getItem().setQuantity(oldquantity + buyitem.getQuantity());
+            JOptionPane.showMessageDialog(null, "Canceled this order Successfully");
+            populateOrderListTable();
+      
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        String prudname = txtGood.getText();
+        int price = 0;
+        if(txtPrice.getText().length()>0){
+            try{
+                price = Integer.parseInt(txtPrice.getText());
+            }
+            catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Please input price correctly!", "Warning", JOptionPane.WARNING_MESSAGE);
+                txtPrice.setBorder(BorderFactory.createLineBorder(Color.red));
+                jLabel5.setForeground(Color.red);
+                return;
+            }
+        }
+        String sellername = txtSeller.getText();
+        String time = "";
+        if(txtTime.getText().length()>0){
+            try{
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                Date date = format.parse(txtTime.getText());
+                time = format.format(date);
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Please input time on format:'yyyy-MM-dd HH:mm'!", "Warning", JOptionPane.WARNING_MESSAGE);
+                txtTime.setBorder(BorderFactory.createLineBorder(Color.red));
+                jLabel7.setForeground(Color.red);
+                return;
+            }
+        }
+        
+        
+        //star to filter no-empty requirement
+        ArrayList<BuyOrderItem> orderItemList = new ArrayList<BuyOrderItem>();
+        if(prudname.length()>0){
+            for(BuyOrderItem item: c.getBuyOrder().getOrderItemList()){
+                if(item.getItem().getItemName().equals(prudname)){
+                    orderItemList.add(item);
+                }
+            }
+        }
+        else{
+            orderItemList = c.getBuyOrder().getOrderItemList();
+        }
+        ArrayList<BuyOrderItem> orderItemList1 = new ArrayList<BuyOrderItem>();
+        if(price!=0){
+            for(BuyOrderItem item: orderItemList){
+                if(item.getItem().getPrice()==(price)){
+                    orderItemList1.add(item);
+                }
+            }
+        }
+        else{
+            orderItemList1 = orderItemList;
+        }
+        ArrayList<BuyOrderItem> orderItemList2 = new ArrayList<BuyOrderItem>();
+        if(sellername.length()>0){
+            for(BuyOrderItem item: orderItemList1){
+                if(item.getItem().getSeller().getName().equals(sellername)){
+                    orderItemList2.add(item);
+                }
+            }
+        }
+        else{
+            orderItemList2 = orderItemList1;
+        }
+        ArrayList<BuyOrderItem> orderItemList3 = new ArrayList<BuyOrderItem>();
+        if(time.length()>0){
+            for(BuyOrderItem item: orderItemList2){
+                if(item.getCreateTime().equals(time)){
+                    orderItemList3.add(item);
+                }
+            }
+        }
+        else{
+            orderItemList3 = orderItemList2;
+        }
+        
+        searchOrderItemTable(orderItemList3);
+        
+        txtPrice.setBorder(BorderFactory.createLineBorder(Color.gray));
+        jLabel5.setForeground(Color.black);
+        txtTime.setBorder(BorderFactory.createLineBorder(Color.gray));
+        jLabel7.setForeground(Color.black);
+    }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnFreshTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFreshTableActionPerformed
+        // TODO add your handling code here:
+        populateOrderListTable();
+    }//GEN-LAST:event_btnFreshTableActionPerformed
+
+    private void btnWriteCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWriteCommentActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = orderListTable.getSelectedRow();
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+        if(buyitem.getStatus().equals("RECEIVED")){
+            CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+            userProcessContainer.add(new WriteCommentJPanel(userProcessContainer,buyitem,account));
+            layout.next(userProcessContainer);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "You have not recieved this order item, you could not write comment!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        populateOrderListTable();
+    }//GEN-LAST:event_btnWriteCommentActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new CustomerMainJPanel(userProcessContainer,network,system,account));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
+        // TODO add your handling code here:
+//        int selectedRow = orderListTable.getSelectedRow();
+//        if (selectedRow < 0){
+//            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
+//        BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+// 
+//        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+//        userProcessContainer.add(new ConnectServiceJPanel(userProcessContainer,account,buyitem));
+//        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnConnectActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = orderListTable.getSelectedRow();
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        BuyOrderItem item = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+        if(item.getStatus().equals("DELIVERED")){
+            item.setStatus("RECEIVED");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Invalid Operation", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    populateOrderListTable();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnConnect;
+    private javax.swing.JButton btnFreshTable;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnWriteComment;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable orderListTable;
+    private javax.swing.JTextField txtGood;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtSeller;
+    private javax.swing.JTextField txtTime;
     // End of variables declaration//GEN-END:variables
+
+    
 }

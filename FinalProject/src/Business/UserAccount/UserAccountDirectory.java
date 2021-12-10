@@ -5,6 +5,7 @@
 package Business.UserAccount;
 
 import Business.Employee.Employee;
+import Business.Epayment.EpaymentAccount;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -35,10 +36,15 @@ public class UserAccountDirectory {
     
     public UserAccount createUserAccount(String username, String password, Employee employee, Role role){
         UserAccount userAccount = new UserAccount();
+        EpaymentAccount epaccount= new EpaymentAccount();
+        epaccount.setMoney(100);
+        epaccount.setUsername("test");
+        epaccount.setPassword("test");
         userAccount.setUsername(username);
         userAccount.setPassword(password);
         userAccount.setEmployee(employee);
         userAccount.setRole(role);
+        userAccount.setEpaccount(epaccount);
         userAccountList.add(userAccount);
         return userAccount;
     }

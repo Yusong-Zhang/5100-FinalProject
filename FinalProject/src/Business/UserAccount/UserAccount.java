@@ -5,6 +5,7 @@
 package Business.UserAccount;
 
 import Business.Employee.Employee;
+import Business.Epayment.EpaymentAccount;
 import Business.Role.Role;
 import Business.WorkQueue.WorkQueue;
 
@@ -20,8 +21,12 @@ public class UserAccount {
     private Role role;
     private WorkQueue workQueue;
 
+   
+    private EpaymentAccount epaccount;
+   
     public UserAccount() {
         workQueue = new WorkQueue();
+      
     }
  
     public String getUsername() {
@@ -60,7 +65,13 @@ public class UserAccount {
         return workQueue;
     }
 
-    
+    public EpaymentAccount getEpaccount() {
+        return epaccount;
+    }
+
+    public void setEpaccount(EpaymentAccount epaccount) {
+        this.epaccount = epaccount;
+    }
     
     @Override
     public String toString() {

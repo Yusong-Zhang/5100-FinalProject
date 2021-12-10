@@ -112,7 +112,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 {null}
             },
             new String [] {
-                "Network"
+                "Country"
             }
         ) {
             Class[] types = new Class [] {
@@ -138,7 +138,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Create New Network HERE");
+        jLabel2.setText("Create New Country HERE");
 
         btnSeller.setText("Manage Seller");
         btnSeller.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +188,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(btnFeedbacker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,8 +214,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(9, 9, 9))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCustomer1)
