@@ -50,18 +50,10 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnLoginEpay = new javax.swing.JButton();
         btnBuy = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-
-        btnLoginEpay.setText("Login E-Pay System");
-        btnLoginEpay.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginEpayActionPerformed(evt);
-            }
-        });
 
         btnBuy.setText("BuyBuyBuy!");
         btnBuy.addActionListener(new java.awt.event.ActionListener() {
@@ -99,30 +91,24 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnEdit)
                 .addGap(179, 179, 179))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnLoginEpay)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBuy)
-                                    .addComponent(btnHistory))
-                                .addGap(18, 18, 18))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(btnBack)))
-                .addContainerGap(171, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(204, 204, 204)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnBuy)
+                        .addComponent(btnHistory))
+                    .addContainerGap(189, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addComponent(btnBack)
+                    .addContainerGap(391, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(btnBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLoginEpay)
-                .addGap(32, 32, 32)
+                .addGap(63, 63, 63)
                 .addComponent(btnBuy)
                 .addGap(34, 34, 34)
                 .addComponent(btnHistory)
@@ -132,18 +118,10 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLoginEpayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginEpayActionPerformed
-//        a.setCommit(txtCommit.getText());
-//        JOptionPane.showMessageDialog(null, "Commit added!", "", JOptionPane.WARNING_MESSAGE);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new EpaymentJPanel(userProcessContainer,net,system,useraccount));
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnLoginEpayActionPerformed
-
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
         // TODO add your handling code here:
-         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new CustomerAreaJPanel(userProcessContainer,system,net,useraccount));
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new EpaymentJPanel(userProcessContainer,net,system,useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnBuyActionPerformed
 
@@ -180,6 +158,5 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHistory;
-    private javax.swing.JButton btnLoginEpay;
     // End of variables declaration//GEN-END:variables
 }

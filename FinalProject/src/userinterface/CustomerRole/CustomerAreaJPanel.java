@@ -105,9 +105,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         for(BuyOrderItem item: cart){
             Object row[] = new Object[4];
             row[0] = item;
-            row[1] = item.getItem().getQuantity();
+            row[1] = item.getQuantity();
             row[2] = item.getItem().getDiscribe();
-            row[3] = (item.getItem().getPrice()*item.getItem().getQuantity());
+            row[3] = (item.getItem().getPrice()*item.getQuantity());
             
 
             model.addRow(row);
@@ -273,6 +273,12 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("quantity:");
 
+        txtItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtItemActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Item:");
 
         txtType.addActionListener(new java.awt.event.ActionListener() {
@@ -282,6 +288,12 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         });
 
         jLabel3.setText("Seller:");
+
+        txtSeller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSellerActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Address:");
 
@@ -473,7 +485,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         Item item = (Item)tblItem.getValueAt(selectedRow, 0);
         
+//        int quantity = (Integer)jSpinner1.getValue();
         int quantity = (Integer)jSpinner1.getValue();
+        System.out.println(quantity);
         if(quantity <=0){
             JOptionPane.showMessageDialog(null, "Quantity cannot be less than equal to 0!");
             return;
@@ -516,9 +530,38 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
          String prudname = txtItem.getText();
          int priceLow=0;
          int priceHigh=0;
-        if(txtPriceLow.getText().length()>0||txtPriceHigh.getText().length()>0){
+        if(txtPriceLow.getText().length()>0&&txtPriceHigh.getText().length()>0){
             try{
+                
+                priceHigh = Integer.parseInt(txtPriceHigh.getText());
+               
                 priceLow = Integer.parseInt(txtPriceLow.getText());
+         
+            }
+            catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Please input price correctly!", "Warning", JOptionPane.WARNING_MESSAGE);
+//                txtPrice.setBorder(BorderFactory.createLineBorder(Color.red));
+//                jLabel5.setForeground(Color.red);
+                return;
+            }
+        }else if(txtPriceLow.getText().length()>0&&txtPriceHigh.getText().length()==0){
+         try{
+                
+               
+                priceLow = Integer.parseInt(txtPriceLow.getText());
+         
+            }
+            catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Please input price correctly!", "Warning", JOptionPane.WARNING_MESSAGE);
+//                txtPrice.setBorder(BorderFactory.createLineBorder(Color.red));
+//                jLabel5.setForeground(Color.red);
+                return;
+            }
+        
+        }else if(txtPriceLow.getText().length()==00&&txtPriceHigh.getText().length()>0){
+         try{
+                
+               
                 priceHigh = Integer.parseInt(txtPriceHigh.getText());
             }
             catch (Exception e){
@@ -527,7 +570,10 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 //                jLabel5.setForeground(Color.red);
                 return;
             }
+        
         }
+       
+       
         String sellername = txtSeller.getText();
         String Address = txtAddress.getText();
         String Type=txtType.getText();
@@ -634,6 +680,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         }
         u.getEpaccount().setMoney(u.getEpaccount().getMoney()-totalprice);
+        JOptionPane.showMessageDialog(null, "Place Order Successfully!", "Warning",JOptionPane.WARNING_MESSAGE);
         }
         cart.clear();
         cartTable(cart);
@@ -707,6 +754,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add(new DetailsJPanel(userProcessContainer,item));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnDetailsActionPerformed
+
+    private void txtSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSellerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSellerActionPerformed
+
+    private void txtItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

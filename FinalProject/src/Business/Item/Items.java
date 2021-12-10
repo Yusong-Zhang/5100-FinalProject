@@ -26,10 +26,10 @@ public class Items {
     }
     
     
-    public Item addItem(){
-        Item i = new Item();
-        itemCatalog.add(i);
-        return i;
+    public void addItem(Item item){
+       
+        itemCatalog.add(item);
+        
     }
     public Item addItem(String itemName,int price, String discribe,int quantity,Seller seller){
         Item i = new Item(itemName,price,discribe,quantity,seller);

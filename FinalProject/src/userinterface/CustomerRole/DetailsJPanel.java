@@ -137,7 +137,7 @@ public class DetailsJPanel extends javax.swing.JPanel {
         txtPosition.setEnabled(false);
         add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 236, 300, -1));
 
-        jLabel8.setText("Inventory:");
+        jLabel8.setText("Quantity");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 285, -1, -1));
 
         txtQuantity.setEnabled(false);

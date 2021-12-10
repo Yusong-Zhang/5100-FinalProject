@@ -13,7 +13,6 @@ import Business.WorkQueue.WorkQueue;
 import userinterface.CustomerRole.CustomerAreaJPanel;
 import javax.swing.JPanel;
 import userinterface.CustomerRole.CustomerMainJPanel;
-import userinterface.CustomerRole.EpaymentJPanel;
 
 /**
  *

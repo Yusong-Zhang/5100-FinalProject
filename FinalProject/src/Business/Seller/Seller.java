@@ -28,6 +28,17 @@ public class Seller {
     private ProductManagerDir productManagerDir;
     private String type;
 
+    public Items getItems() {
+        if(items==null){
+            items =new Items();
+        }
+        return items;
+    }
+
+    public void setItems(Items items) {
+        this.items = items;
+    }
+
    
 
     public String getType() {

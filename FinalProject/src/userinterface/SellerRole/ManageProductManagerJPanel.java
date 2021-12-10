@@ -120,7 +120,7 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -247,7 +247,22 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         int selectedRow = tblProductManager.getSelectedRow();
+        
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+      ProductManager pm = (ProductManager)tblProductManager.getValueAt(selectedRow, 0);
+      seller.getProductManagerDir().getProductManagerList().remove(pm);
+      UserAccount ua=new UserAccount();
+      ua=pm.getUserAccount();
+      system.getUserAccountDirectory().getUserAccountList().remove(ua);
+       
+         
+         JOptionPane.showMessageDialog(null, "Delete the ProductManager successfully!");
+         refreshTable();        // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -280,6 +295,7 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         pm.setName(name);
         pm.setTelephone(telePhone);
         pm.setUserAccount(useraccount1);
+        pm.setAddress(address);
         seller.getProductManagerDir().getProductManagerList().add(pm);
         network.getUserAccountDirectory().getUserAccountList().add(useraccount1);
          
@@ -325,7 +341,7 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
          for(ProductManager pm: seller.getProductManagerDir().getProductManagerList()){
             
                 Object row[] = new Object[5];
-                row[0] = pm.getName();
+                row[0] = pm;
                 row[1] =pm.getUserAccount().getUsername();
                 row[2] =pm.getUserAccount().getPassword();
                 row[3] =pm.getTelephone();
