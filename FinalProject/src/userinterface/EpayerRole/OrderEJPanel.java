@@ -165,13 +165,13 @@ public class OrderEJPanel extends javax.swing.JPanel {
 
     private void bRefundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRefundActionPerformed
 
-      int selectedRow = ApproveTable.getSelectedRow();
+      int selectedRow = RefundTable.getSelectedRow();
         
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-      BuyOrderItem buyitem = (BuyOrderItem)ApproveTable.getValueAt(selectedRow, 0);
+      BuyOrderItem buyitem = (BuyOrderItem)RefundTable.getValueAt(selectedRow, 0);
       if(buyitem.getStatus()=="Canceled"){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getCustomer().getUserAccount().getEpaccount().getMoney();

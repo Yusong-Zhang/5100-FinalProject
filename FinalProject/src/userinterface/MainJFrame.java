@@ -18,7 +18,6 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import userinterface.CustomerRole.CustomerAreaJPanel;
-import userinterface.ExpressRole.ExpressManagerWorkAreaJPanel;
 import userinterface.SellerRole.SellerWorkAreaJPanel;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 /**

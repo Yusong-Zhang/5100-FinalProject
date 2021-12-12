@@ -6,10 +6,13 @@ package userinterface.SellerRole;
 import Business.EcoSystem;
 import Business.Network.Network;
 import Business.Seller.Seller;
+import Business.Tools.PieChart1;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import org.jfree.ui.RefineryUtilities;
 import userinterface.SystemAdminWorkArea.ManageExpressJPanel;
 
 /**
@@ -47,11 +50,12 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnManageSellerInfo = new javax.swing.JButton();
+        btnShowChart = new javax.swing.JButton();
         btnManageProductManager = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         btnManagePriceManager = new javax.swing.JButton();
+        btnManageSellerInfo1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -59,13 +63,13 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setText("My Work Area -Adminstrative Role");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        btnManageSellerInfo.setText("Manage Seller Info");
-        btnManageSellerInfo.addActionListener(new java.awt.event.ActionListener() {
+        btnShowChart.setText("Show Selling Chart");
+        btnShowChart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageSellerInfoActionPerformed(evt);
+                btnShowChartActionPerformed(evt);
             }
         });
-        add(btnManageSellerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 200, -1));
+        add(btnShowChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 200, -1));
 
         btnManageProductManager.setText("Manage Product Manager");
         btnManageProductManager.addActionListener(new java.awt.event.ActionListener() {
@@ -89,14 +93,25 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnManagePriceManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 200, -1));
+
+        btnManageSellerInfo1.setText("Manage Seller Info");
+        btnManageSellerInfo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageSellerInfo1ActionPerformed(evt);
+            }
+        });
+        add(btnManageSellerInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageSellerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageSellerInfoActionPerformed
+    private void btnShowChartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowChartActionPerformed
         // TODO add your handling code here:
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        userProcessContainer.add(new ManageSellerInfoJPanel(userProcessContainer,net,system, useraccount));
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageSellerInfoActionPerformed
+      PieChart1 demo = new PieChart1( "Customer Preference",system,net,useraccount );  
+      demo.setSize( 700,700);    
+      RefineryUtilities.centerFrameOnScreen( demo );   
+      demo.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+      demo.setVisible( true ); 
+      
+    }//GEN-LAST:event_btnShowChartActionPerformed
 
     private void btnManageProductManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProductManagerActionPerformed
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
@@ -110,12 +125,20 @@ public class SellerWorkAreaJPanel extends javax.swing.JPanel {
         userProcessContainer.add(new ManagerPriceManagerJPanel(userProcessContainer,net,system,useraccount));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManagePriceManagerActionPerformed
+
+    private void btnManageSellerInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageSellerInfo1ActionPerformed
+        // TODO add your handling code here:
+     CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new ManageSellerInfoJPanel(userProcessContainer,net,system,useraccount));
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnManageSellerInfo1ActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManagePriceManager;
     private javax.swing.JButton btnManageProductManager;
-    private javax.swing.JButton btnManageSellerInfo;
+    private javax.swing.JButton btnManageSellerInfo1;
+    private javax.swing.JButton btnShowChart;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel valueLabel;

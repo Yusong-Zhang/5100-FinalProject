@@ -46,23 +46,25 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         populateTable();
         cbxUpdateStatus.addItem("Work");
         cbxUpdateStatus.addItem("Rest");
-        cbxUpdateStatus.addItem("Busy");
+        
     }
     public void populateTable(){
-        int rowCount = workRequestJTable.getRowCount();
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
+        int rowCount = tblDeliveryMan.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)tblDeliveryMan.getModel();
         for(int i = rowCount - 1; i >= 0; i--){
             model.removeRow(i);
         }
         for(BuyOrderItem buyOrderItem: deliveryman.getBuyOrder().getOrderItemList()){
-            Object row[] = new Object[4];
-            row[0] = buyOrderItem.getItem().getItemName();
+            if(buyOrderItem.getOrderPosition().equals(buyOrderItem.getCustomer().getAddress())){
+            Object row[] = new Object[5];
+            row[0] = buyOrderItem;
             row[1] = buyOrderItem.getQuantity();
             row[2] = buyOrderItem.getCustomer().getAddress();
-            row[3] = buyOrderItem.getItem().getSeller().getPosition();
+            row[3] = buyOrderItem.getOrderPosition();
             row[4] = buyOrderItem.getStatus();
             
             model.addRow(row);
+        }
         }
     }
     /**
@@ -77,13 +79,12 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         refreshJButton = new javax.swing.JButton();
         btnAccept = new javax.swing.JButton();
         btnRefuse = new javax.swing.JButton();
-        btnViewOrders = new javax.swing.JButton();
         btnUpdateStatus = new javax.swing.JButton();
         btnFinish = new javax.swing.JButton();
         cbxUpdateStatus = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
+        tblDeliveryMan = new javax.swing.JTable();
 
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,8 +107,6 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewOrders.setText("View Orders");
-
         btnUpdateStatus.setText("Update Status");
         btnUpdateStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +124,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel1.setText("Delivery Man Work Area");
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+        tblDeliveryMan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -133,7 +132,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Goods", "Quantity", "Buyer Position", "Seller Position", "Status"
+                "Items", "Quantity", "Customer Address", "Seller Address", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -151,7 +150,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(workRequestJTable);
+        jScrollPane1.setViewportView(tblDeliveryMan);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -159,37 +158,35 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(refreshJButton)
-                        .addGap(78, 78, 78))))
+                .addComponent(jLabel1)
+                .addGap(145, 145, 145))
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnUpdateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxUpdateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(refreshJButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
                         .addComponent(btnAccept)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnRefuse)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewOrders)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnFinish)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFinish)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUpdateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbxUpdateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(refreshJButton)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,13 +194,10 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAccept)
                     .addComponent(btnRefuse)
-                    .addComponent(btnViewOrders)
-                    .addComponent(btnFinish))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFinish)
                     .addComponent(btnUpdateStatus)
                     .addComponent(cbxUpdateStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
+                .addGap(92, 92, 92))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,15 +207,15 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
         // TODO add your handling code here:
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblDeliveryMan.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        BuyOrderItem buyOrderItem = (BuyOrderItem)workRequestJTable.getValueAt(selectedRow, 0);
-        if(buyOrderItem.getStatus().equals("Assigned to Delivery Man")){
+        BuyOrderItem buyOrderItem = (BuyOrderItem)tblDeliveryMan.getValueAt(selectedRow, 0);
+        if(buyOrderItem.getStatus().equals("Assign to Delivery Man")){
             buyOrderItem.setStatus("Delivery Man Delivering");
-            JOptionPane.showMessageDialog(null, "Order has been Assigned!");
+            JOptionPane.showMessageDialog(null, "Delivering Assigned!");
         }else{
             JOptionPane.showMessageDialog(null, "This Order cannot be Operated!", "Warning", JOptionPane.WARNING_MESSAGE);
             populateTable();
@@ -231,16 +225,16 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
 
     private void btnRefuseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefuseActionPerformed
         // TODO add your handling code here:
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblDeliveryMan.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        BuyOrderItem buyOrderItem = (BuyOrderItem)workRequestJTable.getValueAt(selectedRow, 0);
-        if(buyOrderItem.getStatus().equals("Assigned to Delivery Man")){
+        BuyOrderItem buyOrderItem = (BuyOrderItem)tblDeliveryMan.getValueAt(selectedRow, 0);
+        if(buyOrderItem.getStatus().equals("Assign to Delivery Man")){
             buyOrderItem.setStatus("Delivery Man Refused");
             deliveryman.getBuyOrder().getOrderItemList().remove(buyOrderItem);
-            JOptionPane.showMessageDialog(null, "Order has been Refused!");
+            JOptionPane.showMessageDialog(null, "Delivering Refused!");
         }else{
             JOptionPane.showMessageDialog(null, "This Order cannot be Operated!", "Warning", JOptionPane.WARNING_MESSAGE);
             populateTable();
@@ -256,15 +250,15 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
 
     private void btnFinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinishActionPerformed
         // TODO add your handling code here:
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = tblDeliveryMan.getSelectedRow();
         if(selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        BuyOrderItem buyOrderItem = (BuyOrderItem)workRequestJTable.getValueAt(selectedRow, 0);
+        BuyOrderItem buyOrderItem = (BuyOrderItem)tblDeliveryMan.getValueAt(selectedRow, 0);
         if(buyOrderItem.getStatus().equals("Delivery Man Delivering")){
             buyOrderItem.setStatus("Delivered");
-            JOptionPane.showMessageDialog(null, "Order has been Finished!");
+            JOptionPane.showMessageDialog(null, "Delivering Finished!");
         }else{
             JOptionPane.showMessageDialog(null, "This Order cannot be Operated!", "Warning", JOptionPane.WARNING_MESSAGE);
             populateTable();
@@ -277,11 +271,10 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnFinish;
     private javax.swing.JButton btnRefuse;
     private javax.swing.JButton btnUpdateStatus;
-    private javax.swing.JButton btnViewOrders;
     private javax.swing.JComboBox<String> cbxUpdateStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTable tblDeliveryMan;
     // End of variables declaration//GEN-END:variables
 }

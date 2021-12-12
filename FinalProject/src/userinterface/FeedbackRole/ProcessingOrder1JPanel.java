@@ -121,6 +121,7 @@ public class ProcessingOrder1JPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         buyOrderItem.getEvaluate().setRefund(false);
         JOptionPane.showMessageDialog(null, "Refused Refund");        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

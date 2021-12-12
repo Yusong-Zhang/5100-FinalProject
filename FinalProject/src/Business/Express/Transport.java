@@ -58,6 +58,9 @@ public class Transport {
     }
 
     public String getStatus() {
+        if(status == null){
+            status = new String();
+        }
         return status;
     }
 

@@ -14,7 +14,7 @@ public class Evaluate {
     private String word;
     private String buyer;
     private String date;
-    private Boolean Refund;
+    private Boolean Refund = false;
 
     public Boolean getRefund() {
         return Refund;

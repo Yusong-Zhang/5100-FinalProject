@@ -11,6 +11,7 @@ import Business.Express.ExpressManager;
 import Business.Item.Item;
 import Business.Network.Network;
 import Business.Seller.Seller;
+import Business.Tools.Email;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
@@ -18,6 +19,8 @@ import Business.WorkQueue.WorkQueue;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.BorderFactory;
@@ -705,7 +708,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                     buyitem.setCreateTime(date);
                     buyitem.setStatus("Customer submitted the order");
                     buyitem.setCustomer(customer);
-                    
+                    buyitem.setOrderPosition(buyitem.getItem().getSeller().getAddress());
                     customer.getBuyOrder().getOrderItemList().add(buyitem);
                     int newInventory = buyitem.getItem().getQuantity() - buyitem.getQuantity();
                     buyitem.getItem().setQuantity(newInventory);
@@ -718,6 +721,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         cart.clear();
         cartTable(cart);
+        try {
+                 Email.send_email("TravelConformation","Your travel has been approved! \n Plz check our app for further information ","zhang.yuso@northeastern.edu");
+             } catch (Exception ex) {
+              
+                  java.util.logging.Logger.getLogger(CustomerAreaJPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+              }
+             
          populateTable();
     }//GEN-LAST:event_btnRequest1ActionPerformed
 

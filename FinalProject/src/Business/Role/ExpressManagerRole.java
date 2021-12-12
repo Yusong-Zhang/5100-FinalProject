@@ -10,7 +10,6 @@ import Business.Network.Network;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import javax.swing.JPanel;
-import userinterface.ExpressRole.ExpressManagerWorkAreaJPanel;
 import userinterface.ExpressRole.ExpressWorkAreaJPanel;
 
 /**
