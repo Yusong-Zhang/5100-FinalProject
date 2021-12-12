@@ -4,16 +4,11 @@
  */
 package Business.Tools;
 
-/**
- *
- * @author 13522
- */
-
 
 import Business.Customer.Customer;
-
+import Business.CustomerOrder.BuyOrderItem;
 import Business.EcoSystem;
-
+import Business.Network.Network;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
@@ -33,62 +28,73 @@ import org.jfree.data.statistics.HistogramDataset;
  */
 public class HistChart extends JFrame{
     
-//       String t;
-//   EcoSystem system;
-//   HashMap<String,Integer> dataM = new HashMap<String,Integer>();
-//   HashMap<String,String> dataR = new HashMap<String,String>();
-//   ArrayList<String> count = new ArrayList<String>();
-//   public HistChart( String title ,EcoSystem system) {
-//      super( title ); 
-//      t = title;
-//      this.system = system;
-//      setContentPane(createDemoPanel( ));
-//      
-//   }
-//    
-//    private CategoryDataset createDataset() {   
-//    DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
-//      
-//      for(Customer c:system.getCustomerDirectory().getCustomersList()){
-//          for(CustomerTravelPlan ctp:c.getCustomerOrderHistory()){
-//              for(OneDayPlan odp: ctp.getTravelPlan()){
+     
+       String t;
+   EcoSystem system;
+   
+   HashMap<String,Integer> dataM = new HashMap<String,Integer>();
+   HashMap<String,String> dataR = new HashMap<String,String>();
+   ArrayList<String> count = new ArrayList<String>();
+   public HistChart( String title ,EcoSystem system) {
+      super( title ); 
+      t = title;
+      this.system = system;
+      setContentPane(createDemoPanel( ));
+      
+   }
+    
+    private CategoryDataset createDataset() {   
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+      for(Network net:system.getNetworkList()){
+          int countNum=0;
+          
+          
+       for(Customer c:net.getCustomerDirectory().getCustomersList()){
+          for(BuyOrderItem buyItem:c.getBuyOrder().getOrderItemList()){
+               countNum++;
+               
 //                dataR.put(odp.getFoodName(),odp.getResName()); 
 //                count.add(odp.getFoodName());      
-//              }
-//                  
-//          }
-//      }
-//      
+              }       
+          }
+       
+         dataset.addValue(countNum, net.getName(), "Item");
+      }
+     
+   
+          
+      
 //      if (count == null || count.size() == 0) return null;
 //      for(String s:count){
 //          Integer i = dataM.get(s);
 //          dataM.put(s,(i==null)?1:i+1);
 //      }
-////      System.out.println(dataR);
-////      System.out.println(dataM);
+//      System.out.println(dataR);
+//      System.out.println(dataM);
 //      for(String menu :dataM.keySet()){
 //          dataset.addValue(dataM.get(menu),dataR.get(menu),menu);  
 //      }
 //          
-//      
-//      return dataset;      
-//}
-//    private JFreeChart createChart(CategoryDataset dataset) {   
-//    JFreeChart chart = ChartFactory.createBarChart("Popular Restaurant", // chart title   
-//                "Restaurant", // domain axis label   
-//                "Frequency", // range axis label   
-//                dataset, // data   
-//                PlotOrientation.VERTICAL, // å›¾æ ‡æ–¹å�‘   
-//                true, // æ˜¯å�¦æ˜¾ç¤ºlegend   
-//                true, // æ˜¯å�¦æ˜¾ç¤ºtooltips   
-//                false // æ˜¯å�¦æ˜¾ç¤ºURLs   
-//        );   
-//    return chart;   
-//}
-//    
-//    public  JPanel createDemoPanel( ) {
-//      JFreeChart chart = createChart(createDataset( ) );  
-//      return new ChartPanel( chart ); 
-//   }
+      
+      return dataset;      
 }
-
+    private JFreeChart createChart(CategoryDataset dataset) {   
+     JFreeChart chart = ChartFactory.createBarChart3D(
+       		                 "National Selling Num",
+                            "Nation", 
+                            "Quantity", 
+                            dataset, 
+                            PlotOrientation.VERTICAL, 
+                            true,           
+                            false,          
+                            false           
+                            );
+        
+    return chart;   
+}
+    
+    public  JPanel createDemoPanel( ) {
+      JFreeChart chart = createChart(createDataset( ) );  
+      return new ChartPanel( chart ); 
+   }
+}

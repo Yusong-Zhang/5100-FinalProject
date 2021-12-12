@@ -12,6 +12,8 @@ import Business.Item.Item;
 import Business.Network.Network;
 import Business.Seller.Seller;
 import Business.Tools.Email;
+import Business.Tools.PieChart;
+import Business.Tools.PieChart1;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
@@ -24,9 +26,11 @@ import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.BorderFactory;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.ui.RefineryUtilities;
 import userinterface.SystemAdminWorkArea.ManageCustomerJPanel;
 
 /**
@@ -40,6 +44,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private UserAccount u;
     private WorkQueue wq;
     private Network net;
+    private Customer customer1;
      ArrayList<Item> itemList = new ArrayList<Item>();
     ArrayList<BuyOrderItem> cart = new ArrayList<BuyOrderItem>();
     /**
@@ -186,6 +191,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         lblmoneyleft = new javax.swing.JLabel();
         lblorderprice = new javax.swing.JLabel();
+        jRoles = new javax.swing.JButton();
 
         tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -351,6 +357,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jLabel9.setText("Order total price:");
 
+        jRoles.setText("View Rates ratio");
+        jRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRolesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -388,7 +401,10 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                                 .addComponent(jLabel6)))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                                .addComponent(jRoles))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addGroup(layout.createSequentialGroup()
@@ -400,7 +416,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                                         .addComponent(jLabel7)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txtPriceHigh, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel1)
                                         .addGap(18, 18, 18))
                                     .addGroup(layout.createSequentialGroup()
@@ -472,7 +488,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel2)
                                     .addComponent(txtItem, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtType, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
+                                    .addComponent(jLabel5)
+                                    .addComponent(jRoles))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
@@ -691,6 +708,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         
         for(Customer customer: net.getCustomerDirectory().getCustomersList()){
             if(customer.getUserAccount().equals(u)){
+                customer1 = customer;
                 for(BuyOrderItem buyitem: cart){
                     totalprice+= (buyitem.getItem().getPrice()*buyitem.getQuantity());
                 }
@@ -722,7 +740,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         cart.clear();
         cartTable(cart);
         try {
-                 Email.send_email("TravelConformation","Your travel has been approved! \n Plz check our app for further information ","zhang.yuso@northeastern.edu");
+                 Email.send_email("Shopping notice","Your goods are on the way! \n Plz check our app for further information ",customer1.getEmail());
              } catch (Exception ex) {
               
                   java.util.logging.Logger.getLogger(CustomerAreaJPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -807,6 +825,22 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtItemActionPerformed
 
+    private void jRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRolesActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = tblItem.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Item item = (Item)tblItem.getValueAt(selectedRow, 0);
+           PieChart demo = new PieChart( "Item Rates Ratio",item );  
+      demo.setSize( 700,700);    
+      RefineryUtilities.centerFrameOnScreen( demo );   
+      demo.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+      demo.setVisible( true ); 
+    }//GEN-LAST:event_jRolesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnChangeQuantity;
@@ -825,6 +859,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jRoles;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jSearch;

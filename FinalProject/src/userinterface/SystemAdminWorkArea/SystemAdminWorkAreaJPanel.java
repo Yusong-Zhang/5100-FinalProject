@@ -9,15 +9,19 @@ import Business.EcoSystem;
 import Business.Network.Network;
 
 import Business.Organization;
+import Business.Tools.HistChart;
+import Business.Tools.HistChart1;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkQueue;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import org.jfree.ui.RefineryUtilities;
 
 /**
  *
@@ -80,7 +84,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         btnSeller = new javax.swing.JButton();
         btnFeedbacker = new javax.swing.JButton();
-        btnViewData = new javax.swing.JButton();
+        jSelling = new javax.swing.JButton();
+        jRoles = new javax.swing.JButton();
 
         jLabel1.setText("Welcome!");
 
@@ -155,10 +160,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewData.setText("View Data");
-        btnViewData.addActionListener(new java.awt.event.ActionListener() {
+        jSelling.setText("View National Selling Number");
+        jSelling.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewDataActionPerformed(evt);
+                jSellingActionPerformed(evt);
+            }
+        });
+
+        jRoles.setText("View National Roles");
+        jRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRolesActionPerformed(evt);
             }
         });
 
@@ -179,17 +191,18 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
+                                        .addComponent(jSelling)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jRoles))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(btnViewData, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCustomer1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
@@ -234,12 +247,14 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                             .addComponent(btnCustomer1)
                             .addComponent(jLabel2)
                             .addComponent(txtNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnViewData))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jSelling)
+                            .addComponent(jRoles)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnFeedbacker)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -325,12 +340,22 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 layout.next(userProcessContainer);
     }//GEN-LAST:event_btnFeedbackerActionPerformed
 
-    private void btnViewDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDataActionPerformed
+    private void jSellingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSellingActionPerformed
+        HistChart demo = new HistChart( "Country's selling quantity",ecosystem );  
+      demo.setSize( 700,700);    
+      RefineryUtilities.centerFrameOnScreen( demo );   
+      demo.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+      demo.setVisible( true );         // TODO add your handling code here:
+    }//GEN-LAST:event_jSellingActionPerformed
+
+    private void jRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRolesActionPerformed
         // TODO add your handling code here:
-         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-               userProcessContainer.add(new ChartJPanel(userProcessContainer,ecosystem));
-                layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnViewDataActionPerformed
+         HistChart1 demo = new HistChart1( "National Roles",ecosystem );  
+      demo.setSize( 700,700);    
+      RefineryUtilities.centerFrameOnScreen( demo );   
+      demo.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+      demo.setVisible( true ); 
+    }//GEN-LAST:event_jRolesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -340,10 +365,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnExpressManager;
     private javax.swing.JButton btnFeedbacker;
     private javax.swing.JButton btnSeller;
-    private javax.swing.JButton btnViewData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jRoles;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jSelling;
     private javax.swing.JLabel lblAdminName;
     private javax.swing.JTable tblNetwork;
     private javax.swing.JTextField txtNetwork;

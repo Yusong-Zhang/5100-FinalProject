@@ -27,6 +27,7 @@ public class Customer {
     private Role role;
     private WorkQueue workQueue;  
     private BuyOrder buyOrder;
+    private String email;
 
     
     public Customer(String Name,String username,String password,String address,String phone,UserAccount useraccount) {
@@ -40,6 +41,14 @@ public class Customer {
         this.userAccount=useraccount;
     }
     public Customer(){
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
