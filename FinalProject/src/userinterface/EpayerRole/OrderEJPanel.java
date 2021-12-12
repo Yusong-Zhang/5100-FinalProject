@@ -42,6 +42,7 @@ public class OrderEJPanel extends javax.swing.JPanel {
         
         //valueLabel.setText(enterprise.getName());
      populateTable();
+     populateTable1();
        
     }
     /**
@@ -54,11 +55,13 @@ public class OrderEJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        orderListTable = new javax.swing.JTable();
+        ApproveTable = new javax.swing.JTable();
         bRefund = new javax.swing.JButton();
         bApprove = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        RefundTable = new javax.swing.JTable();
 
-        orderListTable.setModel(new javax.swing.table.DefaultTableModel(
+        ApproveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -81,7 +84,7 @@ public class OrderEJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(orderListTable);
+        jScrollPane1.setViewportView(ApproveTable);
 
         bRefund.setText("Refund");
         bRefund.addActionListener(new java.awt.event.ActionListener() {
@@ -97,20 +100,53 @@ public class OrderEJPanel extends javax.swing.JPanel {
             }
         });
 
+        RefundTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Item", "Customer", "Seller", "totalPrice", "Comment", "Time", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(RefundTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(bRefund)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bApprove)
-                .addGap(43, 43, 43))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(bApprove)
+                                .addGap(43, 43, 43))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(bRefund)
+                                .addGap(40, 40, 40))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,22 +154,24 @@ public class OrderEJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bRefund)
-                    .addComponent(bApprove))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addComponent(bApprove)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bRefund)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void bRefundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRefundActionPerformed
 
-      int selectedRow = orderListTable.getSelectedRow();
+      int selectedRow = ApproveTable.getSelectedRow();
         
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-      BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+      BuyOrderItem buyitem = (BuyOrderItem)ApproveTable.getValueAt(selectedRow, 0);
       if(buyitem.getStatus()=="Canceled"){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getCustomer().getUserAccount().getEpaccount().getMoney();
@@ -142,18 +180,18 @@ public class OrderEJPanel extends javax.swing.JPanel {
       JOptionPane.showMessageDialog(null, "Customer did not want to refund the item yet!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
       }
-      populateTable();
+      populateTable1();
     }//GEN-LAST:event_bRefundActionPerformed
 
     private void bApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bApproveActionPerformed
         // TODO add your handling code here:
-         int selectedRow = orderListTable.getSelectedRow();
+         int selectedRow = ApproveTable.getSelectedRow();
         
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-      BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+      BuyOrderItem buyitem = (BuyOrderItem)ApproveTable.getValueAt(selectedRow, 0);
       if(buyitem.getStatus()=="RECEIVED"){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getItem().getSeller().getUserAccount().getEpaccount().getMoney();
@@ -167,21 +205,24 @@ public class OrderEJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable ApproveTable;
+    private javax.swing.JTable RefundTable;
     private javax.swing.JButton bApprove;
     private javax.swing.JButton bRefund;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable orderListTable;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
  public void populateTable(){
-        int rowCount = orderListTable.getRowCount();
-        DefaultTableModel model = (DefaultTableModel)orderListTable.getModel();
+        int rowCount = ApproveTable.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)ApproveTable.getModel();
         for(int i=rowCount-1;i>=0;i--) {
             model.removeRow(i);
         }
         //find buyer who possess this account
         for(Customer customer: net.getCustomerDirectory().getCustomersList()){
              for(BuyOrderItem item: customer.getBuyOrder().getOrderItemList()){
-            Object row[] = new Object[7];
+             if(item.getEvaluate().getRefund()==false){
+                     Object row[] = new Object[7];
             row[0] = item;
             row[1] = customer.getName();
             row[2] = item.getItem().getSeller();
@@ -191,11 +232,38 @@ public class OrderEJPanel extends javax.swing.JPanel {
             row[6] = item.getStatus();
 
             model.addRow(row);
+                 }
         } 
         }
         
         
     }
- 
+ public void populateTable1(){
+        int rowCount = RefundTable.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)RefundTable.getModel();
+        for(int i=rowCount-1;i>=0;i--) {
+            model.removeRow(i);
+        }
+        //find buyer who possess this account
+        for(Customer customer: net.getCustomerDirectory().getCustomersList()){
+             for(BuyOrderItem item: customer.getBuyOrder().getOrderItemList()){
+                 if(item.getEvaluate().getRefund()==true){
+                     Object row[] = new Object[7];
+            row[0] = item;
+            row[1] = customer.getName();
+            row[2] = item.getItem().getSeller();
+            row[3] = (item.getQuantity()*item.getItem().getPrice());
+            row[4] = item.getEvaluate().getWord();
+            row[5] = item.getCreateTime();
+            row[6] = item.getStatus();
+
+            model.addRow(row);
+                 }
+            
+        } 
+        }
+        
+        
+    }
     
 }

@@ -253,8 +253,8 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
       system.getUserAccountDirectory().getUserAccountList().remove(ua);
        
          
-         JOptionPane.showMessageDialog(null, "Delete the ProductManager successfully!");
-         refreshTable();   // TODO add your handling code here:
+      JOptionPane.showMessageDialog(null, "Delete the ProductManager successfully!");
+      refreshTable();   // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -296,7 +296,7 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
         txtPassword.setText("");
         txtPhone.setText("");
         txtPriceManagerName.setText("");
-         txtAddress.setText("");
+        txtAddress.setText("");
         refreshTable();
        
        

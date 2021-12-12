@@ -256,9 +256,8 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         
       ProductManager pm = (ProductManager)tblProductManager.getValueAt(selectedRow, 0);
       seller.getProductManagerDir().getProductManagerList().remove(pm);
-      UserAccount ua=new UserAccount();
-      ua=pm.getUserAccount();
-      system.getUserAccountDirectory().getUserAccountList().remove(ua);
+      
+      system.getUserAccountDirectory().getUserAccountList().remove(pm.getUserAccount());
        
          
          JOptionPane.showMessageDialog(null, "Delete the ProductManager successfully!");

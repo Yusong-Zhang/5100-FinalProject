@@ -10,6 +10,7 @@ import Business.CustomerOrder.BuyOrderItem;
 import Business.Epay.EpayerDir;
 
 import Business.Express.ExpressManagerDir;
+import Business.Feedback.FeedbackDir;
 import Business.Item.Items;
 import Business.Seller.SellerDirectory;
 import Business.UserAccount.UserAccountDirectory;
@@ -26,14 +27,26 @@ public class Network {
     private ExpressManagerDir expressManagerDir;
     private EpayerDir epayerdir;
     private UserAccountDirectory userAccountDirectory;
+    private FeedbackDir feedbackDir;
 
-
-    
-    
-    
     
    
- 
+      public Network(){
+        userAccountDirectory=new UserAccountDirectory();
+        sellerDirectory=new SellerDirectory();
+        customerDirectory =new CustomerDirectory();
+        expressManagerDir=new ExpressManagerDir();
+        epayerdir=new EpayerDir();
+        feedbackDir  = new FeedbackDir();
+    }
+    public FeedbackDir getFeedbackDir() {
+        return feedbackDir;
+    }
+
+    public void setFeedbackDir(FeedbackDir feedbackDir) {
+        this.feedbackDir = feedbackDir;
+    }
+
     
     public EpayerDir getEpayerdir() {
         return epayerdir;
@@ -70,13 +83,7 @@ public class Network {
     
     
     
-    public Network(){
-        userAccountDirectory=new UserAccountDirectory();
-        sellerDirectory=new SellerDirectory();
-        customerDirectory =new CustomerDirectory();
-        expressManagerDir=new ExpressManagerDir();
-        epayerdir=new EpayerDir();
-    }
+  
 
 
     public String getName() {

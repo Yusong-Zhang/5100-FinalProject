@@ -7,12 +7,9 @@ package userinterface.CustomerRole;
 import Business.Customer.Customer;
 import Business.EcoSystem;
 import Business.Network.Network;
-import Business.Tools.PieChart1;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import org.jfree.ui.RefineryUtilities;
 
 /**
  *
@@ -57,9 +54,6 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
         btnHistory = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        btnEdit1 = new javax.swing.JButton();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBuy.setText("BuyBuyBuy!");
         btnBuy.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +61,6 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnBuyActionPerformed(evt);
             }
         });
-        add(btnBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 117, -1, -1));
 
         btnHistory.setText("View History");
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +68,6 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnHistoryActionPerformed(evt);
             }
         });
-        add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 176, -1, -1));
 
         btnEdit.setText("Edit own profile");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +75,6 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnEditActionPerformed(evt);
             }
         });
-        add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 237, -1, -1));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -91,15 +82,40 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 29, -1, -1));
 
-        btnEdit1.setText("1");
-        btnEdit1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEdit1ActionPerformed(evt);
-            }
-        });
-        add(btnEdit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEdit)
+                .addGap(179, 179, 179))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(204, 204, 204)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnBuy)
+                        .addComponent(btnHistory))
+                    .addContainerGap(189, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addComponent(btnBack)
+                    .addContainerGap(391, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btnBack)
+                .addGap(63, 63, 63)
+                .addComponent(btnBuy)
+                .addGap(34, 34, 34)
+                .addComponent(btnHistory)
+                .addGap(36, 36, 36)
+                .addComponent(btnEdit)
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
@@ -136,21 +152,11 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit1ActionPerformed
-        // TODO add your handling code here:
-        PieChart1 demo = new PieChart1( "Popular Restaurant",system,net );
-        demo.setSize( 700,700);
-        RefineryUtilities.centerFrameOnScreen( demo );
-        demo.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        demo.setVisible( true );
-    }//GEN-LAST:event_btnEdit1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnEdit1;
     private javax.swing.JButton btnHistory;
     // End of variables declaration//GEN-END:variables
 }

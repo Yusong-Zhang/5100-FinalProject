@@ -19,8 +19,17 @@ public class Item {
     private Seller seller;
     private String imagePath;
     private Comments comments;
+    private String type;
     
     private static int count =0;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     
     
     

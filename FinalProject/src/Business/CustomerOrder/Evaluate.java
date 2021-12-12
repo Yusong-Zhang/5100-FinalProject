@@ -10,12 +10,21 @@ package Business.CustomerOrder;
  * @author jiaohongmei
  */
 public class Evaluate {
-    private int score;//打分(0-10)
+    private int score;
     private String word;
-    //private file picture;//可以插入图片,返图
     private String buyer;
     private String date;
+    private Boolean Refund;
 
+    public Boolean getRefund() {
+        return Refund;
+    }
+
+    public void setRefund(Boolean Refund) {
+        this.Refund = Refund;
+    }
+
+    
     public int getScore() {
         return score;
     }

@@ -25,6 +25,16 @@ public class Feedback {
         Feedback.count = count;
     }
 
+    Feedback(String Name, String phone, UserAccount useraccount) {
+       name = Name;
+       this.phone = phone;
+       this.useraccount = useraccount;//To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Feedback() {
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getID() {
         return ID;
     }
@@ -56,4 +66,10 @@ public class Feedback {
     public void setUseraccount(UserAccount useraccount) {
         this.useraccount = useraccount;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+    
 }

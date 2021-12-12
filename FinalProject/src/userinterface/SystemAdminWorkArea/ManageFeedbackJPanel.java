@@ -7,8 +7,10 @@ package userinterface.SystemAdminWorkArea;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Express.ExpressManager;
+import Business.Feedback.Feedback;
 import Business.Network.Network;
 import Business.Role.ExpressManagerRole;
+import Business.Role.FeedbackRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -59,16 +61,12 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         txtManagerName = new javax.swing.JTextField();
-        txtAddress = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
         txtUserName = new javax.swing.JTextField();
-        txtCompany = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
         jLabel3.setText("Location");
@@ -82,17 +80,17 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
 
         tblFeedbackManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "AccountName", "ManagerName", "Address", "Company", "Phone"
+                "Name", "AccountName", "Phone"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -130,9 +128,7 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("New Feedback Manager:");
 
-        jLabel8.setText("company Name");
-
-        jLabel4.setText("ManagerName");
+        jLabel4.setText("Feedback Name");
 
         jLabel9.setText("phone");
 
@@ -143,8 +139,6 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         });
 
         jLabel5.setText("User Name");
-
-        jLabel6.setText("address");
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -161,17 +155,11 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(223, 712, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 447, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 462, Short.MAX_VALUE)
                                         .addComponent(jButton1)
                                         .addGap(18, 18, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -179,51 +167,56 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(26, 26, 26)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel9)
-                                                .addComponent(jLabel7)
-                                                .addComponent(jLabel6))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtAddress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(22, 22, 22)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jLabel3)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(lbllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addComponent(jLabel5)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addComponent(jLabel4)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(txtManagerName, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                                    .addComponent(jLabel2)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel9))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtPhone, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnCreateFeedbackManager)
+                                        .addGap(54, 54, 54))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(22, 22, 22)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jLabel3)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(lbllocation, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addComponent(jLabel5)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                            .addComponent(jLabel4)
+                                                            .addGap(18, 18, 18)
+                                                            .addComponent(txtManagerName, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jLabel2))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCompany, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(btnModify)
-                        .addGap(116, 116, 116)
-                        .addComponent(btnSave)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCreateFeedbackManager)
-                        .addGap(71, 71, 71))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(45, 45, 45)
+                                        .addComponent(jLabel10)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBack)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addComponent(btnModify)
+                                .addGap(116, 116, 116)
+                                .addComponent(btnSave)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,29 +249,21 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCreateFeedbackManager)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnModify)
-                            .addComponent(btnSave)
-                            .addComponent(btnCreateFeedbackManager)))
+                            .addComponent(btnSave)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -291,7 +276,7 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-        ExpressManager em = (ExpressManager)tblFeedbackManager.getValueAt(selectedRow, 0);
+        Feedback em = (Feedback)tblFeedbackManager.getValueAt(selectedRow, 0);
 
         if(system.getUserAccountDirectory().checkIfUsernameIsUnique(txtUserName.getText())){}
         else{
@@ -304,15 +289,12 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         em.setName( txtManagerName.getText());
         em.setPhone(txtPhone.getText());
         em.getUseraccount().setPassword(txtPassword.getText());
-        em.getUseraccount().setUsername(txtUserName.getText());
-        em.setCompany(txtCompany.getText());
-        em.setAddress(txtAddress.getText());
+        em.getUseraccount().setUsername(txtUserName.getText()) ;
 
         txtManagerName.setText("");
         txtUserName.setText("");
         txtPassword.setText("");
-        txtAddress.setText("");
-        txtCompany.setText("");
+       
         txtPhone.setText("");
 
         btnSave.setEnabled(false);
@@ -330,8 +312,8 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
             return;
         }
 
-        ExpressManager em = (ExpressManager)tblFeedbackManager.getValueAt(selectedRow, 0);
-        network.getExpressManagerDir().getExpressManagerList().remove(em);
+        Feedback em = (Feedback)tblFeedbackManager.getValueAt(selectedRow, 0);
+        network.getFeedbackDir().getFeedbacklist().remove(em);
         UserAccount ua=new UserAccount();
         ua=em.getUseraccount();
         system.getUserAccountDirectory().getUserAccountList().remove(ua);
@@ -348,14 +330,12 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
-        ExpressManager em = ( ExpressManager)tblFeedbackManager.getValueAt(selectedRow, 0);
+        Feedback em = ( Feedback)tblFeedbackManager.getValueAt(selectedRow, 0);
         txtManagerName.setText(em.getName());
         txtUserName.setText(em.getUseraccount().getUsername());
         txtPassword.setText(em.getUseraccount().getPassword());
         txtPhone.setText(em.getPhone());
-        txtAddress.setText(em.getAddress());
-        txtCompany.setText(em.getCompany());
-
+        
         btnSave.setEnabled(true);
         btnModify.setEnabled(false);
     }//GEN-LAST:event_btnModifyActionPerformed
@@ -365,31 +345,29 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
         String managerName = txtManagerName.getText();
-        String address=txtAddress.getText();
+        
         String phone = txtPhone.getText();
-        String company=txtCompany.getText();
+        
 
         //        Organization organization = (Organization) cmbOrganization.getSelectedItem();
         //        Employee employee = (Employee) cmbEmployee.getSelectedItem();
         //        Role role = (Role) cmbRoles.getSelectedItem();
-        ExpressManager em = new ExpressManager();
+        Feedback em = new Feedback();
         UserAccount useraccount=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(managerName);
-        useraccount=system.getUserAccountDirectory().createUserAccount(userName, password, e1, new ExpressManagerRole());
+        useraccount=system.getUserAccountDirectory().createUserAccount(userName, password, e1, new FeedbackRole());
         em.setName(managerName);
         em.setPhone(phone);
-        em.setAddress(address);
+        
         em.setUseraccount(useraccount);
-        em.setCompany(company);
-        network.getExpressManagerDir().getExpressManagerList().add(em);
-
+       
+        network.getFeedbackDir().getFeedbacklist().add(em);
+        network.getUserAccountDirectory().getUserAccountList().add(useraccount);
         JOptionPane.showMessageDialog(null, "User Account added successfully.");
         txtUserName.setText("");
         txtPassword.setText("");
         txtManagerName.setText("");
-        txtAddress.setText("");
         txtPhone.setText("");
-        txtCompany.setText("");
         refreshTable();
     }//GEN-LAST:event_btnCreateFeedbackManagerActionPerformed
 
@@ -416,31 +394,25 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbllocation;
     private javax.swing.JTable tblFeedbackManager;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCompany;
     private javax.swing.JTextField txtManagerName;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
-private void refreshTable() {
+public void refreshTable() {
         DefaultTableModel model = (DefaultTableModel) tblFeedbackManager.getModel();
         model.setRowCount(0);
 
-        for(ExpressManager em: network.getExpressManagerDir().getExpressManagerList()){
-            Object row[] = new Object[5];
+        for(Feedback em: network.getFeedbackDir().getFeedbacklist()){
+            Object row[] = new Object[3];
              row[0] = em;
-           row[1] = em.getName();
-           row[2] = em.getAddress();
-           row[3] = em.getCompany();
-           row[4] = em.getPhone();
+           row[1] = em.getUseraccount().getUsername();
+           row[2] = em.getPhone();
 
             
             model.addRow(row);

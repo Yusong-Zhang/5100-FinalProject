@@ -157,7 +157,7 @@ public class DetailsJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Buyer", "Score", "Date", "Comment"
+                "Customer", "Score", "Date", "Comment"
             }
         ) {
             Class[] types = new Class [] {

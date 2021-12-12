@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Business.Feedback;
 
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -18,9 +16,17 @@ public class FeedbackDir {
     }
 
     public ArrayList<Feedback> getFeedbacklist() {
+       if(feedbacklist == null){
+            feedbacklist = new ArrayList<Feedback>();
+        }
         return feedbacklist;
     }
+    public Feedback createFeedback( String Name,String phone,UserAccount useraccount){
+        Feedback c = new Feedback(Name,phone,useraccount);
 
+        feedbacklist.add(c);
+        return c;
+    }
     public void setFeedbacklist(ArrayList<Feedback> feedbacklist) {
         this.feedbacklist = feedbacklist;
     }

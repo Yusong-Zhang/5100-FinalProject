@@ -21,15 +21,18 @@ public class BuyOrderItem {
     
     private int quantity;
     private Item item;
-    private String status;//订单状态(商家已接单、商家已取消、商品已发货、商品已送达、确认收货)(pending,recieved)
-    private Evaluate evaluate;//评价
+    private String status;
+    private Evaluate evaluate;
     private Date createTime;
-    private ArrayList<String> messages;//message's format: 'time username: message'
+    private ArrayList<String> feedbackend;
     
     private Customer customer;
     private String orderPosition;
 
     public String getOrderPosition() {
+        if(orderPosition == null){
+            orderPosition = new String();
+        }
         return orderPosition;
     }
 
@@ -105,21 +108,16 @@ public class BuyOrderItem {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-    
-//set time by string
-    /* 
-    public void setCreateTime(String createTime) throws ParseException{
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date date = format.parse(createTime);
-        this.createTime = date;
-    }
-*/
 
-    public ArrayList<String> getMessages() {
-        if(messages == null){
-            messages = new ArrayList<String>();
+    public void setFeedbackend(ArrayList<String> feedbackend) {
+        this.feedbackend = feedbackend;
+    }
+
+    public ArrayList<String> getFeedbackends() {
+        if(feedbackend == null){
+            feedbackend = new ArrayList<String>();
         }
-        return messages;
+        return feedbackend;
     }
     
 }

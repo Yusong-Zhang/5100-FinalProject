@@ -11,18 +11,10 @@ package Business.Item;
  * @author TT1
  */
 public class Comment {
-    private int score;//打分(0-10)
+    private int score;
     private String word;
     private String buyer;
     private String date;
-    private Boolean Refund;
-    public Boolean getRefund() {
-        return Refund;
-    }
-
-    public void setRefund(Boolean Refund) {
-        this.Refund = Refund;
-    }
     
 
     public int getScore() {

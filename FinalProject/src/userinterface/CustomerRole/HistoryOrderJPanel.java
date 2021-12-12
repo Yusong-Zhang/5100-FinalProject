@@ -226,7 +226,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnConnectActionPerformed(evt);
             }
         });
-        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 520, 170, -1));
+        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 170, -1));
 
         jButton1.setText("Confirm Order");
         jButton1.setPreferredSize(new java.awt.Dimension(150, 30));
@@ -377,16 +377,16 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
 
     private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
         // TODO add your handling code here:
-//        int selectedRow = orderListTable.getSelectedRow();
-//        if (selectedRow < 0){
-//            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
-//            return;
-//        }
-//        BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
-// 
-//        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-//        userProcessContainer.add(new ConnectServiceJPanel(userProcessContainer,account,buyitem));
-//        layout.next(userProcessContainer);
+        int selectedRow = orderListTable.getSelectedRow();
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        BuyOrderItem buyitem = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
+ 
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        userProcessContainer.add(new CommunicationJPanel(userProcessContainer,account,buyitem));
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnConnectActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
