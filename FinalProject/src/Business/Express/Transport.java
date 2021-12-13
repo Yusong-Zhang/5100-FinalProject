@@ -58,8 +58,8 @@ public class Transport {
     }
 
     public String getStatus() {
-        if(status == null){
-            status = new String();
+        if(status==null){
+            status =new String("Work");
         }
         return status;
     }
@@ -77,6 +77,6 @@ public class Transport {
     }
     @Override
     public String toString() {
-        return address;
+        return name;
     }
 }

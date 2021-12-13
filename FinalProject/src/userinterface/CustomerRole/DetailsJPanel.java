@@ -61,13 +61,9 @@ public class DetailsJPanel extends javax.swing.JPanel {
     Image im=Toolkit.getDefaultToolkit().createImage(item.getImagePath());// Returns an image which gets pixel data from the specified file.
         im=im.getScaledInstance(250, 200, Image.SCALE_SMOOTH);//Creates a scaled version of this image.
         ImageIcon ii=new ImageIcon(im);//Creates an uninitialized image icon.
-        lblImage.setIcon(ii);
-        }
-        else{
-            lblImage.setText("No picture!");
-        }
+     
     }
-
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,8 +86,6 @@ public class DetailsJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        lblImage = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         commentTable = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
@@ -105,11 +99,13 @@ public class DetailsJPanel extends javax.swing.JPanel {
         txtSeller.setEnabled(false);
         add(txtSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 192, 260, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Seller:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 197, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Item:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 109, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
 
         txtGood.setEnabled(false);
         add(txtGood, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 104, 260, -1));
@@ -117,41 +113,40 @@ public class DetailsJPanel extends javax.swing.JPanel {
         txtPrice.setEnabled(false);
         add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 148, 260, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("Price:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 153, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 24)); // NOI18N
         jLabel1.setText("More Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 190, -1));
 
-        btnBack.setText("back");
+        btnBack.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 70, 30));
 
+        jLabel7.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel7.setText("Address:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 241, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, -1, -1));
 
         txtPosition.setEnabled(false);
         add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 236, 260, -1));
 
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel8.setText("Quantity");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 285, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
 
         txtQuantity.setEnabled(false);
         add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 280, 260, -1));
 
+        jLabel2.setFont(new java.awt.Font("宋体", 2, 14)); // NOI18N
         jLabel2.setText("Comments:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
-
-        jLabel9.setText("Image:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
-
-        lblImage.setText("jLabel3");
-        add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 250, 200));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
         commentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,18 +173,24 @@ public class DetailsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(commentTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 758, 138));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 758, 138));
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, -1, -1));
 
-        jLabel12.setText("description:");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, -1));
+        jLabel12.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel12.setText("Description:");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
 
         txtDescrip.setEnabled(false);
-        add(txtDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 324, 260, -1));
+        txtDescrip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescripActionPerformed(evt);
+            }
+        });
+        add(txtDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 260, 70));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/B.jpg"))); // NOI18N
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1010, 630));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1010, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -198,6 +199,10 @@ public class DetailsJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtDescripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescripActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -214,9 +219,7 @@ public class DetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblImage;
     private javax.swing.JTextField txtDescrip;
     private javax.swing.JTextField txtGood;
     private javax.swing.JTextField txtPosition;

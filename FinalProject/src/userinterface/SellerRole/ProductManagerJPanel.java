@@ -63,14 +63,17 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel1.setText("Set Name:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 73, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 73, 30));
 
+        jLabel2.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel2.setText("Set Quantity:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 280, -1, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, 30));
 
+        jLabel3.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel3.setText("Description:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, -1, 30));
 
         tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,11 +96,11 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblItem);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 458, 160));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 458, 160));
 
-        jLabel5.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel5.setText("Manage Selling Product");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, -1, 40));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, -1, 40));
 
         txtItemName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +123,7 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
         });
         add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 184, 30));
 
+        jButton1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,16 +132,18 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 410, -1, 40));
 
+        jButton2.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton2.setText("Delete");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 40));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Type:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, 30));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, 30));
 
         txtType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,6 +191,7 @@ public class ProductManagerJPanel extends javax.swing.JPanel {
             txtItemName.setText("");
             txtQuantity.setText("");
             txtDescription.setText("");
+            txtType.setText("");
             JOptionPane.showMessageDialog(null, "Add item  successfully");
         }
         

@@ -105,6 +105,7 @@ public class TransportJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 589, 96));
 
+        btnUpdateStatus.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnUpdateStatus.setText("Update Status");
         btnUpdateStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,12 +114,13 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         add(btnUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 140, -1));
 
-        add(cbxUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 106, -1));
+        add(cbxUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 106, 30));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         jLabel1.setText("Transport WorkArea");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
+        btnAccept.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +129,7 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, -1, -1));
 
+        btnRefuse.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnRefuse.setText("Refuse");
         btnRefuse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +138,7 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         add(btnRefuse, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, -1, -1));
 
+        btnFinish.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnFinish.setText("Finish");
         btnFinish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

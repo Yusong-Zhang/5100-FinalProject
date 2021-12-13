@@ -74,43 +74,47 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnAccept.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAccept.setText("Accept");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptActionPerformed(evt);
             }
         });
-        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, -1));
+        add(btnAccept, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
 
+        btnRefuse.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnRefuse.setText("Refuse");
         btnRefuse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefuseActionPerformed(evt);
             }
         });
-        add(btnRefuse, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, -1));
+        add(btnRefuse, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
+        btnUpdateStatus.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnUpdateStatus.setText("Update Status");
         btnUpdateStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateStatusActionPerformed(evt);
             }
         });
-        add(btnUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 147, -1));
+        add(btnUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 390, 147, -1));
 
+        btnFinish.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnFinish.setText("Finish");
         btnFinish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinishActionPerformed(evt);
             }
         });
-        add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, -1, -1));
+        add(btnFinish, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, -1));
 
-        add(cbxUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 106, -1));
+        add(cbxUpdateStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, 106, 30));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         jLabel1.setText("Delivery Man Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
 
         tblDeliveryMan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,7 +144,7 @@ public class DeliveryManJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDeliveryMan);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 550, 96));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 550, 96));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));

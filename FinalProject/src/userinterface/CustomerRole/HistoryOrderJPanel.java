@@ -129,12 +129,15 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 125, -1));
         add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 125, -1));
 
+        jLabel7.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel7.setText("Time:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("Price:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
 
+        btnWriteComment.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnWriteComment.setText("Write Comment");
         btnWriteComment.setPreferredSize(new java.awt.Dimension(150, 30));
         btnWriteComment.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +148,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         add(btnWriteComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 140, -1));
         add(txtSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 125, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Seller:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
@@ -175,7 +179,8 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 808, 147));
 
-        btnFreshTable.setText("REFRESH");
+        btnFreshTable.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        btnFreshTable.setText("Refresh");
         btnFreshTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFreshTableActionPerformed(evt);
@@ -183,6 +188,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         });
         add(btnFreshTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(704, 86, 110, -1));
 
+        btnSearch.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.setPreferredSize(new java.awt.Dimension(150, 30));
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -190,20 +196,22 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 100, 29));
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 480, 100, 29));
 
         jLabel2.setText("Order list:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
         add(txtGood, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 125, -1));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Item:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("History Order");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 39, 542, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 542, -1));
 
-        btnBack.setText(" back");
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        btnBack.setText(" Back");
         btnBack.setPreferredSize(new java.awt.Dimension(150, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,14 +220,16 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 90, -1));
 
+        btnCancel.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnCancel.setText("Cancel order ");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
             }
         });
-        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 130, 30));
+        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 140, 30));
 
+        btnConnect.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnConnect.setText("FeedBack");
         btnConnect.setPreferredSize(new java.awt.Dimension(150, 30));
         btnConnect.addActionListener(new java.awt.event.ActionListener() {
@@ -227,8 +237,9 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnConnectActionPerformed(evt);
             }
         });
-        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 480, 100, -1));
+        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, 100, -1));
 
+        jButton1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton1.setText("Confirm Order");
         jButton1.setPreferredSize(new java.awt.Dimension(150, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +247,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 330, 120, 29));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 150, 29));
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 10, 120, 100));
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 383, 569, 302));
 

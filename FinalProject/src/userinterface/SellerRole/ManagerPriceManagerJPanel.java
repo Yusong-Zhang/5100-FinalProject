@@ -69,15 +69,18 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel8.setText("Address:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 232, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, 20));
 
+        jLabel9.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel9.setText("Phone:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, -1, 20));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, 20));
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 235, 184, -1));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Price Manager Name:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 123, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, 20));
 
         txtPriceManagerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,26 +96,28 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
         });
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 264, 184, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("User Name:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 158, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, -1, 20));
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 159, 184, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Password:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 200, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, -1, 20));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 197, 184, -1));
 
-        lblManageProductManager.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        lblManageProductManager.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         lblManageProductManager.setText("Manage Price Manager");
-        add(lblManageProductManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
+        add(lblManageProductManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 430, -1));
 
-        btnBack.setFont(new java.awt.Font("黑体", 1, 11)); // NOI18N
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnBack.setText("Back<<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 41, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 34, 90, 30));
 
         tblPriceManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,38 +142,43 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 107, 458, 148));
 
+        jButton1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton1.setText("Delete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 286, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton2.setText("Create");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 300, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, -1, -1));
 
+        btnModify.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnModify.setText("Modify");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 286, -1, -1));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
+        btnSave.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 286, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 80, 30));
 
+        jLabel17.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
@@ -239,7 +249,7 @@ public class ManagerPriceManagerJPanel extends javax.swing.JPanel {
         PriceManager pm = new PriceManager();
         UserAccount useraccount1=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(name);
-        useraccount1=system.getUserAccountDirectory().createUserAccount(name, password, e1, new PriceManagerRole());
+        useraccount1=system.getUserAccountDirectory().createUserAccount(username, password, e1, new PriceManagerRole());
         
         pm.setName(name);
         pm.setTelephone(telePhone);

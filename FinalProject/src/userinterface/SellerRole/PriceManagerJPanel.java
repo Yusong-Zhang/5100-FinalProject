@@ -60,13 +60,14 @@ public class PriceManagerJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 69, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 69, -1));
 
         tblItem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,21 +90,22 @@ public class PriceManagerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblItem);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 458, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 458, 148));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("Sales price:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 400, -1, -1));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
             }
         });
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 184, -1));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, 184, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("Manage Goods Price Screen");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 360, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 490, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));

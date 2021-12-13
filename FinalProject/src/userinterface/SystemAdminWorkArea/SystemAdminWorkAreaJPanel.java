@@ -139,7 +139,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblNetwork);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 199));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 199));
 
         btnCustomer1.setText("----^");
         btnCustomer1.addActionListener(new java.awt.event.ActionListener() {
@@ -241,8 +241,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCustomer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomer1ActionPerformed
         // TODO add your handling code here:
+        if(txtNetwork.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null, "You need to input a new Country", "Warning",JOptionPane.WARNING_MESSAGE);
+        }else{
         ecosystem.createAndAddNetwork(txtNetwork.getText());
          populateTable();
+        }
     }//GEN-LAST:event_btnCustomer1ActionPerformed
 
     private void txtNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNetworkActionPerformed

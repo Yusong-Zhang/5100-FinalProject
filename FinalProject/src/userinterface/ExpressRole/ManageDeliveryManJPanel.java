@@ -74,17 +74,20 @@ public void populateTable(){
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel5.setText("User Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 297, -1, 20));
 
-        lblManageProductManager.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        lblManageProductManager.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         lblManageProductManager.setText("Manage Delivery Man");
         add(lblManageProductManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 184, -1));
 
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel8.setText("Address");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, 20));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, 20));
 
+        btnDelete.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,9 +96,11 @@ public void populateTable(){
         });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel9.setText("Phone");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, -1, -1));
 
+        btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,8 +111,9 @@ public void populateTable(){
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, 184, -1));
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 290, 184, -1));
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel4.setText("Delivery Man Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
 
         btnBack.setText("Back<<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -124,8 +130,9 @@ public void populateTable(){
         });
         add(txtDeliveryManName, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 184, -1));
 
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel6.setText("Password");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, -1));
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,8 +210,8 @@ public void populateTable(){
         }else{
             DeliveryMan dm = new DeliveryMan();
             UserAccount useraccount3 = new UserAccount();
-            Employee e1 = system.getEmployeeDirectory().createEmployee(name);
-            useraccount3 = system.getUserAccountDirectory().createUserAccount(name, password, e1, new DeliveryManRole());
+            Employee e1 = system.getEmployeeDirectory().createEmployee(username);
+            useraccount3 = system.getUserAccountDirectory().createUserAccount(username, password, e1, new DeliveryManRole());
 
             dm.setName(name);
             dm.setTelephone(telePhone);

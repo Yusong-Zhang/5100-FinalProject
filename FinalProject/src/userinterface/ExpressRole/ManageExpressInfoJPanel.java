@@ -98,6 +98,7 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblDriver.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         lblDriver.setText("Driver:");
         add(lblDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
@@ -126,6 +127,7 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
 
         add(cbxDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 163, -1));
 
+        btnChooseDriver.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnChooseDriver.setText("Choose Driver");
         btnChooseDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +136,7 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
         });
         add(btnChooseDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 173, -1));
 
+        btnAssigntoDriver.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAssigntoDriver.setText("Assign to Driver");
         btnAssigntoDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,11 +145,13 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
         });
         add(btnAssigntoDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 242, -1));
 
+        lblDeliveryMan.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         lblDeliveryMan.setText("Delivery Man:");
-        add(lblDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 550, -1, -1));
+        add(lblDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 540, -1, -1));
 
         add(cbxDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 163, -1));
 
+        btnChooseDeliveryMan.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnChooseDeliveryMan.setText("Choose Delivery Man");
         btnChooseDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +160,7 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
         });
         add(btnChooseDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 580, -1, -1));
 
+        btnAssigntoDeliveryMan.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnAssigntoDeliveryMan.setText("Assign to Delivery Man");
         btnAssigntoDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,10 +169,11 @@ public class ManageExpressInfoJPanel extends javax.swing.JPanel {
         });
         add(btnAssigntoDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 540, 234, -1));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         jLabel1.setText("Express Information");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jButton1.setText("Back<<");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -165,10 +165,13 @@ public class OrderEJPanel extends javax.swing.JPanel {
             return;
         }
       BuyOrderItem buyitem = (BuyOrderItem)RefundTable.getValueAt(selectedRow, 0);
-      if(buyitem.getStatus()=="Canceled"){
+      if(buyitem.getEvaluate().getRefund()==true&&buyitem.getStatus()=="Canceled"){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getCustomer().getUserAccount().getEpaccount().getMoney();
       buyitem.getCustomer().getUserAccount().getEpaccount().setMoney(moneyLeft+(buyitem.getQuantity()*buyitem.getItem().getPrice()));
+      }else if(buyitem.getStatus()=="TRANSACTION END"){
+      JOptionPane.showMessageDialog(null, "Transaction was ended", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
       }else{
       JOptionPane.showMessageDialog(null, "Customer did not want to refund the item yet!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
@@ -185,11 +188,15 @@ public class OrderEJPanel extends javax.swing.JPanel {
             return;
         }
       BuyOrderItem buyitem = (BuyOrderItem)ApproveTable.getValueAt(selectedRow, 0);
-      if(buyitem.getStatus()=="RECEIVED"){
+      if(buyitem.getStatus()=="RECEIVED"&&buyitem.getEvaluate().getRefund()==false){
       buyitem.setStatus("TRANSACTION END");
       int moneyLeft= buyitem.getItem().getSeller().getUserAccount().getEpaccount().getMoney();
       buyitem.getItem().getSeller().getUserAccount().getEpaccount().setMoney( moneyLeft+(buyitem.getQuantity()*buyitem.getItem().getPrice()));
-      }else{
+      }else if(buyitem.getStatus()=="TRANSACTION END"){
+      JOptionPane.showMessageDialog(null, "Transaction was ended", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+      }
+      else{
       JOptionPane.showMessageDialog(null, "Customer has not recieved the item yet!", "Warning",JOptionPane.WARNING_MESSAGE);
             return;
       }

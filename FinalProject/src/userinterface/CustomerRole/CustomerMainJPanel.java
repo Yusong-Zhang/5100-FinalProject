@@ -65,7 +65,7 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnBuyActionPerformed(evt);
             }
         });
-        add(btnBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 150, 50));
+        add(btnBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 190, 60));
 
         btnHistory.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnHistory.setText("View History");
@@ -74,7 +74,7 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
                 btnHistoryActionPerformed(evt);
             }
         });
-        add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, 50));
+        add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 190, 60));
 
         btnEdit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnEdit.setText("Edit own profile");

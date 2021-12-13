@@ -85,23 +85,25 @@ public class CommunicationJPanel extends javax.swing.JPanel {
         txtChatRecord.setEnabled(false);
         jScrollPane1.setViewportView(txtChatRecord);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 228, 397));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 228, 420));
 
         txtChatBox.setColumns(20);
         txtChatBox.setRows(5);
         jScrollPane2.setViewportView(txtChatBox);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 220, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 220, 120));
 
+        btnSend.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnSend.setText("Send");
         btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendActionPerformed(evt);
             }
         });
-        add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, -1, -1));
+        add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 80, 30));
 
-        btnBack.setText("< back");
+        btnBack.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        btnBack.setText("< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -109,13 +111,13 @@ public class CommunicationJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 14, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel4.setText("Chat BOX:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         jLabel5.setText("History Chat:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 120, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/B.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));

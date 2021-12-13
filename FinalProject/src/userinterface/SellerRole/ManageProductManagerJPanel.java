@@ -74,19 +74,23 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 184, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Password:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, -1, -1));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 310, 184, -1));
 
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel8.setText("Address:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel9.setText("Phone:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 184, -1));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Product Manager Name:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, -1, -1));
 
         txtProductManagerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,14 +106,15 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         });
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 400, 184, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("User Name:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, -1, -1));
 
         lblManageProductManager.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         lblManageProductManager.setText("Manage Product Manager");
         add(lblManageProductManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
-        btnBack.setFont(new java.awt.Font("黑体", 1, 11)); // NOI18N
+        btnBack.setFont(new java.awt.Font("黑体", 1, 14)); // NOI18N
         btnBack.setText("Back<<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,16 +148,18 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
             tblProductManager.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 458, 148));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 458, 148));
 
+        jButton1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton1.setText("Delete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
 
+        btnCreateRestaurantsManager.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnCreateRestaurantsManager.setText("Create");
         btnCreateRestaurantsManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,22 +168,25 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         });
         add(btnCreateRestaurantsManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 460, -1, -1));
 
+        btnModify.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnModify.setText("Modify");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, -1, -1));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, -1, -1));
 
+        btnSave.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 60, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 80, -1));
 
+        jLabel17.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
@@ -245,7 +255,7 @@ public class ManageProductManagerJPanel extends javax.swing.JPanel {
         ProductManager pm = new ProductManager();
         UserAccount useraccount1=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(name);
-        useraccount1=system.getUserAccountDirectory().createUserAccount(name, password, e1, new ProductManagerRole());
+        useraccount1=system.getUserAccountDirectory().createUserAccount(username, password, e1, new ProductManagerRole());
         
         pm.setName(name);
         pm.setTelephone(telePhone);

@@ -92,45 +92,60 @@ public class EpayManageJPanel extends javax.swing.JPanel {
                 txtMoneyActionPerformed(evt);
             }
         });
-        add(txtMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 140, 27));
+        add(txtMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 140, 27));
 
+        jLabel1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel1.setText("Username");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 106, -1, 20));
 
+        jLabel2.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 20));
 
+        jLabel3.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel3.setText("Money Left:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
+        btnChange.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnChange.setText("Change profile");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeActionPerformed(evt);
             }
         });
-        add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 146, -1, -1));
+        add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
+        btnCharge.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnCharge.setText("Charge");
         btnCharge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChargeActionPerformed(evt);
             }
         });
-        add(btnCharge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, -1, -1));
-        add(lblmoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 126, 18));
+        add(btnCharge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, -1, -1));
 
+        lblmoney.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        add(lblmoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 126, 18));
+
+        jLabel4.setFont(new java.awt.Font("宋体", 3, 18)); // NOI18N
         jLabel4.setText("Previous Username:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 66, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 3, 18)); // NOI18N
         jLabel5.setText("Previous Password:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 161, -1, -1));
-        add(lblppassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(191, 161, 126, 18));
-        add(lblpusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 66, 126, 18));
 
+        lblppassword.setFont(new java.awt.Font("宋体", 3, 18)); // NOI18N
+        add(lblppassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 170, 20));
+
+        lblpusername.setFont(new java.awt.Font("宋体", 3, 18)); // NOI18N
+        add(lblpusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 160, 20));
+
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Charge Money:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
 
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

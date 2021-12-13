@@ -49,16 +49,8 @@ public class ConfigureASystem {
         Employee e7 = system.getEmployeeDirectory().createEmployee("CV");
         Employee e8 = system.getEmployeeDirectory().createEmployee("CB");
         Employee e9 = system.getEmployeeDirectory().createEmployee("CE");
+       
         system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
-        system.getUserAccountDirectory().createUserAccount("1","1", e1, new CustomerRole());
-        system.getUserAccountDirectory().createUserAccount("2","2", e2, new ExpressManagerRole());
-        useraccount =system.getUserAccountDirectory().createUserAccount("3","3", e3, new SellerRole());
-        system.getUserAccountDirectory().createUserAccount("4","4", e4, new EpayerRole());
-        system.getUserAccountDirectory().createUserAccount("5","5", e5, new ProductManagerRole());
-        system.getUserAccountDirectory().createUserAccount("6","6", e6, new PriceManagerRole());
-        system.getUserAccountDirectory().createUserAccount("7","7", e7, new DeliveryManRole());
-        system.getUserAccountDirectory().createUserAccount("8","8", e8, new TransportRole());
-        system.getUserAccountDirectory().createUserAccount("9","9", e9, new FeedbackRole());
         
         
        

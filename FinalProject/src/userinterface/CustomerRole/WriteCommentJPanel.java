@@ -66,9 +66,9 @@ public class WriteCommentJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 1, 48)); // NOI18N
         jLabel1.setText("Comment");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 100, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 230, -1));
 
         txtComment.setColumns(20);
         txtComment.setRows(5);
@@ -76,14 +76,16 @@ public class WriteCommentJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 513, -1));
 
+        btnCommit.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnCommit.setText("comment");
         btnCommit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCommitActionPerformed(evt);
             }
         });
-        add(btnCommit, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 100, -1));
+        add(btnCommit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 100, -1));
 
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnBack.setText("< back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +95,9 @@ public class WriteCommentJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
         add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 56, -1));
 
+        jLabel2.setFont(new java.awt.Font("宋体", 1, 18)); // NOI18N
         jLabel2.setText("score:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setText("0~10 ");

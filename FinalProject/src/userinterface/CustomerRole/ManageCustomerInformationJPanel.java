@@ -32,8 +32,10 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         this.network=network;
         
         txtCustomer.setText(customer.toString());
-        txtEmail.setText(customer.getAddress());
+        txtEmail.setText(customer.getEmail());
         txtTelephone.setText(customer.getPhone());
+        txtAddress1.setText(customer.getAddress());
+        txtAddress1.setEnabled(false);
         txtCustomer.setEnabled(false);
         txtEmail.setEnabled(false);
         txtTelephone.setEnabled(false);
@@ -75,11 +77,12 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         });
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 184, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("Manage Information Screen");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
 
-        btnBack.setText("back");
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -88,6 +91,7 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
         add(txtCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 184, -1));
 
+        btnSave.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +100,7 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         });
         add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 96, -1));
 
+        btnUpdate.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,18 +109,22 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         });
         add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 96, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("username:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel9.setText("Telephone:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
         add(txtTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 184, -1));
 
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel8.setText("Email:");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, 20));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel10.setText("Address:");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, 20));
         add(txtAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 184, -1));
@@ -133,10 +142,10 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-      
-        customer.setAddress(txtEmail.getText());
-        customer.setPhone(txtTelephone.getText());
         customer.setEmail(txtEmail.getText());
+        customer.setAddress(txtAddress1.getText());
+        customer.setPhone(txtTelephone.getText());
+       
         txtCustomer.setEnabled(false);
         txtEmail.setEnabled(false);
         txtTelephone.setEnabled(false);
@@ -149,6 +158,7 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
 
         txtEmail.setEnabled(true);
         txtTelephone.setEnabled(true);
+        txtAddress1.setEnabled(true);
         btnSave.setEnabled(true);
         btnUpdate.setEnabled(false);
     }//GEN-LAST:event_btnUpdateActionPerformed

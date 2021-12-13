@@ -78,14 +78,16 @@ public class SignUpJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 70, 30));
 
+        btnCreateCustomer.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnCreateCustomer.setText("Create");
         btnCreateCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +96,8 @@ public class SignUpJPanel extends javax.swing.JPanel {
         });
         add(btnCreateCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, -1, -1));
 
-        jLabel4.setText("Customer Name");
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel4.setText("Customer Name:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
@@ -104,21 +107,26 @@ public class SignUpJPanel extends javax.swing.JPanel {
         });
         add(txtCustomerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 184, -1));
 
-        jLabel5.setText("User Name");
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel5.setText("User Name:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, -1));
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 184, -1));
 
-        jLabel6.setText("Password");
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel6.setText("Password:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 184, -1));
 
-        jLabel7.setText("country");
+        jLabel7.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel7.setText("Country");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
 
-        jLabel8.setText("Address");
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel8.setText("Address:");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
 
-        jLabel9.setText("Phone");
+        jLabel9.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel9.setText("Phone:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 184, -1));
 
@@ -130,12 +138,13 @@ public class SignUpJPanel extends javax.swing.JPanel {
         add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 184, -1));
 
         jComboBox1.setFont(new java.awt.Font("Plantagenet Cherokee", 0, 18)); // NOI18N
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 190, 22));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 180, 22));
 
         jLabel1.setFont(new java.awt.Font("Plantagenet Cherokee", 1, 36)); // NOI18N
         jLabel1.setText("Create New Buyer");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 8, 337, -1));
 
+        jLabel10.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel10.setText("Email:");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
@@ -146,6 +155,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
         });
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 184, -1));
 
+        jLabel17.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
@@ -173,6 +183,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
         }else if(txtEmail.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Invalid Email");
         }else{
+        
          String netName = (String)jComboBox1.getSelectedItem();
          Network network=new Network();
         for(Network n:system.getNetworkList()){
@@ -187,6 +198,11 @@ public class SignUpJPanel extends javax.swing.JPanel {
         String phone=txtPhone.getText();
         String email = txtEmail.getText();
         
+         if(system.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){}
+        else{
+            JOptionPane.showMessageDialog(null, "This username has existed!", "Warning",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         Customer ct = new Customer();
         UserAccount useraccount=new UserAccount();
         Employee e1 = system.getEmployeeDirectory().createEmployee(customerName);
@@ -209,6 +225,7 @@ public class SignUpJPanel extends javax.swing.JPanel {
         txtPassword.setText("");
         txtAddress.setText("");
         txtPhone.setText("");
+        txtEmail.setText("");
         
         
     }//GEN-LAST:event_btnCreateCustomerActionPerformed

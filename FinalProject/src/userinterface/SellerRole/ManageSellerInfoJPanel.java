@@ -76,6 +76,7 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnBack.setText("Back<<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +85,9 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 32, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("Manage Buyer Order Screen");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 25, 384, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 25, 500, -1));
 
         tblInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,16 +114,19 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblInfo);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 98, 904, 147));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 904, 147));
         add(txtBuyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 152, -1));
 
+        jLabel6.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel6.setText("Buyer:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel7.setText("Position:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
         add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 152, -1));
 
+        btnSearch.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,11 +135,13 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
         });
         add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 152, -1));
 
+        jLabel4.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel4.setText("Product:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 257, -1, -1));
         add(txtProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 152, -1));
         add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 152, -1));
 
+        jLabel8.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel8.setText("Status:");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 636, 177, 162));
@@ -158,6 +164,7 @@ public class ManageSellerInfoJPanel extends javax.swing.JPanel {
         jLabel9.setText("Delivery Company:");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 464, -1, 20));
 
+        jLabel18.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents

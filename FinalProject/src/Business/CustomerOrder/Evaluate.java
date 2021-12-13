@@ -56,4 +56,10 @@ public class Evaluate {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return word;
+    }
+    
 }

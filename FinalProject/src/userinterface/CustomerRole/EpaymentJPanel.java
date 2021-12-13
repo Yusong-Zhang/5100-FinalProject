@@ -71,9 +71,10 @@ public class EpaymentJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(51, 51, 51));
         enterpriseLabel.setText("Congrats to our new system, we send every customer a free 100 dollar");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 575, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 890, 60));
 
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,17 +82,19 @@ public class EpaymentJPanel extends javax.swing.JPanel {
             }
         });
         add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 140, 27));
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 140, 27));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 140, 27));
 
+        jLabel1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel1.setText("E-password:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel2.setText("E-username:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
-        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         enterpriseLabel1.setText("Welcome!OUR E-Pay System");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 279, 30));
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 580, 30));
 
         jLabel3.setText("(default:test)");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
@@ -99,9 +102,11 @@ public class EpaymentJPanel extends javax.swing.JPanel {
         jLabel4.setText("(default:test)");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jLabel5.setText("We sincerly recommend you to change your username and password");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
+        loginJLogin.setFont(new java.awt.Font("宋体", 1, 12)); // NOI18N
         loginJLogin.setText("Login");
         loginJLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +123,7 @@ public class EpaymentJPanel extends javax.swing.JPanel {
         });
         add(loginJManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 180, -1));
 
+        btnBack.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,7 +133,7 @@ public class EpaymentJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 24, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/B.jpg"))); // NOI18N
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1020, 640));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed

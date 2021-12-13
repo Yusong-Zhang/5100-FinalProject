@@ -72,17 +72,19 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Location");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, -1, -1));
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 147, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, -1, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 340, 147, -1));
 
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 480, -1, -1));
 
         tblFeedbackManager.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,62 +107,74 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblFeedbackManager);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 493, 112));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 493, 112));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Delete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("Choose a row then press Modify so that you can change the profile");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, -1));
 
+        btnModify.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnModify.setText("Modify");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, -1, -1));
 
+        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 370, -1, -1));
-        add(lbllocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 115, 18));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 470, -1, -1));
 
+        lbllocation.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(lbllocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 200, 115, 18));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Feedback Manager List:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Password");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, -1, 22));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, -1, 22));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("New Feedback Manager:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 140, -1, 33));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Feedback Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 230, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("phone");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, -1, 22));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, 22));
 
         txtManagerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtManagerNameActionPerformed(evt);
             }
         });
-        add(txtManagerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 230, 147, -1));
+        add(txtManagerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 147, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("User Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, -1, -1));
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 330, 147, -1));
-        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 260, 147, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, -1, -1));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 147, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 147, -1));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +184,7 @@ public class ManageFeedbackJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 33, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents

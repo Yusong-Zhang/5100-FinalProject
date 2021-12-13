@@ -66,6 +66,7 @@ public class ProcessingOrder1JPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 280, 250));
 
+        jButton1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton1.setText("Accept Refund");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class ProcessingOrder1JPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 133, -1));
 
+        jButton2.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton2.setText("Refuse Refund");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +84,7 @@ public class ProcessingOrder1JPanel extends javax.swing.JPanel {
         });
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 141, -1));
 
+        jButton3.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         jButton3.setText("Send");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +93,9 @@ public class ProcessingOrder1JPanel extends javax.swing.JPanel {
         });
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 81, -1));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("      Processing Order");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 378, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 590, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));

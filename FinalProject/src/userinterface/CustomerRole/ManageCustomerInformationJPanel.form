@@ -31,19 +31,22 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="&#x5b8b;&#x4f53;" size="24" style="1"/>
+          <Font name="&#x5b8b;&#x4f53;" size="36" style="3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Manage Information Screen"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="410" y="40" width="-1" height="-1"/>
+          <AbsoluteConstraints x="240" y="30" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
       <Properties>
-        <Property name="text" type="java.lang.String" value="back"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
@@ -63,6 +66,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSave">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
       <Events>
@@ -76,6 +82,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdate">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
       <Events>
@@ -89,6 +98,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="username:"/>
       </Properties>
       <Constraints>
@@ -99,6 +111,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Telephone:"/>
       </Properties>
       <Constraints>
@@ -116,6 +131,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
       <Constraints>
@@ -140,6 +158,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="&#x5b8b;&#x4f53;" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Address:"/>
       </Properties>
       <Constraints>

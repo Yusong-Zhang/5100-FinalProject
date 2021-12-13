@@ -48,37 +48,40 @@ public class ExpressWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         jLabel1.setText("Express Manager Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
 
+        userJButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         userJButton.setText("Manage Express Info");
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 170, 50));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, 220, 50));
 
+        manageOrganizationJButton.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         manageOrganizationJButton.setText("Manage Transport");
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 170, 50));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 220, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Function:");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 120, 30));
 
+        manageEmployeeJButton1.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         manageEmployeeJButton1.setText("Manage Deliveryman");
         manageEmployeeJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButton1ActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 170, 50));
+        add(manageEmployeeJButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 220, 50));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));

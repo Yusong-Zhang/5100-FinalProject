@@ -110,74 +110,88 @@ public class ManageEpayJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCustomers);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 494, 147));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 494, 147));
 
+        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 450, -1, -1));
 
-        jLabel1.setText("Customer List:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Epayer List:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("New Epayer:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText(" Epayer  Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, -1, -1));
 
         txtEpayerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEpayerNameActionPerformed(evt);
             }
         });
-        add(txtEpayerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 184, -1));
+        add(txtEpayerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 184, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("User Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, -1, -1));
-        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 184, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, -1, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 184, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Password");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, -1, -1));
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 184, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 184, -1));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Delete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 80, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Location");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, -1));
-        add(lbllocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 115, 18));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, -1, -1));
 
+        lbllocation.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(lbllocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 115, 18));
+
+        btnModify.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnModify.setText("Modify");
         btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModifyActionPerformed(evt);
             }
         });
-        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 440, -1, -1));
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 80, -1));
 
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 440, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 70, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Choose a row then press Modify so that you can change the profile");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Phone");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, -1));
-        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 184, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, -1, -1));
+        add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 184, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));

@@ -82,10 +82,11 @@ public class FeedbackJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 806, 147));
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 3, 36)); // NOI18N
         jLabel1.setText("      FeedBacker Workarea");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 378, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 530, -1));
 
+        btnView.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
         btnView.setText("Processing Oder");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +135,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
             
             
             for(BuyOrderItem buyorderItem : customer.getBuyOrder().getOrderItemList()){
-               
+               if(buyorderItem.getStatus().equals("Canceled")){
                       Object row[] = new Object[6];
                 row[0] = buyorderItem;
                 row[1] =buyorderItem.getCustomer().getName();
@@ -145,7 +146,7 @@ public class FeedbackJPanel extends javax.swing.JPanel {
                         
                 
                 model.addRow(row);
-                
+               }  
             }
         }  
     }

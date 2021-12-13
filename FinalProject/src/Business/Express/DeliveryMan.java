@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Business.Express;
 
 import Business.CustomerOrder.BuyOrder;
 import Business.UserAccount.UserAccount;
 
-/**
- *
- * @author 86133
- */
+
 public class DeliveryMan {
     private String telephone;
     private String address;
@@ -56,6 +50,8 @@ public class DeliveryMan {
     }
 
     public String getStatus() {
+        if(status==null){
+            status =new String("Work");}
         return status;
     }
 
@@ -72,6 +68,6 @@ public class DeliveryMan {
     }
     @Override
     public String toString() {
-        return address;
+        return name;
     }
 }

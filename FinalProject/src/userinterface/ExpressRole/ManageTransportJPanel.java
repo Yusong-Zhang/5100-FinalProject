@@ -73,6 +73,7 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnDelete.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,22 +82,26 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
         });
         add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel9.setText("Phone");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, -1));
 
+        btnCreate.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 510, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 510, -1, -1));
         add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, 184, -1));
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 184, -1));
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel4.setText("Driver Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 190, -1, -1));
 
+        btnBack.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         btnBack.setText("Back<<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,8 +117,9 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
         });
         add(txtDriverName, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 184, -1));
 
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel6.setText("Password");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,16 +151,18 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 458, 148));
 
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel5.setText("User Name");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
 
-        lblManageTransport.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        lblManageTransport.setFont(new java.awt.Font("Lucida Grande", 3, 36)); // NOI18N
         lblManageTransport.setText("Manage Transport");
         add(lblManageTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
         add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 184, -1));
 
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         jLabel8.setText("Address");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
@@ -201,8 +209,8 @@ public class ManageTransportJPanel extends javax.swing.JPanel {
             
             Transport tr = new Transport();
             UserAccount useraccount2 = new UserAccount();
-            Employee e1 = system.getEmployeeDirectory().createEmployee(name);
-            useraccount2 = system.getUserAccountDirectory().createUserAccount(name, password, e1, new TransportRole());
+            Employee e1 = system.getEmployeeDirectory().createEmployee(username);
+            useraccount2 = system.getUserAccountDirectory().createUserAccount(username, password, e1, new TransportRole());
 
             tr.setName(name);
             tr.setTelephone(telePhone);

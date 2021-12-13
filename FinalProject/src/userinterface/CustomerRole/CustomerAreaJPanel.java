@@ -227,50 +227,55 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 141, 865, 93));
 
+        btnRequest.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnRequest.setText("Add Cart");
         btnRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestActionPerformed(evt);
             }
         });
-        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 300, -1, -1));
+        add(btnRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, 130, 30));
 
+        refreshTestJButton.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(809, 98, -1, -1));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 100, -1, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         enterpriseLabel.setText("Welcome!");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 27, 85, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 140, 30));
         add(lblCustomerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 27, 70, 26));
 
+        jSearch.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jSearch.setText("Search");
         jSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSearchActionPerformed(evt);
             }
         });
-        add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 338, -1, -1));
+        add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
 
+        btnRequest1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnRequest1.setText("Place Order");
         btnRequest1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequest1ActionPerformed(evt);
             }
         });
-        add(btnRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 535, -1, -1));
+        add(btnRequest1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 120, 30));
 
+        btnHistoryOrder.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnHistoryOrder.setText("View Order History");
         btnHistoryOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistoryOrderActionPerformed(evt);
             }
         });
-        add(btnHistoryOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, -1, -1));
+        add(btnHistoryOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, -1, 30));
 
         tblCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -302,8 +307,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 434, 865, 91));
 
-        jLabel1.setText("quantity:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
+        jLabel1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        jLabel1.setText("Quantity:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, -1, 40));
 
         txtItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,56 +358,69 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jLabel7.setText("to");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 297, -1, -1));
-        add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 56, -1));
 
+        jSpinner1.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, 56, 30));
+
+        btnDelete.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnDelete.setText("Delete item");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
-        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 569, 130, 30));
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 130, 30));
 
+        btnChangeQuantity.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnChangeQuantity.setText("Change Quantity");
         btnChangeQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeQuantityActionPerformed(evt);
             }
         });
-        add(btnChangeQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 532, -1, 30));
-        add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 536, 56, -1));
+        add(btnChangeQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, 30));
+        add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 56, 30));
 
+        btnBack.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 75, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
+        btnDetails.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         btnDetails.setText("More details");
         btnDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDetailsActionPerformed(evt);
             }
         });
-        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 240, -1, 30));
+        add(btnDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, 130, 30));
 
+        jLabel8.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel8.setText("Money Left:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 400, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, -1, 20));
 
+        jLabel9.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jLabel9.setText("Order total price:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, -1, -1));
-        add(lblmoneyleft, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 398, 126, 18));
-        add(lblorderprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 400, 126, 18));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, -1, 20));
 
+        lblmoneyleft.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        add(lblmoneyleft, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 126, 20));
+
+        lblorderprice.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        add(lblorderprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 400, 126, 20));
+
+        jRoles.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
         jRoles.setText("View Rates ratio");
         jRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRolesActionPerformed(evt);
             }
         });
-        add(jRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, -1, -1));
+        add(jRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 160, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
@@ -572,7 +591,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         else{
             itemList5 = itemList4;
         }
-        searchGoodTable(itemList4);
+        searchGoodTable(itemList5);
 //        txtPrice.setBorder(BorderFactory.createLineBorder(Color.gray));
 //        jLabel5.setForeground(Color.black);
     }//GEN-LAST:event_jSearchActionPerformed
@@ -581,10 +600,15 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
           Date date = new Date();
           int totalprice =0;
-        
+         for(Customer customer2: net.getCustomerDirectory().getCustomersList()){
+            if(customer2.getUserAccount().equals(u)){
+                customer1 = customer2;
+            }
+         }
+            System.out.print(customer1);
         for(Customer customer: net.getCustomerDirectory().getCustomersList()){
             if(customer.getUserAccount().equals(u)){
-                customer1 = customer;
+                
                 for(BuyOrderItem buyitem: cart){
                     totalprice+= (buyitem.getItem().getPrice()*buyitem.getQuantity());
                 }
@@ -615,14 +639,15 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         cart.clear();
         cartTable(cart);
-//        try {
-//                 Email.send_email("Shopping notice","Your goods are on the way! \n Plz check our app for further information ",customer1.getEmail());
-//             } catch (Exception ex) {
-//              
-//                  java.util.logging.Logger.getLogger(CustomerAreaJPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//              }
+        try {
+                 Email.send_email("Shopping notice","Your goods are on the way! \n Plz check our app for further information ",customer1.getEmail());
+             } catch (Exception ex) {
+              
+                  java.util.logging.Logger.getLogger(CustomerAreaJPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+              }
              
          populateTable();
+         
     }//GEN-LAST:event_btnRequest1ActionPerformed
 
     private void btnHistoryOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryOrderActionPerformed
