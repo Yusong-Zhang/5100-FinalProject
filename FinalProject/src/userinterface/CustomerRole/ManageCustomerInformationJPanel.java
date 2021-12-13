@@ -32,10 +32,10 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         this.network=network;
         
         txtCustomer.setText(customer.toString());
-        txtAddress.setText(customer.getAddress());
+        txtEmail.setText(customer.getAddress());
         txtTelephone.setText(customer.getPhone());
         txtCustomer.setEnabled(false);
-        txtAddress.setEnabled(false);
+        txtEmail.setEnabled(false);
         txtTelephone.setEnabled(false);
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
@@ -50,7 +50,7 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAddress = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         txtCustomer = new javax.swing.JTextField();
@@ -62,22 +62,31 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtAddress1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 184, -1));
+
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 184, -1));
 
         jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
         jLabel1.setText("Manage Information Screen");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 42, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        btnBack.setText("< back");
+        btnBack.setText("back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
-        add(txtCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 184, -1));
+        add(txtCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 184, -1));
 
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +94,7 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 287, 96, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 96, -1));
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -93,19 +102,26 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 287, 96, -1));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 96, -1));
 
         jLabel6.setText("username:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 129, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
         jLabel9.setText("Telephone:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
-        add(txtTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 184, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+        add(txtTelephone, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 184, -1));
 
-        jLabel8.setText("Address:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+        jLabel8.setText("Email:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, 20));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jLabel10.setText("Address:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, -1, 20));
+        add(txtAddress1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 184, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/B.jpg"))); // NOI18N
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -118,11 +134,11 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
       
-        customer.setAddress(txtAddress.getText());
+        customer.setAddress(txtEmail.getText());
         customer.setPhone(txtTelephone.getText());
-
+        customer.setEmail(txtEmail.getText());
         txtCustomer.setEnabled(false);
-        txtAddress.setEnabled(false);
+        txtEmail.setEnabled(false);
         txtTelephone.setEnabled(false);
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
@@ -131,11 +147,15 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
 
-        txtAddress.setEnabled(true);
+        txtEmail.setEnabled(true);
         txtTelephone.setEnabled(true);
         btnSave.setEnabled(true);
         btnUpdate.setEnabled(false);
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -143,13 +163,16 @@ public class ManageCustomerInformationJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtAddress1;
     private javax.swing.JTextField txtCustomer;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtTelephone;
     // End of variables declaration//GEN-END:variables
 }

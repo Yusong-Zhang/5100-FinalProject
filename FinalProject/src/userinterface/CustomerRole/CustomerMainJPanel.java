@@ -53,69 +53,40 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
         btnBuy = new javax.swing.JButton();
         btnHistory = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(886, 345));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnBuy.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnBuy.setText("BuyBuyBuy!");
         btnBuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuyActionPerformed(evt);
             }
         });
+        add(btnBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 150, 50));
 
+        btnHistory.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnHistory.setText("View History");
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHistoryActionPerformed(evt);
             }
         });
+        add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, 50));
 
+        btnEdit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnEdit.setText("Edit own profile");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
+        add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 190, 60));
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEdit)
-                .addGap(179, 179, 179))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(204, 204, 204)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnBuy)
-                        .addComponent(btnHistory))
-                    .addContainerGap(189, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(46, 46, 46)
-                    .addComponent(btnBack)
-                    .addContainerGap(391, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(btnBack)
-                .addGap(63, 63, 63)
-                .addComponent(btnBuy)
-                .addGap(34, 34, 34)
-                .addComponent(btnHistory)
-                .addGap(36, 36, 36)
-                .addComponent(btnEdit)
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/B.jpg"))); // NOI18N
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyActionPerformed
@@ -145,18 +116,11 @@ public class CustomerMainJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        userProcessContainer.remove(this);
-
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBuy;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnHistory;
+    private javax.swing.JLabel jLabel17;
     // End of variables declaration//GEN-END:variables
 }

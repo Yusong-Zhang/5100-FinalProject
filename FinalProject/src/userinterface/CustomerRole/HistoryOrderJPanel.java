@@ -123,16 +123,17 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 125, -1));
-        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 125, -1));
+        add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 125, -1));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 125, -1));
 
         jLabel7.setText("Time:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, -1, -1));
 
         jLabel5.setText("Price:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
 
         btnWriteComment.setText("Write Comment");
         btnWriteComment.setPreferredSize(new java.awt.Dimension(150, 30));
@@ -141,11 +142,11 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnWriteCommentActionPerformed(evt);
             }
         });
-        add(btnWriteComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 140, -1));
-        add(txtSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 125, -1));
+        add(btnWriteComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 140, -1));
+        add(txtSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 125, -1));
 
         jLabel6.setText("Seller:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
 
         orderListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,7 +173,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderListTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 119, 808, 147));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 808, 147));
 
         btnFreshTable.setText("REFRESH");
         btnFreshTable.addActionListener(new java.awt.event.ActionListener() {
@@ -189,14 +190,14 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnSearchActionPerformed(evt);
             }
         });
-        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 100, 29));
+        add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 100, 29));
 
         jLabel2.setText("Order list:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 92, -1, -1));
-        add(txtGood, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 289, 125, -1));
+        add(txtGood, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 125, -1));
 
         jLabel4.setText("Item:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 292, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
         jLabel1.setText("History Order");
@@ -217,16 +218,16 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 btnCancelActionPerformed(evt);
             }
         });
-        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 130, 30));
+        add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 130, 30));
 
-        btnConnect.setText("Connect Service");
+        btnConnect.setText("FeedBack");
         btnConnect.setPreferredSize(new java.awt.Dimension(150, 30));
         btnConnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConnectActionPerformed(evt);
             }
         });
-        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 170, -1));
+        add(btnConnect, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 480, 100, -1));
 
         jButton1.setText("Confirm Order");
         jButton1.setPreferredSize(new java.awt.Dimension(150, 30));
@@ -235,9 +236,12 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 120, 29));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 330, 120, 29));
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 10, 120, 100));
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 383, 569, 302));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
@@ -397,7 +401,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
             return;
         }
         BuyOrderItem item = (BuyOrderItem)orderListTable.getValueAt(selectedRow, 0);
-        if(item.getStatus().equals("DELIVERED")){
+        if(item.getStatus().equals("Delivered")){
             item.setStatus("RECEIVED");
         }
         else{
@@ -418,6 +422,7 @@ public class HistoryOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

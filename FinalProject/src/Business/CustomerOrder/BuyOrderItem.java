@@ -86,6 +86,9 @@ public class BuyOrderItem {
     }
 
     public void setStatus(String status) {
+        if(status==null){
+            status =new String("Work");
+        }
         this.status = status;
     }
 

@@ -63,62 +63,43 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
         btnSeller = new javax.swing.JButton();
         btnCustomer = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Epayer workarea");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 210, 30));
 
-        btnSeller.setText("Manage Seller E-payment");
+        btnSeller.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSeller.setText("View Seller E-payment");
         btnSeller.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSellerActionPerformed(evt);
             }
         });
+        add(btnSeller, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 250, 60));
 
-        btnCustomer.setText("Manage Customer E-payment");
+        btnCustomer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCustomer.setText("View Customer E-payment");
         btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerActionPerformed(evt);
             }
         });
+        add(btnCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 250, 60));
 
+        btnOrder.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnOrder.setText("Manage Order Process");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrderActionPerformed(evt);
             }
         });
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 250, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSeller)
-                            .addComponent(btnCustomer))))
-                .addContainerGap(205, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnOrder)
-                .addGap(236, 236, 236))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(btnSeller)
-                .addGap(36, 36, 36)
-                .addComponent(btnCustomer)
-                .addGap(18, 18, 18)
-                .addComponent(btnOrder)
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSellerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellerActionPerformed
@@ -148,5 +129,6 @@ public class EpayerAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnSeller;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel17;
     // End of variables declaration//GEN-END:variables
 }

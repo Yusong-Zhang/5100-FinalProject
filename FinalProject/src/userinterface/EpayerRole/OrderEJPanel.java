@@ -10,6 +10,7 @@ import Business.EcoSystem;
 import Business.Epay.Epayer;
 import Business.Network.Network;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -60,6 +61,12 @@ public class OrderEJPanel extends javax.swing.JPanel {
         bApprove = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         RefundTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ApproveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,12 +93,15 @@ public class OrderEJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(ApproveTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 808, 147));
+
         bRefund.setText("Refund");
         bRefund.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bRefundActionPerformed(evt);
             }
         });
+        add(bRefund, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 540, -1, -1));
 
         bApprove.setText("Approve");
         bApprove.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +109,7 @@ public class OrderEJPanel extends javax.swing.JPanel {
                 bApproveActionPerformed(evt);
             }
         });
+        add(bApprove, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
 
         RefundTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,42 +136,24 @@ public class OrderEJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(RefundTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(bApprove)
-                                .addGap(43, 43, 43))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 808, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(bRefund)
-                                .addGap(40, 40, 40))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bApprove)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bRefund)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 808, 147));
+
+        jLabel5.setText("Approve Table:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
+
+        jLabel6.setText("Refund Table:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 30));
+
+        btnBack.setText("Back<<");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/EBack.jpg"))); // NOI18N
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
     }// </editor-fold>//GEN-END:initComponents
 
     private void bRefundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRefundActionPerformed
@@ -203,12 +196,23 @@ public class OrderEJPanel extends javax.swing.JPanel {
       populateTable();
     }//GEN-LAST:event_bApproveActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ApproveTable;
     private javax.swing.JTable RefundTable;
     private javax.swing.JButton bApprove;
     private javax.swing.JButton bRefund;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
